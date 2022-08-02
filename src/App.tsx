@@ -63,7 +63,7 @@ export function App() {
 
     const connectionStatus = React.useMemo(() => (
         <div className="connection-status">
-            {connected ? <div className="connected">Connected <Timer key="connected" /></div> : <div className="disconnected">Disconnected <Timer key="disconnected" /></div>}
+            {connected ? <div className="connected">Connected<br /><Timer key="connected" /></div> : <div className="disconnected">Disconnected<br /><Timer key="disconnected" /></div>}
         </div>),
         [connected],
     );

@@ -4,6 +4,7 @@ import React from "react";
 import { IUser } from "../definitions";
 import { createAndSetPlainMessage, createAndSetPointerMessage } from "../fluid";
 import { Kilobyte, randomString } from "../utils";
+import { GenChatButton } from "./GenChatButton";
 import { Menu } from "./Menu";
 
 export interface IToolsMenuProps extends IMessageFormProps {
@@ -162,6 +163,7 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (props: I
                 <FontAwesomeIcon icon={["fas", "paper-plane"]} title="send message" />
                 &nbsp;&nbsp;Send
             </button>
+            <GenChatButton currentUser={props.user} container={props.container} />
         </form>
     )
 }

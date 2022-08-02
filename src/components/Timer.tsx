@@ -26,5 +26,5 @@ export const Timer: React.FunctionComponent = () => {
     const minutes = (elapsedTimeSec % (60 * 60)) / 60;
     const seconds = elapsedTimeSec % 60;
 
-    return <span>{`${formatToDoubleDigit(hours)}:${formatToDoubleDigit(minutes)}:${formatToDoubleDigit(seconds)}`}</span>
+    return <span className="timer">{`${formatToDoubleDigit(hours)}:${formatToDoubleDigit(minutes)}:${formatToDoubleDigit(seconds)}`}</span>
 };

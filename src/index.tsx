@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -20,7 +20,8 @@ import {
     faMoon,
     faRightLeft,
     faSun,
-    faUser
+    faUser,
+    faShuffle,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Preload icons
@@ -43,7 +44,10 @@ library.add(
     faRightLeft,
     faSun,
     faUser,
+    faShuffle,
 );
 
-const app = document.getElementById("app");
-render(<App />, app);
+// Render app
+const container = document.getElementById("app");
+const root = createRoot(container);
+root.render(<App />);
