@@ -1,0 +1,366 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-color: #efeff3;
+    --active-background-color: #dfdfe3;
+    --standard-shadow-color: rgba(100, 100, 111, 0.2);
+    --active-shadow-color: rgba(100, 100, 111, 0.3);
+    --text-color: #2e2e33;
+}
+
+[data-theme="dark"] {
+    --background-color: #3e3e43;
+    --active-background-color: #2e2e33;
+    --standard-shadow-color: rgba(0, 0, 1, 0.5);
+    --active-shadow-color: rgba(0, 0, 1, 0.7);
+    --text-color: #f8f8ff;
+}
+
+.theme-toggle {
+    font: inherit;
+    vertical-align: middle;
+    line-height: 1.2em;
+}
+
+.theme-toggle>* {
+    opacity: 0.5;
+    margin-left: 0.2em;
+}
+
+.theme-toggle> :first-child {
+    opacity: 1;
+    font-size: 1.2em;
+    margin-left: 0;
+    margin-right: 0.3em;
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.toolbar {
+    width: calc(100% - 4em);
+    padding: 1em 0;
+    margin: 0 auto;
+    display: flex;
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toolbar h1 {
+    margin: 0;
+}
+
+.toolbar .toolbar-left {
+    align-self: flex-start;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.toolbar .toolbar-right {
+    align-self: flex-end;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.toolbar .toolbar-left>*:not(:last-child) {
+    margin-right: 1em;
+}
+
+.toolbar .toolbar-right>*:not(:first-child) {
+    margin-left: 1em;
+}
+
+.toolbar form {
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar form>:not(:first-child) {
+    margin-left: 1em;
+}
+
+.toolbar form input,
+.toolbar form button {
+    font: inherit;
+}
+
+.toolbar form .username {
+    border-radius: 1em;
+    padding: 0.5em 0.8em;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+}
+
+.connected,
+.disconnected {
+    border-radius: 1em;
+    padding: 0.5em 0.8em;
+    color: #2e2e2e;
+}
+
+.connected {
+    background-color: palegreen;
+    box-shadow: rgba(151, 251, 151, 0.7) 0px 2px 19px 0px;
+}
+
+.disconnected {
+    background-color: palevioletred;
+    box-shadow: rgba(217, 112, 147, 0.7) 0px 7px 29px 0px;
+}
+
+.chat {
+    flex-grow: 1;
+    width: calc(100% - 4em);
+    align-self: stretch;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat>* {
+    margin-bottom: 1em;
+}
+
+.chat> :last-child {
+    margin-bottom: 2em;
+}
+
+.chat .messages {
+    position: relative;
+    padding: 1em;
+    flex-grow: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    overflow-y: auto;
+    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+    border-radius: 1em;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: stretch;
+    margin-top: 0.5em;
+    text-align: end;
+    max-width: 100%;
+}
+
+.message.current-user {
+    align-items: flex-start;
+    text-align: start;
+}
+
+.message-sender {
+    font-size: 0.8em;
+    font-weight: 300;
+    opacity: 0.5;
+    margin-bottom: 0.1em;
+}
+
+.message-content {
+    padding: 0.5em 0.8em;
+    border-radius: 1em;
+    max-width: 80%;
+    word-wrap: break-word;
+    hyphens: auto;
+    border-top-right-radius: 0;
+    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+}
+
+.message.current-user .message-content {
+    border-top-right-radius: 1em;
+    border-top-left-radius: 0;
+}
+
+.chat form {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+}
+
+form>*:not(:first-child) {
+    margin-left: 0.5em;
+}
+
+form textarea,
+form input {
+    display: block;
+    font: inherit;
+    flex-grow: 1;
+    border: none;
+    padding: 1rem;
+    border-radius: 1em;
+    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+    background-color: inherit;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    border-radius: 1em;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+    background-color: inherit;
+    color: inherit;
+}
+
+button:hover {
+    position: relative;
+    cursor: pointer;
+    box-shadow: var(--active-shadow-color) 0px 5px 29px 0px;
+    z-index: 2;
+}
+
+button:hover::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -1px;
+    top: -1px;
+    height: 100%;
+    width: 100%;
+    border-radius: 1em;
+    border: 1px solid var(--background-color);
+    background-color: var(--background-color);
+    color: inherit;
+}
+
+.empty-session-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.empty-session-display main {
+    max-width: 50%;
+}
+
+.menu-toggle {
+    position: relative;
+}
+
+.menu-toggle.open {
+    z-index: 2;
+}
+
+
+.menu.closed {
+    display: none;
+}
+
+.menu.open {
+    display: block;
+}
+
+.menu {
+    cursor: unset;
+    position: absolute;
+    border-radius: 1em;
+    background-color: var(--background-color);
+    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    min-width: 30em;
+    max-width: calc(100vw - 20em);
+}
+
+.menu.from-top {
+    bottom: calc(100% + 0.5em);
+}
+
+.menu.from-left {
+    left: 0;
+}
+
+.menu.from-bottom {
+    top: calc(100% + 0.5em);
+}
+
+.menu.from-right {
+    right: 0;
+}
+
+.tools-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tools-menu li {
+    text-align: left;
+    padding: 0.8em 1.2em;
+}
+
+.tools-menu li:first-child {
+    padding-top: 1.2em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.tools-menu li:last-child {
+    padding-bottom: 1.2em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.tools-menu li p {
+    margin: 0;
+}
+
+.tools-menu li p:last-child {
+    margin-left: 1.5rem;
+    margin-top: 0.2em;
+    opacity: 0.8;
+    font-size: 0.8em;
+}
+
+.tools-menu li:hover {
+    background-color: var(--active-background-color);
+}
+
+.menu-icon {
+    display: inline-block;
+    min-width: 1.5rem;
+}
+
+.help-display {
+    text-align: left;
+}
+
+.menu .help-display {
+    padding: 1em;
+}
