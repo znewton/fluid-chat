@@ -1,4 +1,3 @@
-import { faCaretDown, faCaretUp, faCompress, faEnvelope, faEnvelopesBulk, faExpand, faHandPeace, faPaperPlane, faPlugCircleExclamation, faScrewdriverWrench, faWeightHanging } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ConnectionState, IFluidContainer } from "fluid-framework";
 import React from "react";
@@ -49,63 +48,63 @@ const ToolsMenuContent: React.FunctionComponent<IToolsMenuProps> = (props: ITool
         <ul className="tools-menu" role="menu">
             <li role="menuitem" onClick={handleDisconnect}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faPlugCircleExclamation} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "plug-circle-exclamation"]} /></span>
                     <strong>Disconnect</strong>
                 </p>
                 <p>Disconnect from session without destroying container. Reconnect by sending a message or pressing "Enter" in the message input area.</p>
             </li>
             <li role="menuitem" onClick={handleLeave}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faHandPeace} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "hand-peace"]} /></span>
                     <strong>Leave</strong>
                 </p>
                 <p>Disconnect from session and dispose of container completely. Requires page refresh to reconnect.</p>
             </li>
             <li role="menuitem" onClick={handleExpand}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faExpand} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "expand"]} /></span>
                     <strong>Expand Large Messages</strong>
                 </p>
                 <p>Disable truncation of long messages.</p>
             </li>
             <li role="menuitem" onClick={handleCollapse}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faCompress} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "compress"]} /></span>
                     <strong>Collapse Large Messages</strong>
                 </p>
                 <p>Truncate long messages.</p>
             </li>
             <li role="menuitem" onClick={handleSend17KbMessage}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faEnvelope} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelope"]} /></span>
                     <strong>Send 17Kb Message</strong>
                 </p>
                 <p>Send a 17Kb message as an individual SharedMap DDS. This is just slightly over the 16Kb message size limit imposed by Alfred, so it should trigger chunking if enabled, or Alfred message size verification if enabled.</p>
             </li>
             <li role="menuitem" onClick={handleSend200KbMessage}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faEnvelope} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelope"]} /></span>
                     <strong>Send 200Kb Message</strong>
                 </p>
                 <p>Send a 200Kb message as an individual SharedMap DDS. This is greater than the default body-parser limit of 100Kb, so it can be used to trigger an incremental summary &gt;100Kb to validate correct HTTP limit configurations.</p>
             </li>
             <li role="menuitem" onClick={handleSend800KbMessage}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faEnvelope} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelope"]} /></span>
                     <strong>Send 800Kb Message</strong>
                 </p>
                 <p>Send an 800Kb message as an individual SharedMap DDS. This is greater than the runtime's configured Op limit of 768Kb, so it should trigger an "Op Too Large" error and container close if chunking is disabled.</p>
             </li>
             <li role="menuitem" onClick={handleSend2x600KbMessages}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faEnvelopesBulk} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelopes-bulk"]} /></span>
                     <strong>Send 2x 600Kb Messages</strong>
                 </p>
                 <p>Send 2, 600kb messages as individual SharedMap DDS's in quick succession. Useful for triggering a bug where message size exceeds Socket.io's maxHttpBufferSize of 1Mb, even though it is multiple ops.</p>
             </li>
             <li role="menuitem" onClick={createNewSessionWithHeavyPayload}>
                 <p>
-                    <span className="menu-icon"><FontAwesomeIcon icon={faWeightHanging} /></span>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "weight-hanging"]} /></span>
                     <strong>Create New Session with 10Mb Initial Payload</strong>
                 </p>
                 <p>Opens a new chat session (document) with a hidden payload of 10Mb. This is useful for debugging issues or checking performance with large initial summary sizes being sent to Alfred.</p>
@@ -153,14 +152,14 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (props: I
         <form onSubmit={handleSubmit}>
             <Menu
                 name="Tools"
-                icon={faScrewdriverWrench}
+                icon={["fas", "screwdriver-wrench"]}
                 content={<ToolsMenuContent {...props} />}
                 vPosition="from-top"
                 hPosition="from-left"
             />
             <input value={input} onChange={handleInput} placeholder="Send a message..." />
             <button type="submit" >
-                <FontAwesomeIcon icon={faPaperPlane} title="send message" />
+                <FontAwesomeIcon icon={["fas", "paper-plane"]} title="send message" />
                 &nbsp;&nbsp;Send
             </button>
         </form>

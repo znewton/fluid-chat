@@ -108,6 +108,7 @@ dist
 **/.DS_STORE
 
 **/.parcel-cache
+parcel-bundle-reports
 
 # Secret config values
 **/config.ts

@@ -2,7 +2,6 @@ import React from "react";
 import { ConnectionState, IFluidContainer, SharedMap } from "fluid-framework";
 import { Timer, MessagesDisplay, UserForm, MessageForm, ThemeToggle, Menu, Help } from "./components";
 import { IUser, Messages, messagesKey } from "./definitions";
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { localStorageManager, usernameKey } from "./utils";
 import { getFluidData } from "./fluid";
 
@@ -76,7 +75,7 @@ export function App() {
                     <h1>Fluid Chat</h1>
                     <Menu
                         name="Help"
-                        icon={faQuestionCircle}
+                        icon={["fas", "question-circle"]}
                         content={<Help />}
                         hPosition="from-left"
                         vPosition="from-bottom"

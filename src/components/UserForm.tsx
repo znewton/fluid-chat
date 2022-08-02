@@ -1,4 +1,3 @@
-import { faRightFromBracket, faRightToBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { IUser } from "../definitions";
@@ -28,17 +27,17 @@ export const UserForm: React.FunctionComponent<IUserFormProps> = (props: IUserFo
                 <input type="text" placeholder="username" name="username" />
                 <button type="submit">
                     Log in&nbsp;&nbsp;
-                    <FontAwesomeIcon icon={faRightToBracket} />
+                    <FontAwesomeIcon icon={["fas", "right-to-bracket"]} />
                 </button>
             </form>
         );
     }
     return (
         <form onSubmit={handleLogout}>
-            <div className="username"><FontAwesomeIcon icon={faUser} /> {props.user.id}</div>
+            <div className="username"><FontAwesomeIcon icon={["fas", "user"]} /> {props.user.id}</div>
             <button type="submit">
                 Log out&nbsp;&nbsp;
-                <FontAwesomeIcon icon={faRightFromBracket} />
+                <FontAwesomeIcon icon={["fas", "right-from-bracket"]} />
             </button>
         </form>
     );

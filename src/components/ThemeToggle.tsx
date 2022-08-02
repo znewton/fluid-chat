@@ -1,4 +1,3 @@
-import { faMoon, faRightLeft, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Theme } from "../definitions";
@@ -32,9 +31,9 @@ export const ThemeToggle: React.FunctionComponent<IThemeToggleProps> = (props: I
     }
 
     const icons = [
-        <FontAwesomeIcon icon={faMoon} key="moon" />,
-        <FontAwesomeIcon icon={faRightLeft} key="right-left" />,
-        <FontAwesomeIcon icon={faSun} key="sun" />,
+        <FontAwesomeIcon icon={["fas", "moon"]} key="moon" />,
+        <FontAwesomeIcon icon={["fas", "right-left"]} key="right-left" />,
+        <FontAwesomeIcon icon={["fas", "sun"]} key="sun" />,
     ];
 
     return (
