@@ -14,6 +14,11 @@ export const Help: React.FunctionComponent = () => {
                     <p>At a low-level, this sends an individual "op" by adding a string value to an array within a "messages" key in a SharedMap object. Plain text messages here will continue to increase the size of the main DDS, which can be useful for generating larger and larger ops.</p>
                 </li>
                 <li>
+                    <p><strong>Gen Chat (bottom right):</strong></p>
+                    <p>Generates a random conversation, 1 message per click, using <a href="https://www.lipsum.com/" target="_blank">Lorem Ipsum</a> text generation.</p>
+                    <p>Useful when trying to simply validate that ops are flowing across clients.</p>
+                </li>
+                <li>
                     <p><strong>Tools (bottom left):</strong></p>
                     <p>Adding strings to an array is pretty limiting for reproducing various user scenarios. Several tools have been added to the "<FontAwesomeIcon icon={["fas", "screwdriver-wrench"]} /> Tools" menu to the left of the input bar. Click the "<FontAwesomeIcon icon={["fas", "screwdriver-wrench"]} /> Tools" menu button to view a complete list of special utilities and their main usecases.</p>
                 </li>

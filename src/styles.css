@@ -373,6 +373,15 @@ button:hover::after {
     text-align: left;
 }
 
+.help-display li p {
+    margin: 0.5em;
+}
+
+.help-display li p:not(:first-child) {
+    margin: 0.1em;
+    padding-left: 1em;
+}
+
 .menu .help-display {
     padding: 1em;
 }
