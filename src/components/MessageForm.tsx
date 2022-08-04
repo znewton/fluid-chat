@@ -36,11 +36,32 @@ const ToolsMenuContent: React.FunctionComponent<IToolsMenuProps> = (props: ITool
         const messageContent = `Large 800kb: ${randomString().repeat(80 * Kilobyte)}`;
         createAndSetPointerMessage(props.container, props.user, messageContent);
     };
-    const handleSend2x600KbMessages: React.MouseEventHandler<HTMLLIElement> = (e) => {
-        const message1Content = `1 - Large 600kb: ${randomString().repeat(60 * Kilobyte)}`;
-        const message2Content = `2 - Large 600kb: ${randomString().repeat(60 * Kilobyte)}`;
-        createAndSetPointerMessage(props.container, props.user, message1Content);
-        createAndSetPointerMessage(props.container, props.user, message2Content);
+    const handleSend5x200KbMessages: React.MouseEventHandler<HTMLLIElement> = (e) => {
+        const messageContents = [];
+        for (let i = 0; i < 5; i++) {
+            messageContents.push(`${i + 1} - Large 200kb: ${randomString().repeat(20 * Kilobyte)}`);
+        }
+        messageContents.forEach((messageContent) => {
+            createAndSetPointerMessage(props.container, props.user, messageContent);
+        });
+    };
+    const handleSend10x100KbMessages: React.MouseEventHandler<HTMLLIElement> = (e) => {
+        const messageContents = [];
+        for (let i = 0; i < 10; i++) {
+            messageContents.push(`${i + 1} - Large 100kb: ${randomString().repeat(10 * Kilobyte)}`);
+        }
+        messageContents.forEach((messageContent) => {
+            createAndSetPointerMessage(props.container, props.user, messageContent);
+        });
+    };
+    const handleSend2x500KbMessages: React.MouseEventHandler<HTMLLIElement> = (e) => {
+        const messageContents = [];
+        for (let i = 0; i < 2; i++) {
+            messageContents.push(`${i + 1} - Large 500kb: ${randomString().repeat(50 * Kilobyte)}`);
+        }
+        messageContents.forEach((messageContent) => {
+            createAndSetPointerMessage(props.container, props.user, messageContent);
+        });
     };
     const createNewSessionWithHeavyPayload: React.MouseEventHandler<HTMLLIElement> = (e) => {
         window.location.assign("/?initialpayload");
@@ -96,12 +117,26 @@ const ToolsMenuContent: React.FunctionComponent<IToolsMenuProps> = (props: ITool
                 </p>
                 <p>Send an 800Kb message as an individual SharedMap DDS. This is greater than the runtime's configured Op limit of 768Kb, so it should trigger an "Op Too Large" error and container close if chunking is disabled.</p>
             </li>
-            <li role="menuitem" onClick={handleSend2x600KbMessages}>
+            <li role="menuitem" onClick={handleSend2x500KbMessages}>
                 <p>
                     <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelopes-bulk"]} /></span>
-                    <strong>Send 2x 600Kb Messages</strong>
+                    <strong>Send 2x 500Kb Messages</strong>
                 </p>
-                <p>Send 2, 600kb messages as individual SharedMap DDS's in quick succession. Useful for triggering a bug where message size exceeds Socket.io's maxHttpBufferSize of 1Mb, even though it is multiple ops.</p>
+                <p>Send 2, 500kb messages as individual SharedMap DDS's in quick succession. Useful for triggering a bug where message size exceeds Socket.io's maxHttpBufferSize of 1Mb, even though it is multiple ops.</p>
+            </li>
+            <li role="menuitem" onClick={handleSend5x200KbMessages}>
+                <p>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelopes-bulk"]} /></span>
+                    <strong>Send 5x 200Kb Messages</strong>
+                </p>
+                <p>Send 5, 200kb messages as individual SharedMap DDS's in quick succession. Useful for triggering a bug where message size exceeds Socket.io's maxHttpBufferSize of 1Mb, even though it is multiple ops.</p>
+            </li>
+            <li role="menuitem" onClick={handleSend10x100KbMessages}>
+                <p>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelopes-bulk"]} /></span>
+                    <strong>Send 10x 100Kb Messages</strong>
+                </p>
+                <p>Send 10, 100kb messages as individual SharedMap DDS's in quick succession. Useful for triggering a bug where message size exceeds Socket.io's maxHttpBufferSize of 1Mb, even though it is multiple ops.</p>
             </li>
             <li role="menuitem" onClick={createNewSessionWithHeavyPayload}>
                 <p>
