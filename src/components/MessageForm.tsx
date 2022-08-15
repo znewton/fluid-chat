@@ -32,6 +32,10 @@ const ToolsMenuContent: React.FunctionComponent<IToolsMenuProps> = (props: ITool
         const messageContent = `Large 200kb: ${randomString().repeat(20 * Kilobyte)}`;
         createAndSetPointerMessage(props.container, props.user, messageContent);
     };
+    const handleSend700KbMessage: React.MouseEventHandler<HTMLLIElement> = (e) => {
+        const messageContent = `Large 700kb: ${randomString().repeat(70 * Kilobyte)}`;
+        createAndSetPointerMessage(props.container, props.user, messageContent);
+    };
     const handleSend800KbMessage: React.MouseEventHandler<HTMLLIElement> = (e) => {
         const messageContent = `Large 800kb: ${randomString().repeat(80 * Kilobyte)}`;
         createAndSetPointerMessage(props.container, props.user, messageContent);
@@ -110,12 +114,19 @@ const ToolsMenuContent: React.FunctionComponent<IToolsMenuProps> = (props: ITool
                 </p>
                 <p>Send a 200Kb message as an individual SharedMap DDS. This is greater than the default body-parser limit of 100Kb, so it can be used to trigger an incremental summary &gt;100Kb to validate correct HTTP limit configurations.</p>
             </li>
+            <li role="menuitem" onClick={handleSend700KbMessage}>
+                <p>
+                    <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelope"]} /></span>
+                    <strong>Send 700Kb Message</strong>
+                </p>
+                <p>Send a 700Kb message as an individual SharedMap DDS. This is less than the runtime's configured Op size limit of 768Kb, so it can be used to send several large ops to generate a large incremental summary.</p>
+            </li>
             <li role="menuitem" onClick={handleSend800KbMessage}>
                 <p>
                     <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelope"]} /></span>
                     <strong>Send 800Kb Message</strong>
                 </p>
-                <p>Send an 800Kb message as an individual SharedMap DDS. This is greater than the runtime's configured Op limit of 768Kb, so it should trigger an "Op Too Large" error and container close if chunking is disabled.</p>
+                <p>Send an 800Kb message as an individual SharedMap DDS. This is greater than the runtime's configured Op size limit of 768Kb, so it should trigger an "Op Too Large" error and container close if chunking is disabled.</p>
             </li>
             <li role="menuitem" onClick={handleSend2x500KbMessages}>
                 <p>
