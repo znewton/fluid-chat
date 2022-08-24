@@ -20,7 +20,6 @@ export function App() {
 
     const [messages, setMessages] = React.useState<Messages>();
     const [connected, setConnected] = React.useState<boolean>(false);
-    const [expanded, setExpanded] = React.useState<boolean>(false);
 
     React.useEffect(() => {
         if (!container) {
@@ -58,7 +57,7 @@ export function App() {
     }, [container]);
 
     const messageDisplay = React.useMemo(() => {
-        return <MessagesDisplay messages={messages} expandLong={expanded} user={user} />
+        return <MessagesDisplay messages={messages} user={user} />
     }, [messages]);
 
     const connectionStatus = React.useMemo(() => (
@@ -92,7 +91,6 @@ export function App() {
                 <MessageForm
                     container={container}
                     user={user}
-                    handleExpandCollapse={(expanded) => setExpanded(expanded)}
                 />
             </div>
         </div>

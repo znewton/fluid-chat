@@ -7,11 +7,10 @@ import { Help } from "./Help";
 interface IMessageProps {
     content: string;
     sender: string;
-    expandLong: boolean;
     isCurrentUser: boolean;
 }
 const Message: React.FunctionComponent<IMessageProps> = (props: IMessageProps) => {
-    const body = !props.expandLong && props.content.length > 140 ?
+    const body = props.content.length > 140 ?
         `${props.content.substring(0, 140)}...` :
         `${props.content}`;
     const senderColor = getHexCodeColorFromString(props.sender);
@@ -38,7 +37,6 @@ const PointerMessage: React.FunctionComponent<IPointerMessageProps> = (props: IP
         content={content}
         sender={props.sender}
         isCurrentUser={props.isCurrentUser}
-        expandLong={props.expandLong}
     />
 };
 
@@ -50,7 +48,11 @@ const EmptySessionDisplay: React.FunctionComponent = () => {
     )
 }
 
-export const MessagesDisplay: React.FunctionComponent<{ messages: Messages, user: IUser, expandLong: boolean }> = (props) => {
+interface IMessageDisplayProps {
+    messages: Messages;
+    user: IUser;
+}
+export const MessagesDisplay: React.FunctionComponent<IMessageDisplayProps> = (props) => {
     const messages = props.messages === undefined ? [] :
         [...props.messages].reverse().map((message) => {
             const isCurrentUser = message.sender === props.user.id;
@@ -60,7 +62,6 @@ export const MessagesDisplay: React.FunctionComponent<{ messages: Messages, user
                     content={message.content}
                     sender={message.sender}
                     isCurrentUser={isCurrentUser}
-                    expandLong={props.expandLong}
                 />
             } else if (message.type === "plain-large") {
                 return <PointerMessage
@@ -68,7 +69,6 @@ export const MessagesDisplay: React.FunctionComponent<{ messages: Messages, user
                     pointer={message.handle}
                     sender={message.sender}
                     isCurrentUser={isCurrentUser}
-                    expandLong={props.expandLong}
                 />;
             }
             return undefined;

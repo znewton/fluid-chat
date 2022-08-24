@@ -1,5 +1,6 @@
 export const usernameKey = "username";
 export const themeKey = "theme";
+export const tokenLifetimeKey = "tokenlifetime";
 
 class LocalStorageManager {
     private readonly prefix = "fluid-chat";

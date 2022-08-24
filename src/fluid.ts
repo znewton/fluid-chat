@@ -1,9 +1,8 @@
 import { AzureClient, AzureRemoteConnectionConfig } from "@fluidframework/azure-client";
-import { InsecureTokenProvider } from "@fluidframework/test-runtime-utils";
 import { ContainerSchema, IFluidContainer, SharedMap } from "fluid-framework";
 import { v4 as uuid } from "uuid";
 import { contentKey, initialPayloadKey, IPlainMessage, IPointerMessage, IUser, Messages, messagesKey } from "./definitions";
-import { Kilobyte, randomString } from "./utils";
+import { CustomInsecureTokenProvider, Kilobyte, randomString } from "./utils";
 
 export const getFluidData = async (username?: string) => {
     const { tenantId, tenantKey, endpoint } = await (async () => {
@@ -28,7 +27,7 @@ export const getFluidData = async (username?: string) => {
         connection: {
             type: "remote",
             endpoint: endpoint,
-            tokenProvider: new InsecureTokenProvider(tenantKey, { id: userId }),
+            tokenProvider: new CustomInsecureTokenProvider(tenantKey, { id: userId }),
             tenantId: tenantId,
         } as AzureRemoteConnectionConfig,
     });

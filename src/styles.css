@@ -330,6 +330,8 @@ button:hover::after {
     padding: 0;
     margin: 0;
     list-style: none;
+    max-height: 40em;
+    overflow-y: scroll;
 }
 
 .tools-menu li {
@@ -338,13 +340,13 @@ button:hover::after {
 }
 
 .tools-menu li:first-child {
-    padding-top: 1.2em;
+    padding-top: 1.3em;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
 }
 
 .tools-menu li:last-child {
-    padding-bottom: 1.2em;
+    padding-bottom: 1.3em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
 }

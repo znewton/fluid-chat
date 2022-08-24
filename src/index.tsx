@@ -22,6 +22,7 @@ import {
     faSun,
     faUser,
     faShuffle,
+    faKey,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Preload icons
@@ -45,6 +46,7 @@ library.add(
     faSun,
     faUser,
     faShuffle,
+    faKey,
 );
 
 // Render app
