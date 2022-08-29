@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IFluidContainer } from "fluid-framework";
 import { IUser } from "../definitions";
 import { createAndSetPlainMessage } from "../fluid";
+import { canWrite } from "../utils";
 
 const genChatUsers: IUser[] = [];
 
@@ -22,7 +23,7 @@ export const GenChatButton: React.FunctionComponent<IGenChatButtonProps> = (prop
             ...Array(genChatUsers.length + 1).fill(props.currentUser)];
         const userIndex = Math.floor(Math.random() * (possibleUsers.length + 1));
         const existingUser: IUser | undefined = possibleUsers[userIndex];
-        const user: IUser = existingUser ?? { id: uuid(), temp: true };
+        const user: IUser = existingUser ?? { id: uuid(), temp: true, permissions: [] };
         if (!existingUser) {
             genChatUsers.push(user);
         }
@@ -35,8 +36,10 @@ export const GenChatButton: React.FunctionComponent<IGenChatButtonProps> = (prop
         createAndSetPlainMessage(props.container, user, message);
     };
 
+    const disableInputs = !canWrite(props.currentUser);
+
     return (
-        <button type="button" onClick={handleGenChat}>
+        <button type="button" onClick={handleGenChat} disabled={disableInputs}>
             <FontAwesomeIcon icon={["fas", "shuffle"]} title="send random message" />
             &nbsp;&nbsp;Gen Chat
         </button>

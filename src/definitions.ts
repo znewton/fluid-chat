@@ -1,3 +1,4 @@
+import { ScopeType } from "@fluidframework/azure-client";
 import { SharedMap } from "fluid-framework";
 
 export const initialPayloadKey = "initialpayload";
@@ -26,7 +27,11 @@ export interface IPointerMessage extends IMessage {
     handle: SharedMap["handle"];
 }
 export type Messages = (IPlainMessage | IPointerMessage)[];
-export interface IUser { id: string; temp: boolean; }
+export interface IUser {
+    id: string;
+    temp: boolean;
+    permissions: ("read" | "write")[];
+}
 
 export interface IServiceConfig {
     serviceEndpoint: string;

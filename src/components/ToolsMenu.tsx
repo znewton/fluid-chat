@@ -2,7 +2,7 @@ import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { createAndSetPointerMessage } from "../fluid";
-import { Kilobyte, localStorageManager, randomString, tokenLifetimeKey } from "../utils";
+import { canWrite, Kilobyte, localStorageManager, randomString, tokenLifetimeKey } from "../utils";
 import { IMessageFormProps } from "./MessageForm";
 
 const genLargeMessage = (sizeKb: number) => {
@@ -15,14 +15,17 @@ interface ISendLargeMessageToolProps extends IMessageFormProps {
     extraDescription?: string;
 }
 const SendLargeMessageTool: React.FunctionComponent<ISendLargeMessageToolProps> = (props) => {
+    const disabled = !canWrite(props.user);
     const handleClick: React.MouseEventHandler<HTMLLIElement> = React.useCallback(() => {
+        if (disabled) return;
         // Send 1 large message.
         return (e) => {
             createAndSetPointerMessage(props.container, props.user, genLargeMessage(props.sizeKb));
         };
     }, [props.sizeKb]);
+
     return (
-        <li role="menuitem" onClick={handleClick}>
+        <li role="menuitem" onClick={handleClick} data-disabled={disabled}>
             <p>
                 <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelope"]} /></span>
                 <strong>Send {props.sizeKb}Kb Message</strong>
@@ -37,7 +40,9 @@ interface ISendLargeMessagesToolProps extends IMessageFormProps {
     count: number;
 }
 const SendLargeMessagesTool: React.FunctionComponent<ISendLargeMessagesToolProps> = (props) => {
+    const disabled = !canWrite(props.user);
     const handleClick: React.MouseEventHandler<HTMLLIElement> = React.useCallback(() => {
+        if (disabled) return;
         // Send multiple large messages.
         return (e) => {
             const messageContents = [];
@@ -49,8 +54,9 @@ const SendLargeMessagesTool: React.FunctionComponent<ISendLargeMessagesToolProps
             });
         };
     }, [props.count, props.sizeKb]);
+
     return (
-        <li role="menuitem" onClick={handleClick}>
+        <li role="menuitem" onClick={handleClick} data-disabled={disabled}>
             <p>
                 <span className="menu-icon"><FontAwesomeIcon icon={["fas", "envelopes-bulk"]} /></span>
                 <strong>Send {props.count}x {props.sizeKb}Kb Messages</strong>
@@ -76,7 +82,7 @@ export const ToolsMenu: React.FunctionComponent<IToolsMenuProps> = (props: ITool
         if (configuredTokenLifetime !== undefined) {
             localStorageManager.delete(tokenLifetimeKey);
         } else {
-            localStorageManager.set(tokenLifetimeKey, `${2 * 60 * 1000}` /* 2 minutes in milliseconds */)
+            localStorageManager.set(tokenLifetimeKey, `${45 * 1000}` /* 45 seconds in milliseconds */)
         }
         window.location.reload();
     };
@@ -112,13 +118,13 @@ export const ToolsMenu: React.FunctionComponent<IToolsMenuProps> = (props: ITool
                     <strong>
                         {configuredTokenLifetime !== undefined
                             ? "Reset Token Lifetime to Default (1hr)"
-                            : "Reduce Token Lifetime to 2 Minutes"}
+                            : "Reduce Token Lifetime to 45 Seconds"}
                     </strong>
                 </p>
                 <p>
                     {configuredTokenLifetime !== undefined
                         ? `Token lifetime is currently shortened to ${Math.round(Number.parseInt(configuredTokenLifetime) / (60 * 1000))} minutes. Reset to default of 1 hour to resume normal token expiration behavior.`
-                        : "Token lifetime is 1 hour by default. Reduce it to 2 minutes in order to test token expiration behavior more reasonably."}
+                        : "Token lifetime is 1 hour by default. Reduce it to 45 seconds in order to test token expiration behavior more reasonably."}
                 </p>
             </li>
             <SendLargeMessageTool

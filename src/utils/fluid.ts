@@ -1,5 +1,6 @@
-import { ITokenProvider, ITokenResponse, IUser, ScopeType } from "@fluidframework/azure-client";
+import { ITokenProvider, ITokenResponse, IUser as IAzureUser, ScopeType } from "@fluidframework/azure-client";
 import { generateToken } from "@fluidframework/azure-service-utils";
+import { IUser } from "../definitions";
 import { localStorageManager, tokenLifetimeKey } from "./localStorage";
 
 export class CustomInsecureTokenProvider implements ITokenProvider {
@@ -54,16 +55,18 @@ export class CustomInsecureTokenProvider implements ITokenProvider {
     }
 
     private signToken(tenantId: string, documentId: string): string {
+        const scopes: ScopeType[] = this.user.permissions.includes("write")
+            ? [ScopeType.DocRead, ScopeType.DocWrite, ScopeType.SummaryWrite]
+            : [ScopeType.DocRead];
+        const user: IAzureUser = {
+            id: this.user.id,
+        };
         return generateToken(
             tenantId,
             this.tenantKey,
-            [
-                ScopeType.DocRead,
-                ScopeType.DocWrite,
-                ScopeType.SummaryWrite,
-            ],
+            scopes,
             documentId,
-            this.user,
+            user,
             this.tokenLifetimeMs ? Math.round(this.tokenLifetimeMs / 1000) : undefined,
         )
     }

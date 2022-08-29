@@ -3,6 +3,7 @@ import { ConnectionState, IFluidContainer } from "fluid-framework";
 import React from "react";
 import { IUser } from "../definitions";
 import { createAndSetPlainMessage, createAndSetPointerMessage } from "../fluid";
+import { canWrite } from "../utils";
 import { GenChatButton } from "./GenChatButton";
 import { Menu } from "./Menu";
 import { ToolsMenu } from "./ToolsMenu";
@@ -41,6 +42,8 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (props: I
         setInput("");
     };
 
+    const disableInputs = !canWrite(props.user);
+
     return (
         <form onSubmit={handleSubmit}>
             <Menu
@@ -50,8 +53,8 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (props: I
                 vPosition="from-top"
                 hPosition="from-left"
             />
-            <input value={input} onChange={handleInput} placeholder="Send a message..." />
-            <button type="submit" >
+            <input value={input} onChange={handleInput} placeholder="Send a message..." disabled={disableInputs} />
+            <button type="submit" disabled={disableInputs} >
                 <FontAwesomeIcon icon={["fas", "paper-plane"]} title="send message" />
                 &nbsp;&nbsp;Send
             </button>

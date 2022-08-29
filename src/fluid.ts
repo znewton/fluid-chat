@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 import { contentKey, initialPayloadKey, IPlainMessage, IPointerMessage, IUser, Messages, messagesKey } from "./definitions";
 import { CustomInsecureTokenProvider, Kilobyte, randomString } from "./utils";
 
-export const getFluidData = async (username?: string) => {
+export const getFluidData = async (user: IUser): Promise<{ container: IFluidContainer }> => {
     const { tenantId, tenantKey, endpoint } = await (async () => {
         if (process.env.FLUID_CONFIG === "local") {
             console.log("Using local connection configs");
@@ -21,13 +21,12 @@ export const getFluidData = async (username?: string) => {
             endpoint: config.serviceEndpoint,
         };
     })();
-    const userId = username ?? uuid();
-    console.log({ tenantId, tenantKey, endpoint, userId })
+    console.log({ tenantId, tenantKey, endpoint, user })
     const client = new AzureClient({
         connection: {
             type: "remote",
             endpoint: endpoint,
-            tokenProvider: new CustomInsecureTokenProvider(tenantKey, { id: userId }),
+            tokenProvider: new CustomInsecureTokenProvider(tenantKey, user),
             tenantId: tenantId,
         } as AzureRemoteConnectionConfig,
     });
@@ -51,7 +50,7 @@ export const getFluidData = async (username?: string) => {
     } else {
         ({ container } = await client.getContainer(containerId, containerSchema));
     }
-    return { container, user: { id: userId, temp: username === undefined } };
+    return { container };
 };
 
 const getMessages = (container: IFluidContainer): Messages => {

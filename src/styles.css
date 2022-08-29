@@ -244,14 +244,14 @@ button {
     color: inherit;
 }
 
-button:hover {
+button:not(:disabled):hover {
     position: relative;
     cursor: pointer;
     box-shadow: var(--active-shadow-color) 0px 5px 29px 0px;
     z-index: 2;
 }
 
-button:hover::after {
+button:not(:disabled):hover::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -362,7 +362,7 @@ button:hover::after {
     font-size: 0.8em;
 }
 
-.tools-menu li:hover {
+.tools-menu li:not([data-disabled=true]):hover {
     background-color: var(--active-background-color);
 }
 
@@ -386,4 +386,10 @@ button:hover::after {
 
 .menu .help-display {
     padding: 1em;
+}
+
+:disabled,
+[data-disabled=true] {
+    opacity: 50%;
+    cursor: not-allowed;
 }

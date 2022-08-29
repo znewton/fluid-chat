@@ -29,6 +29,7 @@ export const Help: React.FunctionComponent = () => {
                 <li>
                     <p><strong>User Login (top right):</strong></p>
                     <p>By default, you will be assigned a GUID name per page load. To send messages with a consistent user id across windows/refreshes, enter a username into the "username" input then "Log in <FontAwesomeIcon icon={["fas", "right-to-bracket"]} />". This will cause you to rejoin the session as the given username. Username is stored across page loads. Username can be cleared by clicking "Log out <FontAwesomeIcon icon={["fas", "right-from-bracket"]} />".</p>
+                    <p>To establish a read-only client, log in as "reader".</p>
                 </li>
             </ul>
         </main>

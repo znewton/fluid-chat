@@ -2,19 +2,17 @@ import React from "react";
 import { ConnectionState, IFluidContainer, SharedMap } from "fluid-framework";
 import { Timer, MessagesDisplay, UserForm, MessageForm, ThemeToggle, Menu, Help } from "./components";
 import { IUser, Messages, messagesKey } from "./definitions";
-import { localStorageManager, usernameKey } from "./utils";
 import { getFluidData } from "./fluid";
+import { getUser } from "./utils";
 
 export function App() {
+    const user = getUser();
     const [container, setContainer] = React.useState<IFluidContainer>();
-    const [user, setUser] = React.useState<IUser>();
 
     React.useEffect(() => {
-        const username = localStorageManager.get(usernameKey);
-        getFluidData(username)
-            .then(({ container, user }) => {
+        getFluidData(user)
+            .then(({ container }) => {
                 setContainer(container);
-                setUser(user);
             });
     }, []);
 
