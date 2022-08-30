@@ -6,7 +6,9 @@
     "start": "FLUID_CONFIG=local parcel",
     "start:remote": "parcel",
     "build": "parcel build",
-    "build:report": "parcel build --reporter @parcel/reporter-bundle-analyzer"
+    "build:report": "parcel build --reporter @parcel/reporter-bundle-analyzer",
+    "build:tests": "tsc --project ./src/tests",
+    "test": "mocha --unhandled-rejections=strict --recursive src/tests/dist/**/*.spec.js --exit --timeout 10000"
   },
   "dependencies": {
     "@fluidframework/azure-client": "^1.0.2",
@@ -23,8 +25,12 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@fluidframework/counter": "^1.2.4",
+    "@fluidframework/test-client-utils": "^1.2.4",
+    "@fluidframework/test-utils": "^1.2.4",
     "@parcel/reporter-bundle-analyzer": "^2.6.2",
     "@parcel/transformer-typescript-tsc": "^2.6.2",
+    "@types/mocha": "^9.1.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/uuid": "^8",
@@ -32,6 +38,7 @@
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
     "dotenv": "^16.0.1",
+    "mocha": "^10.0.0",
     "parcel": "^2.6.2",
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
