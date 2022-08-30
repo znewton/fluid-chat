@@ -37,5 +37,23 @@
     "querystring-es3": "^0.2.1",
     "typescript": "^4.7.4",
     "url": "^0.11.0"
+  },
+  "resolutions": {
+    "@fluidframework/container-loader": "file:/Users/znewton/code/FluidFramework/packages/loader/container-loader",
+    "@fluidframework/container-utils": "file:/Users/znewton/code/FluidFramework/packages/loader/container-utils",
+    "@fluidframework/container-definitions": "file:/Users/znewton/code/FluidFramework/packages/common/container-definitions",
+    "@fluidframework/container-runtime": "file:/Users/znewton/code/FluidFramework/packages/runtime/container-runtime",
+    "@fluidframework/container-runtime-definitions": "file:/Users/znewton/code/FluidFramework/packages/runtime/container-runtime-definitions",
+    "@fluidframework/runtime-utils": "file:/Users/znewton/code/FluidFramework/packages/runtime/runtime-utils",
+    "@fluidframework/runtime-definitions": "file:/Users/znewton/code/FluidFramework/packages/runtime/runtime-definitions",
+    "@fluidframework/datastore": "file:/Users/znewton/code/FluidFramework/packages/runtime/datastore",
+    "@fluidframework/datastore-definitions": "file:/Users/znewton/code/FluidFramework/packages/runtime/datastore-definitions",
+    "@fluidframework/garbage-collector": "file:/Users/znewton/code/FluidFramework/packages/runtime/garbage-collector",
+    "@fluidframework/routerlicious-driver": "file:/Users/znewton/code/FluidFramework/packages/drivers/routerlicious-driver",
+    "@fluidframework/driver-base": "file:/Users/znewton/code/FluidFramework/packages/drivers/driver-base",
+    "@fluidframework/driver-definitions": "file:/Users/znewton/code/FluidFramework/packages/common/driver-definitions",
+    "@fluidframework/core-interfaces": "file:/Users/znewton/code/FluidFramework/packages/common/core-interfaces",
+    "@fluidframework/driver-utils": "file:/Users/znewton/code/FluidFramework/packages/loader/driver-utils",
+    "@fluidframework/telemetry-utils": "file:/Users/znewton/code/FluidFramework/packages/utils/telemetry-utils"
   }
 }
