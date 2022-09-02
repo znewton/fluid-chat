@@ -1,6 +1,6 @@
-import { SharedMap } from "fluid-framework";
+import { IFluidContainer, SharedMap } from "fluid-framework";
 import React from "react";
-import { contentKey, IPointerMessage, IUser, Messages } from "../definitions";
+import { contentKey, IPointerMessage, IUser, Messages, messagesKey } from "../definitions";
 import { getHexCodeColorFromString } from "../utils";
 import { Help } from "./Help";
 
@@ -49,12 +49,27 @@ const EmptySessionDisplay: React.FunctionComponent = () => {
 }
 
 interface IMessageDisplayProps {
-    messages: Messages;
+    container: IFluidContainer;
     user: IUser;
 }
 export const MessagesDisplay: React.FunctionComponent<IMessageDisplayProps> = (props) => {
-    const messages = props.messages === undefined ? [] :
-        [...props.messages].reverse().map((message) => {
+    const [messages, setMessages] = React.useState<Messages>([]);
+
+    React.useEffect(() => {
+        if (!props.container) {
+            return;
+        }
+        const map: SharedMap = props.container.initialObjects.map as SharedMap;
+        const updateMessages = () => {
+            setMessages([...(map.get(messagesKey) ?? [])]);
+        };
+        updateMessages();
+        map.on("valueChanged", updateMessages);
+        return () => { map.off("valueChanged", updateMessages) };
+    }, [props.container]);
+
+    const messageElements = messages === undefined ? [] :
+        [...messages].reverse().map((message) => {
             const isCurrentUser = message.sender === props.user.id;
             if (message.type === "plain") {
                 return <Message
@@ -74,6 +89,6 @@ export const MessagesDisplay: React.FunctionComponent<IMessageDisplayProps> = (p
             return undefined;
         });
     return <div className="messages">
-        {messages.length === 0 ? <EmptySessionDisplay /> : messages}
+        {messageElements.length === 0 ? <EmptySessionDisplay /> : messageElements}
     </div>
 };

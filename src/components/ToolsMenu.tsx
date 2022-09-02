@@ -16,13 +16,10 @@ interface ISendLargeMessageToolProps extends IMessageFormProps {
 }
 const SendLargeMessageTool: React.FunctionComponent<ISendLargeMessageToolProps> = (props) => {
     const disabled = !canWrite(props.user);
-    const handleClick: React.MouseEventHandler<HTMLLIElement> = React.useCallback(() => {
+    const handleClick: React.MouseEventHandler<HTMLLIElement> = (e) => {
         if (disabled) return;
-        // Send 1 large message.
-        return (e) => {
-            createAndSetPointerMessage(props.container, props.user, genLargeMessage(props.sizeKb));
-        };
-    }, [props.sizeKb]);
+        createAndSetPointerMessage(props.container, props.user, genLargeMessage(props.sizeKb));
+    };
 
     return (
         <li role="menuitem" onClick={handleClick} data-disabled={disabled}>
@@ -41,19 +38,16 @@ interface ISendLargeMessagesToolProps extends IMessageFormProps {
 }
 const SendLargeMessagesTool: React.FunctionComponent<ISendLargeMessagesToolProps> = (props) => {
     const disabled = !canWrite(props.user);
-    const handleClick: React.MouseEventHandler<HTMLLIElement> = React.useCallback(() => {
+    const handleClick: React.MouseEventHandler<HTMLLIElement> = (e) => {
         if (disabled) return;
-        // Send multiple large messages.
-        return (e) => {
-            const messageContents = [];
-            for (let i = 0; i < props.count; i++) {
-                messageContents.push(`${i + 1} - ${genLargeMessage(props.sizeKb)}`);
-            }
-            messageContents.forEach((messageContent) => {
-                createAndSetPointerMessage(props.container, props.user, messageContent);
-            });
-        };
-    }, [props.count, props.sizeKb]);
+        const messageContents = [];
+        for (let i = 0; i < props.count; i++) {
+            messageContents.push(`${i + 1} - ${genLargeMessage(props.sizeKb)}`);
+        }
+        messageContents.forEach((messageContent) => {
+            createAndSetPointerMessage(props.container, props.user, messageContent);
+        });
+    };
 
     return (
         <li role="menuitem" onClick={handleClick} data-disabled={disabled}>

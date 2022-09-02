@@ -281,12 +281,24 @@ button:not(:disabled):hover::after {
     max-width: 50%;
 }
 
-.menu-toggle {
+.menu-wrapper {
     position: relative;
 }
 
-.menu-toggle.open {
-    z-index: 2;
+.menu-shadow {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: black;
+    opacity: 0.2;
+}
+
+
+.menu-shadow.open {
+    display: block;
 }
 
 
@@ -296,6 +308,7 @@ button:not(:disabled):hover::after {
 
 .menu.open {
     display: block;
+    z-index: 2;
 }
 
 .menu {
@@ -364,6 +377,7 @@ button:not(:disabled):hover::after {
 
 .tools-menu li:not([data-disabled=true]):hover {
     background-color: var(--active-background-color);
+    cursor: pointer;
 }
 
 .menu-icon {
