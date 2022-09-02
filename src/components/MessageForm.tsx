@@ -5,6 +5,7 @@ import { IUser } from "../definitions";
 import { createAndSetPlainMessage, createAndSetPointerMessage } from "../fluid";
 import { canWrite } from "../utils";
 import { GenChatButton } from "./GenChatButton";
+import { GenTrafficButton } from "./GenTrafficButton";
 import { Menu } from "./Menu";
 import { ToolsMenu } from "./ToolsMenu";
 
@@ -53,6 +54,7 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (props: I
                 vPosition="from-top"
                 hPosition="from-left"
             />
+            <GenTrafficButton currentUser={props.user} container={props.container} />
             <input value={input} onChange={handleInput} placeholder="Send a message..." disabled={disableInputs} />
             <button type="submit" disabled={disableInputs} >
                 <FontAwesomeIcon icon={["fas", "paper-plane"]} title="send message" />

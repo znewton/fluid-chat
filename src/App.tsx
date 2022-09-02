@@ -2,10 +2,10 @@ import React from "react";
 import { IFluidContainer } from "fluid-framework";
 import { MessagesDisplay, UserForm, MessageForm, ThemeToggle, Menu, Help, ConnectionTimer } from "./components";
 import { getFluidData } from "./fluid";
-import { getUser } from "./utils";
+import { getCurrentUser } from "./utils";
 
 export function App() {
-    const user = React.useMemo(() => getUser(), []);
+    const user = React.useMemo(() => getCurrentUser(), []);
     const [container, setContainer] = React.useState<IFluidContainer>();
 
     React.useEffect(() => {

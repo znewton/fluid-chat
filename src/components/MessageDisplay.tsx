@@ -68,8 +68,9 @@ export const MessagesDisplay: React.FunctionComponent<IMessageDisplayProps> = (p
         return () => { map.off("valueChanged", updateMessages) };
     }, [props.container]);
 
-    const messageElements = messages === undefined ? [] :
-        [...messages].reverse().map((message) => {
+    const messageElements = messages === undefined
+        ? []
+        : [...messages].reverse().map((message) => {
             const isCurrentUser = message.sender === props.user.id;
             if (message.type === "plain") {
                 return <Message
