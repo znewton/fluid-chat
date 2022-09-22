@@ -1,19 +1,28 @@
 import React from "react";
-import { IFluidContainer } from "fluid-framework";
-import { MessagesDisplay, UserForm, MessageForm, ThemeToggle, Menu, Help, ConnectionTimer } from "./components";
+import { MessagesDisplay, UserForm, MessageForm, ThemeToggle, Menu, Help, ConnectionTimer, ChatNavForm } from "./components";
+import { IFluidDocument } from "./definitions";
 import { getFluidData } from "./fluid";
-import { getCurrentUser } from "./utils";
+import { getCurrentUser, getDocumentIdFromUrl, setDocumentIdInUrl } from "./utils";
 
 export function App() {
     const user = React.useMemo(() => getCurrentUser(), []);
-    const [container, setContainer] = React.useState<IFluidContainer>();
+    const [document, setDocument] = React.useState<IFluidDocument>();
+
+    const navigateToDocument = (id?: string | "new"): void => {
+        const docId = id === "new" ? undefined : id ?? getDocumentIdFromUrl();
+        getFluidData(docId)
+            .then((fluidDocument) => {
+                setDocument(fluidDocument);
+            });
+    };
 
     React.useEffect(() => {
-        getFluidData(user)
-            .then(({ container }) => {
-                setContainer(container);
-            });
+        navigateToDocument();
     }, []);
+
+    React.useEffect(() => {
+        setDocumentIdInUrl(document?.id ?? "");
+    }, [document?.id]);
 
     return (
         <div className={`App`}>
@@ -30,14 +39,17 @@ export function App() {
                 </div>
                 <div className="toolbar-right">
                     <ThemeToggle />
-                    <ConnectionTimer container={container} />
+                    <ConnectionTimer container={document?.container} />
                     <UserForm user={user} />
                 </div>
             </nav>
+            <nav className="toolbar">
+                <ChatNavForm currentDocId={document?.id} onSubmit={navigateToDocument} />
+            </nav>
             <div className="chat">
-                <MessagesDisplay container={container} user={user} />
+                <MessagesDisplay container={document?.container} user={user} />
                 <MessageForm
-                    container={container}
+                    container={document?.container}
                     user={user}
                 />
             </div>

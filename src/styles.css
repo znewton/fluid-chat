@@ -407,3 +407,12 @@ button:not(:disabled):hover::after {
     opacity: 50%;
     cursor: not-allowed;
 }
+
+.chat-nav-form {
+    display: flex;
+    font-weight: 500;
+}
+
+.chat-nav-form input {
+    font-size: 1.2em;
+}

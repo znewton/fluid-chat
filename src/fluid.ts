@@ -1,10 +1,11 @@
 import { AzureClient, AzureRemoteConnectionConfig } from "@fluidframework/azure-client";
 import { ContainerSchema, IFluidContainer, SharedMap } from "fluid-framework";
 import { v4 as uuid } from "uuid";
-import { contentKey, initialPayloadKey, IPlainMessage, IPointerMessage, IUser, Messages, messagesKey } from "./definitions";
-import { CustomInsecureTokenProvider, Kilobyte, randomString } from "./utils";
+import { contentKey, IFluidDocument, initialPayloadKey, IPlainMessage, IPointerMessage, IUser, Messages, messagesKey } from "./definitions";
+import { CustomInsecureTokenProvider, getCurrentUser, Kilobyte, randomString, setDocumentIdInUrl } from "./utils";
 
-export const getFluidData = async (user: IUser): Promise<{ container: IFluidContainer }> => {
+const azureClientP = (async (): Promise<AzureClient> => {
+    const user = getCurrentUser();
     const { tenantId, tenantKey, endpoint } = await (async () => {
         if (process.env.FLUID_CONFIG === "local") {
             console.log("Using local connection configs");
@@ -30,14 +31,19 @@ export const getFluidData = async (user: IUser): Promise<{ container: IFluidCont
             tenantId: tenantId,
         } as AzureRemoteConnectionConfig,
     });
+    return client;
+})();
+
+export const getFluidData = async (documentId: string | undefined): Promise<IFluidDocument> => {
+    const client = await azureClientP;
     const containerSchema: ContainerSchema = {
         initialObjects: { map: SharedMap, hiddenData: SharedMap },
         dynamicObjectTypes: [SharedMap],
     };
     let container: IFluidContainer;
-    const containerId = location.hash.substring(1);
+    let id = documentId;
     console.time("disconnected");
-    if (!containerId) {
+    if (!id) {
         ({ container } = await client.createContainer(containerSchema));
         const map: SharedMap = (container.initialObjects.map as SharedMap);
         map.set(messagesKey, []);
@@ -45,12 +51,11 @@ export const getFluidData = async (user: IUser): Promise<{ container: IFluidCont
             const hiddenData: SharedMap = (container.initialObjects.hiddenData as SharedMap);
             hiddenData.set(initialPayloadKey, `${randomString().repeat(Kilobyte * Kilobyte)}`); // 10Mb initial payload size
         }
-        const id = await container.attach();
-        location.hash = id;
+        id = await container.attach();
     } else {
-        ({ container } = await client.getContainer(containerId, containerSchema));
+        ({ container } = await client.getContainer(id, containerSchema));
     }
-    return { container };
+    return { container, id };
 };
 
 const getMessages = (container: IFluidContainer): Messages => {

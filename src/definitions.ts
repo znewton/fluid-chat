@@ -1,11 +1,15 @@
-import { ScopeType } from "@fluidframework/azure-client";
-import { SharedMap } from "fluid-framework";
+import { IFluidContainer, SharedMap } from "fluid-framework";
 
 export const initialPayloadKey = "initialpayload";
 export const messagesKey = "messages";
 export const contentKey = "content";
 
 export type Theme = "dark" | "light";
+
+export interface IFluidDocument {
+    container: IFluidContainer;
+    id: string;
+}
 
 export interface IMessage {
     id: string;
