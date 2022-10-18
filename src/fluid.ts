@@ -1,4 +1,4 @@
-import { AzureClient, AzureRemoteConnectionConfig } from "@fluidframework/azure-client";
+import { AzureClient, AzureRemoteConnectionConfig, AzureUser } from "@fluidframework/azure-client";
 import { ContainerSchema, IFluidContainer, SharedMap } from "fluid-framework";
 import { v4 as uuid } from "uuid";
 import { contentKey, IFluidDocument, initialPayloadKey, IPlainMessage, IPointerMessage, IUser, Messages, messagesKey } from "./definitions";
@@ -6,6 +6,11 @@ import { CustomInsecureTokenProvider, getCurrentUser, Kilobyte, randomString, se
 
 const azureClientP = (async (): Promise<AzureClient> => {
     const user = getCurrentUser();
+    const azureUser: AzureUser<IUser> = {
+        name: user.id,
+        id: user.id,
+        additionalDetails: user,
+    };
     const { tenantId, tenantKey, endpoint } = await (async () => {
         if (process.env.FLUID_CONFIG === "local") {
             console.log("Using local connection configs");
@@ -27,7 +32,7 @@ const azureClientP = (async (): Promise<AzureClient> => {
         connection: {
             type: "remote",
             endpoint: endpoint,
-            tokenProvider: new CustomInsecureTokenProvider(tenantKey, user),
+            tokenProvider: new CustomInsecureTokenProvider(tenantKey, azureUser),
             tenantId: tenantId,
         } as AzureRemoteConnectionConfig,
     });
