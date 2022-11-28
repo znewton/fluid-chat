@@ -6,4 +6,15 @@ const exampleConfig: IServiceConfig = {
     tenantKey: "some-tenant-key-string",
 };
 
-export const config = exampleConfig;
+const defaultConfig = exampleConfig;
+
+export const config = (() => {
+    const env = process.env.ENV;
+    console.log("Using env: ", env);
+    switch (env) {
+        case "example":
+            return exampleConfig;
+        default:
+            return defaultConfig;
+    }
+})();
