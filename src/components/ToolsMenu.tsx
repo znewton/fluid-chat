@@ -2,27 +2,19 @@ import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { createAndSetPointerMessage } from "../fluid";
-import { canWrite, Kilobyte, localStorageManager, randomString, tokenLifetimeKey } from "../utils";
+import { canWrite, generateLargeMessage, Kilobyte, localStorageManager, randomString, tokenLifetimeKey } from "../utils";
 import { IMessageFormProps } from "./MessageForm";
 
-const genLargeMessage = (sizeKb: number) => {
-    const randStr = randomString();
-    const repeatCount = Math.round(sizeKb / randStr.length) * Kilobyte;
-    return `Large ${sizeKb}kb: ${randStr.repeat(repeatCount)}`;
-}
 interface ISendLargeMessageToolProps extends IMessageFormProps {
     sizeKb: number;
     extraDescription?: string;
 }
 const SendLargeMessageTool: React.FunctionComponent<ISendLargeMessageToolProps> = (props) => {
     const disabled = !canWrite(props.user);
-    const handleClick: React.MouseEventHandler<HTMLLIElement> = React.useCallback(() => {
+    const handleClick: React.MouseEventHandler<HTMLLIElement> = (e) => {
         if (disabled) return;
-        // Send 1 large message.
-        return (e) => {
-            createAndSetPointerMessage(props.container, props.user, genLargeMessage(props.sizeKb));
-        };
-    }, [props.sizeKb]);
+        createAndSetPointerMessage(props.container, props.user, generateLargeMessage(props.sizeKb));
+    };
 
     return (
         <li role="menuitem" onClick={handleClick} data-disabled={disabled}>
@@ -41,19 +33,16 @@ interface ISendLargeMessagesToolProps extends IMessageFormProps {
 }
 const SendLargeMessagesTool: React.FunctionComponent<ISendLargeMessagesToolProps> = (props) => {
     const disabled = !canWrite(props.user);
-    const handleClick: React.MouseEventHandler<HTMLLIElement> = React.useCallback(() => {
+    const handleClick: React.MouseEventHandler<HTMLLIElement> = (e) => {
         if (disabled) return;
-        // Send multiple large messages.
-        return (e) => {
-            const messageContents = [];
-            for (let i = 0; i < props.count; i++) {
-                messageContents.push(`${i + 1} - ${genLargeMessage(props.sizeKb)}`);
-            }
-            messageContents.forEach((messageContent) => {
-                createAndSetPointerMessage(props.container, props.user, messageContent);
-            });
-        };
-    }, [props.count, props.sizeKb]);
+        const messageContents = [];
+        for (let i = 0; i < props.count; i++) {
+            messageContents.push(`${i + 1} - ${generateLargeMessage(props.sizeKb)}`);
+        }
+        messageContents.forEach((messageContent) => {
+            createAndSetPointerMessage(props.container, props.user, messageContent);
+        });
+    };
 
     return (
         <li role="menuitem" onClick={handleClick} data-disabled={disabled}>

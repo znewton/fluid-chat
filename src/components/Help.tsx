@@ -19,6 +19,11 @@ export const Help: React.FunctionComponent = () => {
                     <p>Useful when trying to simply validate that ops are flowing across clients.</p>
                 </li>
                 <li>
+                    <p><strong>Gen Traffic (bottom left):</strong></p>
+                    <p>Generates a random conversation, 1 message per 400ms, continuously, until clicked again. Each message has 1% chance to be 700kb, 10% chance to be 200kb, and 89% chance to be small.</p>
+                    <p>Useful for generating mild load while multitasking or monitoring something else, like memory consumption.</p>
+                </li>
+                <li>
                     <p><strong>Tools (bottom left):</strong></p>
                     <p>Adding strings to an array is pretty limiting for reproducing various user scenarios. Several tools have been added to the "<FontAwesomeIcon icon={["fas", "screwdriver-wrench"]} /> Tools" menu to the left of the input bar. Click the "<FontAwesomeIcon icon={["fas", "screwdriver-wrench"]} /> Tools" menu button to view a complete list of special utilities and their main usecases.</p>
                 </li>

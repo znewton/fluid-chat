@@ -23,6 +23,10 @@ import {
     faUser,
     faShuffle,
     faKey,
+    faCirclePlay,
+    faCircleStop,
+    faLocationArrow,
+    faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Preload icons
@@ -47,6 +51,10 @@ library.add(
     faUser,
     faShuffle,
     faKey,
+    faCirclePlay,
+    faCircleStop,
+    faLocationArrow,
+    faPlus,
 );
 
 // Render app
