@@ -176,181 +176,182 @@ __metadata:
   linkType: hard
 
 "@fluidframework/container-definitions@file:/Users/znewton/code/FluidFramework/packages/common/container-definitions::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/container-definitions@file:/Users/znewton/code/FluidFramework/packages/common/container-definitions#/Users/znewton/code/FluidFramework/packages/common/container-definitions::hash=c61219&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/container-definitions@file:/Users/znewton/code/FluidFramework/packages/common/container-definitions#/Users/znewton/code/FluidFramework/packages/common/container-definitions::hash=a66a4d&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-definitions": ^1.1.0
-  checksum: 026fcbd41ffe2d7656cc2f05c6a6f153878615702a1249d97d8f6c52d9d7d08cc3d802e3c85c649a3f99336cf81f273928dfb706949feb320236bae030f1431a
+    events: ^3.1.0
+  checksum: 93e8de34cd1760c97d3cb1e15f73e78fe57f3d18705b3cf60e0c248c0ed59263cefea705a5583e5292f005963a2b3193e550d38a5757e2213a0fc4086f4d15b0
   languageName: node
   linkType: hard
 
 "@fluidframework/container-loader@file:/Users/znewton/code/FluidFramework/packages/loader/container-loader::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/container-loader@file:/Users/znewton/code/FluidFramework/packages/loader/container-loader#/Users/znewton/code/FluidFramework/packages/loader/container-loader::hash=898ef7&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/container-loader@file:/Users/znewton/code/FluidFramework/packages/loader/container-loader#/Users/znewton/code/FluidFramework/packages/loader/container-loader::hash=df840a&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/container-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/container-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/container-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/container-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-base": ^0.1038.2000
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/telemetry-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/telemetry-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     abort-controller: ^3.0.0
     double-ended-queue: ^2.1.0-0
+    events: ^3.1.0
     lodash: ^4.17.21
     url: ^0.11.0
     uuid: ^8.3.1
-  checksum: 7d5fcf72c2c6435fafc83d356e90919a8e38bc62864755952de6c13af1e273af92fe032c8f441034e8c49a705b3a79503cb83e6315f22ecbccfa830eb0f8cbc7
+  checksum: 7416588aee7259895f9f1806386ec194978ee47957e9e53e62e9895354b7b06ab2f4343330506e1c99acd5afc06a687fe1cb019147d1eb188e959763fbee3d64
   languageName: node
   linkType: hard
 
 "@fluidframework/container-runtime-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/container-runtime-definitions::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/container-runtime-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/container-runtime-definitions#/Users/znewton/code/FluidFramework/packages/runtime/container-runtime-definitions::hash=888983&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/container-runtime-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/container-runtime-definitions#/Users/znewton/code/FluidFramework/packages/runtime/container-runtime-definitions::hash=1c5b73&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/container-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/container-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/runtime-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@types/node": ^14.18.0
-  checksum: 92f4260fa0e37775458352ec6056311aa6c60a998381c3fef7f77c39635084ff8d4e46169c941fe416724a5b80f5ece100953f7961271e2e6f9a50ee7d365387
+    "@fluidframework/runtime-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+  checksum: 5cb56f56924ab7e61152e6880b8c8dde11ba2ae1c123eae7eaf983d3db06896cca62e0b5f0fefb529c15f5501c8f1a2372f38cdafe4ef02f0509ecc482ac855d
   languageName: node
   linkType: hard
 
 "@fluidframework/container-runtime@file:/Users/znewton/code/FluidFramework/packages/runtime/container-runtime::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/container-runtime@file:/Users/znewton/code/FluidFramework/packages/runtime/container-runtime#/Users/znewton/code/FluidFramework/packages/runtime/container-runtime::hash=e625a4&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/container-runtime@file:/Users/znewton/code/FluidFramework/packages/runtime/container-runtime#/Users/znewton/code/FluidFramework/packages/runtime/container-runtime::hash=8b4007&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/container-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/container-runtime-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/container-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/datastore": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/garbage-collector": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/container-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/container-runtime-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/container-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/datastore": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/garbage-collector": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-base": ^0.1038.2000
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/runtime-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/runtime-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/telemetry-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/runtime-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/runtime-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/telemetry-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     double-ended-queue: ^2.1.0-0
+    events: ^3.1.0
     lz4js: ^0.2.0
     uuid: ^8.3.1
-  checksum: c35589f6fc0643db31b18b0273b397013a250f48784b5b0079c3fc0dff9ba0a03736b5921cc38d262a1c49b4c94a047e7d3371803e6e9741550fab99c3a1cb46
+  checksum: c9b7004bea80a3e0be7e8a1ee4b15d055838d0e6a9ff8fe1f2042c5bd6585511e6abbceae6fe1a077452c7e68fbf6f9e80cc32f18155adb59064fa21d005ddcb
   languageName: node
   linkType: hard
 
 "@fluidframework/container-utils@file:/Users/znewton/code/FluidFramework/packages/loader/container-utils::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/container-utils@file:/Users/znewton/code/FluidFramework/packages/loader/container-utils#/Users/znewton/code/FluidFramework/packages/loader/container-utils::hash=10f089&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/container-utils@file:/Users/znewton/code/FluidFramework/packages/loader/container-utils#/Users/znewton/code/FluidFramework/packages/loader/container-utils::hash=7335cd&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/container-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/container-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/telemetry-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-  checksum: c6d0c3321807b4800deb6cb0dc3130e89f4cea7b06e8dfd9e9f1fc1df602014a87c0fb2e935681ee803055fe704d2d107c91179e78eb0bccd41ee2fcf2219a35
+    "@fluidframework/telemetry-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+  checksum: 3bf181765fcc50b2c2ab76c6ebeca5fe2d00cf6470cf159322aec23ec637dae5f9b115ac617325e5b9ce5f64c7ab47e2c204cdf9dc0a16601c3d260614089e37
   languageName: node
   linkType: hard
 
 "@fluidframework/core-interfaces@file:/Users/znewton/code/FluidFramework/packages/common/core-interfaces::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/core-interfaces@file:/Users/znewton/code/FluidFramework/packages/common/core-interfaces#/Users/znewton/code/FluidFramework/packages/common/core-interfaces::hash=edd458&locator=fluid-react%40workspace%3A."
-  checksum: 0bb644abc639a3300ddcaf238d5a3f2e726666801d4bf7c9032314c4b5fae0d669e4b172e95be7d300ef3816d57db47bc3fafde521ccbfb4d5ad33093c063128
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/core-interfaces@file:/Users/znewton/code/FluidFramework/packages/common/core-interfaces#/Users/znewton/code/FluidFramework/packages/common/core-interfaces::hash=15fb52&locator=fluid-react%40workspace%3A."
+  checksum: b8b00e641883afce48305eee110608df74ce9b4be99dcf8daf1ee26e2f0252fd4799f479eff98e581fa3bfb81ae6db87b9a247fc9673216b4cc9bb01f18f7497
   languageName: node
   linkType: hard
 
 "@fluidframework/datastore-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/datastore-definitions::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/datastore-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/datastore-definitions#/Users/znewton/code/FluidFramework/packages/runtime/datastore-definitions::hash=6d126e&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/datastore-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/datastore-definitions#/Users/znewton/code/FluidFramework/packages/runtime/datastore-definitions::hash=c200fe&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/container-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/container-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/runtime-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@types/node": ^14.18.0
-  checksum: ad70b0bb7a4f20c794c2693723de2bc99f3c921c9b0f628ac1a045dfcb12f206a5acff9fa665cf032bc98cee11be20a8d6a3cd6c751d045d8602721530594052
+    "@fluidframework/runtime-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+  checksum: 7e1b54a2b9919988dbfc2fbf3af404d8ce9be0f459dad6b4df8ffb7cdd7a7cd74d838f34fbae7626b9b41d0ea7e894fbd62549dbf1b9617a35ecf093733de9b4
   languageName: node
   linkType: hard
 
 "@fluidframework/datastore@file:/Users/znewton/code/FluidFramework/packages/runtime/datastore::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/datastore@file:/Users/znewton/code/FluidFramework/packages/runtime/datastore#/Users/znewton/code/FluidFramework/packages/runtime/datastore::hash=faeb18&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/datastore@file:/Users/znewton/code/FluidFramework/packages/runtime/datastore#/Users/znewton/code/FluidFramework/packages/runtime/datastore::hash=8bc25c&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/container-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/container-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/datastore-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/garbage-collector": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/container-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/container-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/datastore-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/garbage-collector": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-base": ^0.1038.2000
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/runtime-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/runtime-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/telemetry-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/runtime-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/runtime-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/telemetry-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     lodash: ^4.17.21
     uuid: ^8.3.1
-  checksum: 27669f57197ac3390d64a1512cf364dc24731abed567d0342a55722eed9bd903c3b07563b25b112382726f4cc7c2b2063ccc548fb29720e1aeb16a70e21e73c0
+  checksum: 686be1735f1ff2a1de5e6abd0a5049bb651b344f4fbc6375a429a30e76e98864ae55452bbb69370d7ffb77edbd34edb674ebffc87c3ab8b0c23788aaa5645b56
   languageName: node
   linkType: hard
 
 "@fluidframework/driver-base@file:/Users/znewton/code/FluidFramework/packages/drivers/driver-base::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/driver-base@file:/Users/znewton/code/FluidFramework/packages/drivers/driver-base#/Users/znewton/code/FluidFramework/packages/drivers/driver-base::hash=a8e610&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/driver-base@file:/Users/znewton/code/FluidFramework/packages/drivers/driver-base#/Users/znewton/code/FluidFramework/packages/drivers/driver-base::hash=884ca3&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/telemetry-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-  checksum: d338694dfb230c77c8ed401c59a782e6fb1c0434457bc62a8f999efface22c4a4c2e5b675b5fd63290126fc42cd3bbc2eba7ef8225b1bba4316107e98585d7a2
+    "@fluidframework/telemetry-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+  checksum: 29434211bde8dd98f829f5f4ba3e9077d41871df0358e5ad31dc87cd4ec0a6d73a6151d882ddddf626b0b1e1abc99ecd3bd490e5c54d980fdfb34f3ff5122c8c
   languageName: node
   linkType: hard
 
 "@fluidframework/driver-definitions@file:/Users/znewton/code/FluidFramework/packages/common/driver-definitions::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/driver-definitions@file:/Users/znewton/code/FluidFramework/packages/common/driver-definitions#/Users/znewton/code/FluidFramework/packages/common/driver-definitions::hash=35d47e&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/driver-definitions@file:/Users/znewton/code/FluidFramework/packages/common/driver-definitions#/Users/znewton/code/FluidFramework/packages/common/driver-definitions::hash=e9bd46&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-definitions": ^1.1.0
-  checksum: 23a5101ea28d7739332b21fbd36de34de92fe2ef5ea574d5939522a201cf379098d429901cafd2c80770170174f1277910f1bfcfe9cd9cb40d6e43cacd5109b5
+  checksum: 7f96f295599c095c122054c5574d8c33644504af88f95f8842fcef7b28e663117a9b6addc1da5c7aa39dd05c724aaba48f0718b77625727c325aa07db6651be1
   languageName: node
   linkType: hard
 
 "@fluidframework/driver-utils@file:/Users/znewton/code/FluidFramework/packages/loader/driver-utils::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/driver-utils@file:/Users/znewton/code/FluidFramework/packages/loader/driver-utils#/Users/znewton/code/FluidFramework/packages/loader/driver-utils::hash=0ce2a6&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/driver-utils@file:/Users/znewton/code/FluidFramework/packages/loader/driver-utils#/Users/znewton/code/FluidFramework/packages/loader/driver-utils::hash=a14fb9&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/gitresources": ^0.1038.2000
     "@fluidframework/protocol-base": ^0.1038.2000
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/telemetry-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/telemetry-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     axios: ^0.26.0
     url: ^0.11.0
     uuid: ^8.3.1
-  checksum: 3b8aa717d1c4fcb438b566770ba80ed62af0766d4d9e3c7f95d862794723613fc05afb160ab6eaa09d98e56c7484e5865bbf00c3aec3c720334fc49a4570a1e0
+  checksum: 7b5aa22ee6dd0f1c6ec711bcded06e8b88df342c3b2620ccd66b717c21465a7cf0a81128904ca80a74eee0403a6c127f8a7924ea18774843cbf86c3b677776e6
   languageName: node
   linkType: hard
 
@@ -395,13 +396,14 @@ __metadata:
   linkType: hard
 
 "@fluidframework/garbage-collector@file:/Users/znewton/code/FluidFramework/packages/runtime/garbage-collector::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/garbage-collector@file:/Users/znewton/code/FluidFramework/packages/runtime/garbage-collector#/Users/znewton/code/FluidFramework/packages/runtime/garbage-collector::hash=21c53c&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/garbage-collector@file:/Users/znewton/code/FluidFramework/packages/runtime/garbage-collector#/Users/znewton/code/FluidFramework/packages/runtime/garbage-collector::hash=bdfbc4&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/runtime-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-  checksum: 9f9404467d38b588346df4d22308aedb580a8c00010b32a6e1d06c721446c37d106a1ffdfd61fcb6beb15cb0201f3133d643b815858b988789f23b21091a0433
+    "@fluidframework/protocol-definitions": ^1.1.0
+    "@fluidframework/runtime-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+  checksum: 2a791dd09375d0790eb75343449453b55d8c174cad546cddeff98564ea329ae251a6f5e0b3962af3311aefb751ce5322b44cacc8c949cfbae742fb9d98cb1f53
   languageName: node
   linkType: hard
 
@@ -554,60 +556,59 @@ __metadata:
   linkType: hard
 
 "@fluidframework/routerlicious-driver@file:/Users/znewton/code/FluidFramework/packages/drivers/routerlicious-driver::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/routerlicious-driver@file:/Users/znewton/code/FluidFramework/packages/drivers/routerlicious-driver#/Users/znewton/code/FluidFramework/packages/drivers/routerlicious-driver::hash=882092&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/routerlicious-driver@file:/Users/znewton/code/FluidFramework/packages/drivers/routerlicious-driver#/Users/znewton/code/FluidFramework/packages/drivers/routerlicious-driver::hash=fff8dd&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/driver-base": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/driver-base": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/gitresources": ^0.1038.2000
     "@fluidframework/protocol-base": ^0.1038.2000
     "@fluidframework/protocol-definitions": ^1.1.0
     "@fluidframework/server-services-client": ^0.1038.2000
-    "@fluidframework/telemetry-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/telemetry-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     cross-fetch: ^3.1.5
     json-stringify-safe: 5.0.1
     querystring: ^0.2.0
     socket.io-client: ^4.4.1
     url-parse: ^1.5.8
     uuid: ^8.3.1
-  checksum: 55d13cde4edfce3f73e21a8db6658cffda75b7d7e14b0f18ded3dc2c996a51e745a2d5881d97f1b644b72b8d3b35abd2568bb983b8fb2a75c1735ed574abfbe3
+  checksum: b5542930ece693b17094094694238e0332e90351f5f223d35e94bcafecde11a23d2d11eb1d490b30623c47f409e9f05dcb341d9d0da2a18976605aed3815e75c
   languageName: node
   linkType: hard
 
 "@fluidframework/runtime-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/runtime-definitions::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/runtime-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/runtime-definitions#/Users/znewton/code/FluidFramework/packages/runtime/runtime-definitions::hash=6baf84&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/runtime-definitions@file:/Users/znewton/code/FluidFramework/packages/runtime/runtime-definitions#/Users/znewton/code/FluidFramework/packages/runtime/runtime-definitions::hash=415c3d&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/container-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/driver-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/container-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/driver-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@types/node": ^14.18.0
-  checksum: 34fb3b1aa5113180532898534a16279d17d906cf816f265ed73c96e28c67c262a98a4ddf0116793991c6b462572deabf6bf8710d88e3a142387914d71ec9281a
+  checksum: 6730701c62293dddc5e2ecb40439e0175a8b1bbc7a7406f0e95930618177089b5409cca9709dbac7fc4214a54a28eb18d683ca815b7a692be9e84a0d9af756ad
   languageName: node
   linkType: hard
 
 "@fluidframework/runtime-utils@file:/Users/znewton/code/FluidFramework/packages/runtime/runtime-utils::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/runtime-utils@file:/Users/znewton/code/FluidFramework/packages/runtime/runtime-utils#/Users/znewton/code/FluidFramework/packages/runtime/runtime-utils::hash=ccdb7d&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/runtime-utils@file:/Users/znewton/code/FluidFramework/packages/runtime/runtime-utils#/Users/znewton/code/FluidFramework/packages/runtime/runtime-utils::hash=aee269&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
-    "@fluidframework/container-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/container-runtime-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/core-interfaces": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/datastore-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/garbage-collector": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
+    "@fluidframework/container-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/container-runtime-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/datastore-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/garbage-collector": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
     "@fluidframework/protocol-base": ^0.1038.2000
     "@fluidframework/protocol-definitions": ^1.1.0
-    "@fluidframework/runtime-definitions": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-    "@fluidframework/telemetry-utils": ">=2.0.0-internal.2.2.0 <2.0.0-internal.3.0.0"
-  checksum: 92b09dd5be4694edcd8e77a0f40d56bc03c30a614b390af146b2defa738a7d8c8a3a5e3968e5dcced78fec2556d66bd89e7473cfbe84f445f96beb14bb0204a0
+    "@fluidframework/runtime-definitions": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+    "@fluidframework/telemetry-utils": ">=2.0.0-internal.3.1.0 <2.0.0-internal.4.0.0"
+  checksum: c8e9cce6fe53f04689b21a90b419aad1882cadd674750e63bf3953aa9479e618635d48406bf8a583263e63cbd8c18ac3b1e2522fa3993dec76b05dbb50fd6772
   languageName: node
   linkType: hard
 
@@ -730,15 +731,15 @@ __metadata:
   linkType: hard
 
 "@fluidframework/telemetry-utils@file:/Users/znewton/code/FluidFramework/packages/utils/telemetry-utils::locator=fluid-react%40workspace%3A.":
-  version: 2.0.0-internal.2.2.0
-  resolution: "@fluidframework/telemetry-utils@file:/Users/znewton/code/FluidFramework/packages/utils/telemetry-utils#/Users/znewton/code/FluidFramework/packages/utils/telemetry-utils::hash=d34904&locator=fluid-react%40workspace%3A."
+  version: 2.0.0-internal.3.1.0
+  resolution: "@fluidframework/telemetry-utils@file:/Users/znewton/code/FluidFramework/packages/utils/telemetry-utils#/Users/znewton/code/FluidFramework/packages/utils/telemetry-utils::hash=7f225b&locator=fluid-react%40workspace%3A."
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
     "@fluidframework/common-utils": ^1.0.0
     debug: ^4.1.1
     events: ^3.1.0
     uuid: ^8.3.1
-  checksum: 51a1c818fb2d550b6ec30962f6c6550c0d5eaf434250ffe372abb30519da279cd678efde9e810bb015f8fe8d12879c318a54a24dc4e66d6238cfc2dd68d56639
+  checksum: 29c9a11b6435199478120deb9209f859e17f56e501b918c1798ef6b09c9ae9549cefed107660645060d9114b5d991596ab2ab1be75a7618a109c38c6deb2d641
   languageName: node
   linkType: hard
 
@@ -1953,13 +1954,6 @@ __metadata:
   version: 13.13.52
   resolution: "@types/node@npm:13.13.52"
   checksum: 8f1afff497ebeba209e2dc340d823284e087a47632afe99a7daa30eaff80893e520f222ad400cd1f2d3b8288e93cf3eaded52a8e64eaefb8aacfe6c35de98f42
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^14.18.0":
-  version: 14.18.23
-  resolution: "@types/node@npm:14.18.23"
-  checksum: 119d5ab18426694ade0d3feefbdb42afc5a47b9144e523293f1554f9d34b41c7f21eafc9d0f1295db5700d134aa74e7fd37556e9438f6d64dbeddf791527e1e4
   languageName: node
   linkType: hard
 
