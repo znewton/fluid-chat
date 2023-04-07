@@ -39,35 +39,41 @@ export function App() {
 
   return (
     <div className={`App`}>
-      <nav className="toolbar">
-        <div className="toolbar-left">
-          <h1>
-            <FluidLogo /> Fluid Chat
-          </h1>
-          <Menu
-            name="Help"
-            icon={["fas", "question-circle"]}
-            content={<Help />}
-            hPosition="from-left"
-            vPosition="from-bottom"
+      <section className="side-nav">
+        <nav className="toolbar">
+          <div className="toolbar-row">
+            <h1>
+              <FluidLogo /> Fluid Chat
+            </h1>
+            <Menu
+              name="Help"
+              icon={["fas", "question-circle"]}
+              content={<Help />}
+              hPosition="from-left"
+              vPosition="from-bottom"
+            />
+          </div>
+          <div className="toolbar-column">
+            <div className="toolbar-row">
+              <ThemeToggle />
+              <ConnectionTimer container={document?.container} />
+            </div>
+          </div>
+        </nav>
+      </section>
+      <main className="main-app">
+        <nav className="toolbar">
+          <ChatNavForm
+            currentDocId={document?.id}
+            onSubmit={navigateToDocument}
           />
-        </div>
-        <div className="toolbar-right">
-          <ThemeToggle />
-          <ConnectionTimer container={document?.container} />
           <UserForm user={user} />
+        </nav>
+        <div className="chat">
+          <MessagesDisplay container={document?.container} user={user} />
+          <MessageForm container={document?.container} user={user} />
         </div>
-      </nav>
-      <nav className="toolbar">
-        <ChatNavForm
-          currentDocId={document?.id}
-          onSubmit={navigateToDocument}
-        />
-      </nav>
-      <div className="chat">
-        <MessagesDisplay container={document?.container} user={user} />
-        <MessageForm container={document?.container} user={user} />
-      </div>
+      </main>
     </div>
   );
 }

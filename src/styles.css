@@ -58,20 +58,14 @@ body {
     height: 100vh;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
     color: var(--text-color);
     background-color: var(--secondary-background-color);
 }
 
-.App>* {
-    max-width: 70em;
-}
-
 .toolbar {
-    width: calc(100% - 4em);
-    padding: 1em 0;
-    margin: 0 auto;
+    width: 100%;
     display: flex;
     align-self: stretch;
     justify-content: space-between;
@@ -82,20 +76,7 @@ body {
     margin: 0;
 }
 
-.toolbar .toolbar-left {
-    align-self: flex-start;
-    align-items: center;
-    display: flex;
-    height: 100%;
-}
-
-.toolbar .toolbar-right {
-    align-self: flex-end;
-    align-items: center;
-    display: flex;
-    height: 100%;
-}
-
+/* 
 .toolbar .toolbar-left>*:not(:last-child) {
     margin-right: 1em;
 }
@@ -112,6 +93,60 @@ body {
 
 .toolbar form>:not(:first-child) {
     margin-left: 1em;
+} */
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    height: calc(100vh - 2em);
+    padding: 1em 1em;
+    position: relative;
+}
+
+.side-nav .toolbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-background-color);
+}
+
+.side-nav .toolbar .toolbar-row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center;
+}
+.side-nav .toolbar .toolbar-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toolbar form {
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+}
+
+.main-app {
+    width: 100%;
+    height: calc(100vh - 2em);
+    padding: 1em;
+    background-color: var(--background-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .connection-status {
@@ -153,9 +188,10 @@ body {
 
 .chat {
     flex-grow: 1;
-    width: calc(100% - 4em);
+    width: 60em;
     align-self: stretch;
     margin: 0 auto;
+    margin-top: 0.5em;
     display: flex;
     flex-direction: column;
 }
@@ -165,7 +201,7 @@ body {
 }
 
 .chat> :last-child {
-    margin-bottom: 2em;
+    margin-bottom: 0;
 }
 
 .chat .messages {
@@ -177,25 +213,22 @@ body {
     flex-direction: column-reverse;
     align-items: flex-end;
     overflow-y: auto;
-    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
-    border-radius: var(--border-radius-small);
     height: 0;
-    background-color: var(--background-color);
 }
 
 .message {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     align-self: stretch;
     margin-top: 0.5em;
-    text-align: end;
+    text-align: start;
     max-width: 100%;
 }
 
 .message.current-user {
-    align-items: flex-start;
-    text-align: start;
+    align-items: flex-end;
+    text-align: end;
 }
 
 .message-sender {
@@ -211,13 +244,13 @@ body {
     max-width: 80%;
     word-wrap: break-word;
     hyphens: auto;
-    border-top-right-radius: 0;
+    border-top-left-radius: 0;
     box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
 }
 
 .message.current-user .message-content {
-    border-top-right-radius: var(--border-radius-large);
-    border-top-left-radius: 0;
+    border-top-left-radius: var(--border-radius-large);
+    border-top-right-radius: 0;
 }
 
 .chat form {
@@ -398,6 +431,10 @@ button:not(:disabled):hover {
 
 .help-display {
     text-align: left;
+}
+
+.help-display ul {
+    padding-left: 1em;
 }
 
 .help-display li p {

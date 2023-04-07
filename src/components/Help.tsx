@@ -6,8 +6,15 @@ export const Help: React.FunctionComponent = () => {
     <main className="help-display">
       <h1>Welcome to "Fluid Chat"</h1>
       <p>
-        This is a simple chat application built with Fluid Framework and
-        ReactJS.
+        This is a simple chat application built with{" "}
+        <a href="http://fluidframework.com" target="_blank">
+          Fluid Framework
+        </a>{" "}
+        and{" "}
+        <a href="https://react.dev" target="_blank">
+          ReactJS
+        </a>
+        .
       </p>
       <p>
         It includes some helpful tools to debug and reproduce various scenarios.

@@ -24,7 +24,7 @@ export const FluidLogo: React.FunctionComponent<IFluidLogoProps> = (
           cy="475"
           cx="281.96"
           gradientTransform="matrix(1.0933 .038634 -.054783 1.5503 -.28742 -269.16)"
-          r="26.596"
+          r="20.596"
         >
           <stop id="stop5622" style={{ stopColor: "#48e6f3" }} offset="0" />
           <stop id="stop5626" style={{ stopColor: "#9237e3" }} offset=".5" />
