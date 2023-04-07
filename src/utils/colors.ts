@@ -6,14 +6,14 @@ const hashCode = (str: string) => { // java String#hashCode
     }
     return hash;
 }
-const intToRGB = (i: number) => {
+const intToHexCode = (i: number) => {
     const c = (i & 0x00FFFFFF)
         .toString(16)
         .toUpperCase();
 
-    return "00000".substring(0, 6 - c.length) + c;
+    return "000000".substring(0, 6 - c.length) + c;
 }
 
 export const getHexCodeColorFromString = (str: string): string => {
-    return intToRGB(hashCode(str));
+    return intToHexCode(hashCode(str));
 }

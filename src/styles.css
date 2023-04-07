@@ -7,20 +7,32 @@ body {
 
 :root {
     color-scheme: light;
-    --background-color: #efeff3;
-    --active-background-color: #dfdfe3;
+    --background-color: #ffffff;
+    --primary-background-color: #eee8ff;
+    --secondary-background-color: #f1f6f9;
+    --active-background-color: #f5f5f5;
     --standard-shadow-color: rgba(100, 100, 111, 0.2);
     --active-shadow-color: rgba(100, 100, 111, 0.3);
-    --text-color: #2e2e33;
+    --text-color: #242424;
+    --neutral-text-color: #d1d1d1;
+    --primary-text-color: #7520f5;
+    /* Non-color specific */
+    --border-radius-small: 0.5em;
+    --border-radius-large: 1em;
+    --interactive-element-padding: 0.5em 0.8em;
 }
 
 [data-theme="dark"] {
     color-scheme: dark;
-    --background-color: #3e3e43;
-    --active-background-color: #2e2e33;
+    --background-color: #292929;
+    --primary-background-color: #4c0aa8;
+    --secondary-background-color: #141414;
+    --active-background-color: #383838;
     --standard-shadow-color: rgba(0, 0, 1, 0.5);
     --active-shadow-color: rgba(0, 0, 1, 0.7);
     --text-color: #f8f8ff;
+    --neutral-text-color: #666666;
+    --primary-text-color: #a375ff;
 }
 
 .theme-toggle {
@@ -49,7 +61,7 @@ body {
     flex-direction: column;
     align-items: flex-end;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background-color: var(--secondary-background-color);
 }
 
 .App>* {
@@ -102,41 +114,40 @@ body {
     margin-left: 1em;
 }
 
-.toolbar form input,
-.toolbar form button {
-    font: inherit;
-}
-
-.toolbar form .username {
-    border-radius: 1em;
-    padding: 0.5em 0.8em;
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-}
-
 .connection-status {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.connection-status .timer {
-    font-size: 0.8em;
+.connection-status .connected,
+.connection-status .disconnected {
+    position: relative;
+    border-radius: var(--border-radius-small);
+    padding: var(--interactive-element-padding);
+    border-width: 1px;
+    border-style: solid;
 }
-
-.connected,
-.disconnected {
-    border-radius: 1em;
-    padding: 0.5em 0.8em;
-    color: #2e2e2e;
+.connection-status .timer-label {
+    font-size: 0.9em;
+    margin-right: 0.5em;
 }
 
 .connected {
-    background-color: palegreen;
+    color: rgba(50, 200, 50);
+    box-shadow: rgba(50, 200, 50, 0.7) 0px 2px 19px 0px;
+}
+[data-theme="dark"] .connected {
+    color: palegreen;
     box-shadow: rgba(151, 251, 151, 0.7) 0px 2px 19px 0px;
 }
 
 .disconnected {
-    background-color: palevioletred;
+    color: rgba(177, 72, 107);
+    box-shadow: rgba(177, 72, 107, 0.7) 0px 7px 29px 0px;
+}
+[data-theme="dark"] .disconnected {
+    color: palevioletred;
     box-shadow: rgba(217, 112, 147, 0.7) 0px 7px 29px 0px;
 }
 
@@ -167,8 +178,9 @@ body {
     align-items: flex-end;
     overflow-y: auto;
     box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
-    border-radius: 1em;
+    border-radius: var(--border-radius-small);
     height: 0;
+    background-color: var(--background-color);
 }
 
 .message {
@@ -189,13 +201,13 @@ body {
 .message-sender {
     font-size: 0.8em;
     font-weight: 300;
-    opacity: 0.5;
+    color: var(--neutral-text-color);
     margin-bottom: 0.1em;
 }
 
 .message-content {
     padding: 0.5em 0.8em;
-    border-radius: 1em;
+    border-radius: var(--border-radius-large);
     max-width: 80%;
     word-wrap: break-word;
     hyphens: auto;
@@ -204,7 +216,7 @@ body {
 }
 
 .message.current-user .message-content {
-    border-top-right-radius: 1em;
+    border-top-right-radius: var(--border-radius-large);
     border-top-left-radius: 0;
 }
 
@@ -224,11 +236,19 @@ form input {
     font: inherit;
     flex-grow: 1;
     border: none;
-    padding: 1rem;
-    border-radius: 1em;
-    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+    padding: var(--interactive-element-padding);
+    border-radius: var(--border-radius-small);
     background-color: inherit;
     color: inherit;
+    border: 1px solid var(--neutral-text-color);
+}
+form textarea:focus,
+form input:focus {
+    outline: var(--primary-text-color) solid 1px;
+}
+form textarea:focus + label,
+form input:focus + label {
+    color: var(--primary-text-color);
 }
 
 button {
@@ -236,34 +256,23 @@ button {
     text-align: center;
     vertical-align: middle;
     border: none;
-    border-radius: 1em;
-    padding: 1rem;
-    background-color: white;
-    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+    border-radius: var(--border-radius-small);
+    padding: var(--interactive-element-padding);
+    background-color: var(--background-color);
     background-color: inherit;
     color: inherit;
+    border: 1px solid var(--neutral-text-color);
+    transition: color 100ms, border-color 100ms;
 }
 
 button:not(:disabled):hover {
     position: relative;
     cursor: pointer;
-    box-shadow: var(--active-shadow-color) 0px 5px 29px 0px;
     z-index: 2;
+    color: var(--primary-text-color);
+    border-color: var(--primary-text-color);
 }
 
-button:not(:disabled):hover::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: -1px;
-    top: -1px;
-    height: 100%;
-    width: 100%;
-    border-radius: 1em;
-    border: 1px solid var(--background-color);
-    background-color: var(--background-color);
-    color: inherit;
-}
 
 .empty-session-display {
     position: absolute;
@@ -291,9 +300,10 @@ button:not(:disabled):hover::after {
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     background-color: black;
     opacity: 0.2;
+    z-index: 2;
 }
 
 
@@ -314,13 +324,14 @@ button:not(:disabled):hover::after {
 .menu {
     cursor: unset;
     position: absolute;
-    border-radius: 1em;
+    border-radius: var(--border-radius-small);
     background-color: var(--background-color);
     box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
     display: flex;
     flex-direction: column;
     min-width: 30em;
     max-width: calc(100vw - 20em);
+    z-index: 3;
 }
 
 .menu.from-top {
@@ -413,6 +424,26 @@ button:not(:disabled):hover::after {
     font-weight: 500;
 }
 
-.chat-nav-form input {
-    font-size: 1.2em;
+.hover-label {
+    position: relative;
+}
+.hover-label label {
+  position: absolute;
+  opacity: 0.6;
+  left: 0.8em;
+  pointer-events: none;
+  color: var(--text-color);
+  transition: transform 100ms, top 100ms, left 100ms, font-size 100ms;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+}
+
+.hover-label input:focus + label,
+.hover-label input:not(:placeholder-shown) + label
+{
+  top: calc(-0.8rem - 2px);
+  font-size: 0.8em;
+  transform: translateY(0);
+  left: 0;
 }
