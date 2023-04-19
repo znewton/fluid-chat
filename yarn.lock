@@ -55,30 +55,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/aqueduct@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/aqueduct@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-loader": 1.3.0-100520
-    "@fluidframework/container-runtime": 1.3.0-100520
-    "@fluidframework/container-runtime-definitions": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore": 1.3.0-100520
-    "@fluidframework/datastore-definitions": 1.3.0-100520
-    "@fluidframework/map": 1.3.0-100520
-    "@fluidframework/request-handler": 1.3.0-100520
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-    "@fluidframework/synthesize": 1.3.0-100520
-    "@fluidframework/view-interfaces": 1.3.0-100520
-    uuid: ^8.3.1
-  checksum: adadb9e064d056e0595408cbdc24e456618677cb5447711237ee641d6f96463dc732fc6f8db7d27a4a2e40f695f0509d83e185ee9c3144c76b1f0cf6c64bb5d9
-  languageName: node
-  linkType: hard
-
 "@fluidframework/aqueduct@npm:^1.3.1":
   version: 1.3.1
   resolution: "@fluidframework/aqueduct@npm:1.3.1"
@@ -100,6 +76,30 @@ __metadata:
     "@fluidframework/view-interfaces": ^1.3.1
     uuid: ^8.3.1
   checksum: 63e11dd5a7d796ff483b31f1929fd276fc3afcfcbc65da583919faf1cf22056f150f4bd77faa231e4552bd0ebee913bb61e6ae337163f22f66bdf882b2a807c5
+  languageName: node
+  linkType: hard
+
+"@fluidframework/aqueduct@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/aqueduct@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-loader": ^1.3.6
+    "@fluidframework/container-runtime": ^1.3.6
+    "@fluidframework/container-runtime-definitions": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore": ^1.3.6
+    "@fluidframework/datastore-definitions": ^1.3.6
+    "@fluidframework/map": ^1.3.6
+    "@fluidframework/request-handler": ^1.3.6
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+    "@fluidframework/synthesize": ^1.3.6
+    "@fluidframework/view-interfaces": ^1.3.6
+    uuid: ^8.3.1
+  checksum: 3a3fd4e0c613d552266f99461e04335f261dfce1010f5fe48d3e36dfb5c639e4eac8360dd82a827d5f569f616a701784f3b4ac0f148a087d4911a64f513cada5
   languageName: node
   linkType: hard
 
@@ -160,6 +160,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fluidframework/common-utils@npm:^0.32.2":
+  version: 0.32.2
+  resolution: "@fluidframework/common-utils@npm:0.32.2"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@types/events": ^3.0.0
+    base64-js: ^1.5.1
+    buffer: ^6.0.3
+    events: ^3.1.0
+    lodash: ^4.17.21
+    sha.js: ^2.4.11
+  checksum: d5efbc63a72dd0cf7c9fb044bc5530e0579f93ac80da821bb6363c005dc903e0dae62c9e8dc571a1b7700f9d28a48cabcc3f34c5fdafc1b7ffdb0b137349865d
+  languageName: node
+  linkType: hard
+
 "@fluidframework/common-utils@npm:^1.0.0":
   version: 1.0.0
   resolution: "@fluidframework/common-utils@npm:1.0.0"
@@ -172,19 +187,6 @@ __metadata:
     lodash: ^4.17.21
     sha.js: ^2.4.11
   checksum: d56ab0dbe48ce6f2a701ac8d62103c3f8f5c76ba52f88fb0d8c2b1983822f453ecae016922c11e77afde44bce4fd7792e60c967cf1986baea0099fcbf76e9309
-  languageName: node
-  linkType: hard
-
-"@fluidframework/container-definitions@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/container-definitions@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/driver-definitions": 1.3.0-100520
-    "@fluidframework/protocol-definitions": ^0.1028.2000
-    events: ^3.1.0
-  checksum: f6ac4d324904fee40ec9294bfa0c50f542fa5ffdcbf6106eeacdeacef1ae1e1566b5a485304f2ceaef58b0ac114398a632770b24c950dce30b1f86143a1884b9
   languageName: node
   linkType: hard
 
@@ -201,27 +203,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/container-loader@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/container-loader@npm:1.3.0-100520"
+"@fluidframework/container-definitions@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/container-definitions@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-utils": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/driver-definitions": 1.3.0-100520
-    "@fluidframework/driver-utils": 1.3.0-100520
-    "@fluidframework/protocol-base": ^0.1036.5000
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/driver-definitions": ^1.3.6
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/telemetry-utils": 1.3.0-100520
-    abort-controller: ^3.0.0
-    double-ended-queue: ^2.1.0-0
     events: ^3.1.0
-    lodash: ^4.17.21
-    url: ^0.11.0
-    uuid: ^8.3.1
-  checksum: 3cbb3a3463b58b544d5687d4d850b586cb792ce440eef9916561693d50670dec5c16aba32951e7c5aa3923eb02ef88d81beac7be9fcb2f5df06afd451ad30b7a
+  checksum: 789d710c916ff11b8dcee39fb2dccd46ef34dc903d8b04f51228d95d54755325dd5da9bd1ab15fffa7aa6b25a133b75fc673e46bfb83266d3ccef211142ea627
   languageName: node
   linkType: hard
 
@@ -249,18 +240,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/container-runtime-definitions@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/container-runtime-definitions@npm:1.3.0-100520"
+"@fluidframework/container-loader@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/container-loader@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/driver-definitions": 1.3.0-100520
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-utils": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/driver-definitions": ^1.3.6
+    "@fluidframework/driver-utils": ^1.3.6
+    "@fluidframework/protocol-base": ^0.1036.5001
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@types/node": ^14.18.0
-  checksum: a8196875869cab8548bf8113221dbd0a41611775847a8c2d1d5473c0ad53ff8d9c9c44ad8853e0b84378b17971d3a53e3e736f4876f4c1400983a1e0405b282a
+    "@fluidframework/telemetry-utils": ^1.3.6
+    abort-controller: ^3.0.0
+    double-ended-queue: ^2.1.0-0
+    events: ^3.1.0
+    lodash: ^4.17.21
+    url: ^0.11.0
+    uuid: ^8.3.1
+  checksum: 1d7a2874f92dbb38e2de076277d02f10d72d89cac4014cf94da256e682a524527494456469bd65a372a1fab92d180d7b6fcb4073c36cd9459b1a0bac5294aa28
   languageName: node
   linkType: hard
 
@@ -279,29 +279,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/container-runtime@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/container-runtime@npm:1.3.0-100520"
+"@fluidframework/container-runtime-definitions@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/container-runtime-definitions@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-runtime-definitions": 1.3.0-100520
-    "@fluidframework/container-utils": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore": 1.3.0-100520
-    "@fluidframework/driver-definitions": 1.3.0-100520
-    "@fluidframework/driver-utils": 1.3.0-100520
-    "@fluidframework/garbage-collector": 1.3.0-100520
-    "@fluidframework/protocol-base": ^0.1036.5000
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/driver-definitions": ^1.3.6
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-    "@fluidframework/telemetry-utils": 1.3.0-100520
-    double-ended-queue: ^2.1.0-0
-    events: ^3.1.0
-    uuid: ^8.3.1
-  checksum: 6754fc0d09c1a402fdb21fff8b1d5595058256ee405a4295d183258c127ae3b91ff2b9c5687f83c5a3b88096e04c3f2c7e4cdc046afe061efe381b9118bb5755
+    "@fluidframework/runtime-definitions": ^1.3.6
+  checksum: a2bef7c5aaa213c8214285122a6b97eb55e3580c42e514bc5703e9b1712b8c0c23ce58d3c613fa81a8de55b81466b36624282ee694f890342ea68a5edc0a58e8
   languageName: node
   linkType: hard
 
@@ -331,16 +319,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/container-utils@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/container-utils@npm:1.3.0-100520"
+"@fluidframework/container-runtime@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/container-runtime@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-runtime-definitions": ^1.3.6
+    "@fluidframework/container-utils": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore": ^1.3.6
+    "@fluidframework/driver-definitions": ^1.3.6
+    "@fluidframework/driver-utils": ^1.3.6
+    "@fluidframework/garbage-collector": ^1.3.6
+    "@fluidframework/protocol-base": ^0.1036.5001
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/telemetry-utils": 1.3.0-100520
-  checksum: 94e9726e8ed5536abde8e2841c88ef4d24b7db60b08e2d332a4b856645c01f75934943cd0216d7c611f296b91f10d255088d418f67785fac3cad0c6938abf0ce
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+    "@fluidframework/telemetry-utils": ^1.3.6
+    double-ended-queue: ^2.1.0-0
+    events: ^3.1.0
+    uuid: ^8.3.1
+  checksum: 9087d409efea287b264274682f7e02cdb4fc68a32cc2569a4fcf9b406733275d7bda506bd9d50ec10eac133532eed8f9f8f9a8203d252677690d8ec69a2c3abf
   languageName: node
   linkType: hard
 
@@ -357,10 +358,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/core-interfaces@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/core-interfaces@npm:1.3.0-100520"
-  checksum: 038a386a57d7e0d178284fc37a6bcf45dc048f59b0a0011367462fdd392513044929cab41577a230addc635b3b10bcaff29d90ce57fe90849da5a3c8f0612d78
+"@fluidframework/container-utils@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/container-utils@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/protocol-definitions": ^0.1028.2000
+    "@fluidframework/telemetry-utils": ^1.3.6
+  checksum: 925f5e787f17ae7ad2ac521912e65c3efa9ebb1414ec1fb94ed218066a82a50641c7daa8a45afa8189aa58735834b6766a73b5073f539a90118cd3c6695c4276
   languageName: node
   linkType: hard
 
@@ -371,18 +378,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/datastore-definitions@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/datastore-definitions@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@types/node": ^14.18.0
-  checksum: 6636fdaa5cc0de022bd2a397f57399d9103b715931daeec7e72408137a462008927a8f105d7063f5ad8766b76440eede126f0467370f724134d37a3e8c50c809
+"@fluidframework/core-interfaces@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/core-interfaces@npm:1.3.6"
+  checksum: 04dbbb2d35e0ca3d892a4f1ed52823fbcdeda17bf630be699eab62c77e1bffcc279927966ff48cf5f38295d00fb9adbea80bbcfcd679c28b975adcf3c341c632
   languageName: node
   linkType: hard
 
@@ -401,27 +400,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/datastore@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/datastore@npm:1.3.0-100520"
+"@fluidframework/datastore-definitions@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/datastore-definitions@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-utils": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore-definitions": 1.3.0-100520
-    "@fluidframework/driver-definitions": 1.3.0-100520
-    "@fluidframework/driver-utils": 1.3.0-100520
-    "@fluidframework/garbage-collector": 1.3.0-100520
-    "@fluidframework/protocol-base": ^0.1036.5000
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-    "@fluidframework/telemetry-utils": 1.3.0-100520
-    lodash: ^4.17.21
-    uuid: ^8.3.1
-  checksum: f741cb38e23f5e898376c48af18cb59067d9bcfe2255bb0c6f99ebfbca0e446cfdc0fe97cdad7a08c5b71ec4a512ab50644508d49cf2e591d718566bebb90804
+    "@fluidframework/runtime-definitions": ^1.3.6
+  checksum: 47d229984cab348855b2edb175db3681d3f145a0a3ea05da3bb910e8e009e501a262097adf1ce1a9ca3a03da3230cfec5ee7655d17438deab97b8ce1692ec5bb
   languageName: node
   linkType: hard
 
@@ -449,6 +438,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fluidframework/datastore@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/datastore@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-utils": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore-definitions": ^1.3.6
+    "@fluidframework/driver-definitions": ^1.3.6
+    "@fluidframework/driver-utils": ^1.3.6
+    "@fluidframework/garbage-collector": ^1.3.6
+    "@fluidframework/protocol-base": ^0.1036.5001
+    "@fluidframework/protocol-definitions": ^0.1028.2000
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+    "@fluidframework/telemetry-utils": ^1.3.6
+    lodash: ^4.17.21
+    uuid: ^8.3.1
+  checksum: 5d1fa374ed14c9766940a9325a3bcc717a6a8667567826416b68a5dfdac4aae709471864e7f7390ea86f38ec9b63d9399aa7f9d75b879881d99c8542a208e186
+  languageName: node
+  linkType: hard
+
 "@fluidframework/driver-base@npm:^1.3.1":
   version: 1.3.1
   resolution: "@fluidframework/driver-base@npm:1.3.1"
@@ -463,17 +476,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/driver-definitions@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/driver-definitions@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/protocol-definitions": ^0.1028.2000
-  checksum: 76e14b1e74a2ccc7bfe1b9ea9d303286296b2b5d23f3c1cce9ee0cfd289108248bc895a900b3ff773a1ddd026671bfdbb9d1d742b3de84e65e2a82470f209132
-  languageName: node
-  linkType: hard
-
 "@fluidframework/driver-definitions@npm:^1.3.0, @fluidframework/driver-definitions@npm:^1.3.1":
   version: 1.3.1
   resolution: "@fluidframework/driver-definitions@npm:1.3.1"
@@ -485,21 +487,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/driver-utils@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/driver-utils@npm:1.3.0-100520"
+"@fluidframework/driver-definitions@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/driver-definitions@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/driver-definitions": 1.3.0-100520
-    "@fluidframework/gitresources": ^0.1036.5000
-    "@fluidframework/protocol-base": ^0.1036.5000
+    "@fluidframework/core-interfaces": ^1.3.6
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/telemetry-utils": 1.3.0-100520
-    axios: ^0.26.0
-    uuid: ^8.3.1
-  checksum: 1886e67d90771de6b693b776bb6087e85b2958adc29663c90cefda4b3ec930d49d6ae174583d8ef809f426e5b072e6270416341906012a939be9e4d563cbf369
+  checksum: 7caeb097e2a5154d47cb0ed86a284aad332dda85e0fd45716fba20940eb49145af2c99a24622fcdc3cbfbb4e1378845b48d0fb6ef5b548e15f3dfea9cdce7fdb
   languageName: node
   linkType: hard
 
@@ -521,23 +516,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/fluid-static@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/fluid-static@npm:1.3.0-100520"
+"@fluidframework/driver-utils@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/driver-utils@npm:1.3.6"
   dependencies:
-    "@fluidframework/aqueduct": 1.3.0-100520
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-loader": 1.3.0-100520
-    "@fluidframework/container-runtime-definitions": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore-definitions": 1.3.0-100520
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/driver-definitions": ^1.3.6
+    "@fluidframework/gitresources": ^0.1036.5001
+    "@fluidframework/protocol-base": ^0.1036.5001
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/request-handler": 1.3.0-100520
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-  checksum: 74efac08f39b6b4d28a4cc84f2ba602dcf0755f8e93c50b09293c4d13512ffdd606922dc96126c8751690e79d630fbe3c701cfb1785ef73a76cda452116c311f
+    "@fluidframework/telemetry-utils": ^1.3.6
+    axios: ^0.26.0
+    uuid: ^8.3.1
+  checksum: 78ff4fe48ac554437f3f83fc6ece63455f0d5d69b41ecef4d53b4a7841f84b33e3540c5455e1de6a625ae5feda400947b08c9676f187ef0399c11aaba75464a1
   languageName: node
   linkType: hard
 
@@ -561,14 +554,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/garbage-collector@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/garbage-collector@npm:1.3.0-100520"
+"@fluidframework/fluid-static@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/fluid-static@npm:1.3.6"
   dependencies:
+    "@fluidframework/aqueduct": ^1.3.6
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-  checksum: 70a01cba7dda49ad3d13cf7abf079d41fff8c3e6e5da56b8474ec679daf1b400e113bcf93c45d377eb14fbb94dee03e40784a3ea94b79a9995cf0406940b537e
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-loader": ^1.3.6
+    "@fluidframework/container-runtime-definitions": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore-definitions": ^1.3.6
+    "@fluidframework/protocol-definitions": ^0.1028.2000
+    "@fluidframework/request-handler": ^1.3.6
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+  checksum: 5cfe5b7e5681fa3746583fd73a119f453b1d177e6e6ba1eedf4d8abd93c8861c5e8cbcab559604e343cfb00af3678111cb6d47ee71053a87da126807d536bb4f
   languageName: node
   linkType: hard
 
@@ -583,6 +585,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fluidframework/garbage-collector@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/garbage-collector@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/runtime-definitions": ^1.3.6
+  checksum: e053a6a5398c411676485b0fb97228d5569471b289a2a6c3ff5f6f3b601ff9184f24a7db0b62e067e72ee0098f9f1f0a8acfc9ec2b46cda0219369e6c77c665f
+  languageName: node
+  linkType: hard
+
 "@fluidframework/gitresources@npm:^0.1036.5000":
   version: 0.1036.5000
   resolution: "@fluidframework/gitresources@npm:0.1036.5000"
@@ -590,22 +603,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/map@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/map@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-utils": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore-definitions": 1.3.0-100520
-    "@fluidframework/driver-utils": 1.3.0-100520
-    "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-    "@fluidframework/shared-object-base": 1.3.0-100520
-    path-browserify: ^1.0.1
-  checksum: 1d45582858860d0346d8a700d7c513285cb09fb262a5e5953094bb62ca4f39048c154e67bbdce0b5d1ca3748d771dece8219dca80ff926c53819362e8b8759fe
+"@fluidframework/gitresources@npm:^0.1036.5001":
+  version: 0.1036.5001
+  resolution: "@fluidframework/gitresources@npm:0.1036.5001"
+  checksum: 1a970e0a673e54e58c23a3bfa1f5b039afedc8aa07cc164b4e44463c075461e48c886bf44d2d78b755c774c5ffe4f1a91d671540ae3ee3a634920a5f7ed5dcff
   languageName: node
   linkType: hard
 
@@ -628,22 +629,41 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/merge-tree@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/merge-tree@npm:1.3.0-100520"
+"@fluidframework/map@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/map@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-utils": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore-definitions": 1.3.0-100520
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-utils": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore-definitions": ^1.3.6
+    "@fluidframework/driver-utils": ^1.3.6
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-    "@fluidframework/shared-object-base": 1.3.0-100520
-    "@fluidframework/telemetry-utils": 1.3.0-100520
-  checksum: 7b5c5299989bf2747bfe058db8a99e8ab1fc63454bb2554d30b58b6cb4470857fc21164c0369edcaf8bd5122cf1eedf20bddc479bd87c316f5db2cb0d58578d3
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+    "@fluidframework/shared-object-base": ^1.3.6
+    path-browserify: ^1.0.1
+  checksum: 33e43d110813d1fb1cc4149417bd56d528e5287f1975208b78cac23c77e0d504731bac59452cdb92e7e7ab684062b6de49757a3ba838cd954fbcc2f2c667f187
+  languageName: node
+  linkType: hard
+
+"@fluidframework/merge-tree@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/merge-tree@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-utils": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore-definitions": ^1.3.6
+    "@fluidframework/protocol-definitions": ^0.1028.2000
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+    "@fluidframework/shared-object-base": ^1.3.6
+    "@fluidframework/telemetry-utils": ^1.3.6
+  checksum: 4cd33845b46223746e1e9f15be09e146aa4798229741bf8f9a26ffe733d1b7164b67951aaccf11fc4324c6d60210cf76bba25c403f491e9c821828e5740da72d
   languageName: node
   linkType: hard
 
@@ -656,6 +676,18 @@ __metadata:
     "@fluidframework/protocol-definitions": ^0.1028.2000
     lodash: ^4.17.21
   checksum: 25e0b4b7d7a9c180b5798e358cc48080bbb06469ce956aeabc5b11f18fbeaaa0d66a7931f1d693ab7adc6e108380e87e2af91115a351cfc9aed4257edafb31fe
+  languageName: node
+  linkType: hard
+
+"@fluidframework/protocol-base@npm:^0.1036.5001":
+  version: 0.1036.5001
+  resolution: "@fluidframework/protocol-base@npm:0.1036.5001"
+  dependencies:
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/gitresources": ^0.1036.5001
+    "@fluidframework/protocol-definitions": ^0.1028.2000
+    lodash: ^4.17.21
+  checksum: 2a7da499069ed2f24948b80bed286ff258435212a48f70639ff697df4c1a6080e2aa3d43e036b47f0251412a57fdd460c22e0db203650987a13812785322f5a3
   languageName: node
   linkType: hard
 
@@ -677,19 +709,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/request-handler@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/request-handler@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-runtime-definitions": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-  checksum: 8cc120b58f67be32e393a1210c34ad415ab5dbf85fe9dad996d23907264469cff27a212a5ce0ba33faae113d639012af6c2851515d0a4bb3aed126d97b26e0aa
-  languageName: node
-  linkType: hard
-
 "@fluidframework/request-handler@npm:^1.3.1":
   version: 1.3.1
   resolution: "@fluidframework/request-handler@npm:1.3.1"
@@ -700,6 +719,19 @@ __metadata:
     "@fluidframework/runtime-definitions": ^1.3.1
     "@fluidframework/runtime-utils": ^1.3.1
   checksum: 45365c30dd478f7083af7f2d43afae6dcfcc08983c7eb90873e1c3a98192913b9407eb37748640cc3d46ac880f2800d8fa033f08b8f20b6b80fbc6bddf0991f5
+  languageName: node
+  linkType: hard
+
+"@fluidframework/request-handler@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/request-handler@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-runtime-definitions": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+  checksum: 28a8133e78444bd2b8a57f1fdd9c9c56a1031578ab56256a9f5e9a9ed2ad672ee6c7a2cbaa34347e82252627550c6c772909ded6233ab313e9c0be3b2e3d57ed
   languageName: node
   linkType: hard
 
@@ -727,21 +759,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/runtime-definitions@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/runtime-definitions@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/driver-definitions": 1.3.0-100520
-    "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@types/node": ^14.18.0
-  checksum: 1af0d0e6df3e6220e17ffe2fb48fa7268123a3f467b6c262207ea429212ce24f21994550775313ed2fd33a4c9a4542590b1737164a01c95858edb2a17adace66
-  languageName: node
-  linkType: hard
-
 "@fluidframework/runtime-definitions@npm:^1.3.1":
   version: 1.3.1
   resolution: "@fluidframework/runtime-definitions@npm:1.3.1"
@@ -757,22 +774,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/runtime-utils@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/runtime-utils@npm:1.3.0-100520"
+"@fluidframework/runtime-definitions@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/runtime-definitions@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-runtime-definitions": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore-definitions": 1.3.0-100520
-    "@fluidframework/garbage-collector": 1.3.0-100520
-    "@fluidframework/protocol-base": ^0.1036.5000
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/driver-definitions": ^1.3.6
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/telemetry-utils": 1.3.0-100520
-  checksum: fb5f7bf02bb4f0cc98209fa678566304294e1abcdda17bbcabde7949092114a9c940706fb18052d0f976d902cb4bf727db64d7169b01eca6a4cb0a5fa25ed906
+  checksum: b63fc40c5c9d7750d53165f29608110df295eec51a6408a464a292c418e62016671c53afc9a056c9b123c50622a658b8d8bcd8db34394127e809479009d4fd84
   languageName: node
   linkType: hard
 
@@ -795,23 +807,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/sequence@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/sequence@npm:1.3.0-100520"
+"@fluidframework/runtime-utils@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/runtime-utils@npm:1.3.6"
   dependencies:
     "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-utils": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore-definitions": 1.3.0-100520
-    "@fluidframework/merge-tree": 1.3.0-100520
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-runtime-definitions": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore-definitions": ^1.3.6
+    "@fluidframework/garbage-collector": ^1.3.6
+    "@fluidframework/protocol-base": ^0.1036.5001
     "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-    "@fluidframework/shared-object-base": 1.3.0-100520
-    "@fluidframework/telemetry-utils": 1.3.0-100520
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/telemetry-utils": ^1.3.6
+  checksum: 2c6cbb1e521d2af4e56cfe6e9aa2dd095a203400d86a1f86911622e88bf42e7fb077049b82c98e12c49603233d7d03afdbce5870feca22d72b8a66d0f6eb3829
+  languageName: node
+  linkType: hard
+
+"@fluidframework/sequence@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/sequence@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-utils": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore-definitions": ^1.3.6
+    "@fluidframework/merge-tree": ^1.3.6
+    "@fluidframework/protocol-definitions": ^0.1028.2000
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+    "@fluidframework/shared-object-base": ^1.3.6
+    "@fluidframework/telemetry-utils": ^1.3.6
     uuid: ^8.3.1
-  checksum: 76e79acac02edab15522c753b349130363199c52b4923025168c3197e203f7b495bd21db12fddf553034a5653b7743dc0172be861ee468bad87f921938e5c800
+  checksum: 218f454ec7b91c318a9fbdd31f08ad32b181da070cc9670337062bf575ae4544141711df96d04eb544aa9ecde2ba401912c81c3a642e51e51f3a8298fcae9719
   languageName: node
   linkType: hard
 
@@ -836,27 +867,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/shared-object-base@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/shared-object-base@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-runtime": 1.3.0-100520
-    "@fluidframework/container-utils": 1.3.0-100520
-    "@fluidframework/core-interfaces": 1.3.0-100520
-    "@fluidframework/datastore": 1.3.0-100520
-    "@fluidframework/datastore-definitions": 1.3.0-100520
-    "@fluidframework/protocol-definitions": ^0.1028.2000
-    "@fluidframework/runtime-definitions": 1.3.0-100520
-    "@fluidframework/runtime-utils": 1.3.0-100520
-    "@fluidframework/telemetry-utils": 1.3.0-100520
-    uuid: ^8.3.1
-  checksum: fceca149ff087c332d4408cf98fb3a9edf97642e0633ffad19477a2d1fe8f1882756723205b74ab85878eb368a5cdc499b4e07a11c1461e3e61ed816531f0291
-  languageName: node
-  linkType: hard
-
 "@fluidframework/shared-object-base@npm:^1.3.1":
   version: 1.3.1
   resolution: "@fluidframework/shared-object-base@npm:1.3.1"
@@ -878,10 +888,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/synthesize@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/synthesize@npm:1.3.0-100520"
-  checksum: cb619e10ec40bb4028e2cc2a4beaa46cec0bd14c9b2cca765c3c27980e562d6233a95517f2885ee8004fcd491cc527521242889dd8737cbf6db08b2efd00448c
+"@fluidframework/shared-object-base@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/shared-object-base@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@fluidframework/common-utils": ^0.32.2
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-runtime": ^1.3.6
+    "@fluidframework/container-utils": ^1.3.6
+    "@fluidframework/core-interfaces": ^1.3.6
+    "@fluidframework/datastore": ^1.3.6
+    "@fluidframework/datastore-definitions": ^1.3.6
+    "@fluidframework/protocol-definitions": ^0.1028.2000
+    "@fluidframework/runtime-definitions": ^1.3.6
+    "@fluidframework/runtime-utils": ^1.3.6
+    "@fluidframework/telemetry-utils": ^1.3.6
+    uuid: ^8.3.1
+  checksum: 6f6090f841b66507671d3ce7ac1ad262ef7f93fd349f556182bb2881b5d4daaad438b854205b4a542c62eb25065355fb0be875d7bea0f5a67e881d2546a54532
   languageName: node
   linkType: hard
 
@@ -892,16 +916,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/telemetry-utils@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/telemetry-utils@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/common-definitions": ^0.20.1
-    "@fluidframework/common-utils": ^0.32.1
-    debug: ^4.1.1
-    events: ^3.1.0
-    uuid: ^8.3.1
-  checksum: 083dd7af201ac8875da7fdcf405fcb306bed214fd9afcdcd2e02964434b8c053868bfa3edd21aff0e00635447462be02d6a589f9e011dd8506d289b9a892f8e3
+"@fluidframework/synthesize@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/synthesize@npm:1.3.6"
+  checksum: a6a3a52b7bf4740a6adcee61c9de10cddc4606ef022fa6ef31917831f9364dd3a7108a079044e79a866bbe55baade53553fa28b38b970de94defc803e37ab3a6
   languageName: node
   linkType: hard
 
@@ -915,6 +933,19 @@ __metadata:
     events: ^3.1.0
     uuid: ^8.3.1
   checksum: 39e142b83328aedcf7293159a530c731149ab8c3f7ce3b42ac7151c27e0898edf050d1b847d13007206ab5529b942cc96dc60f702d4dac9ee849d1da0e624cdc
+  languageName: node
+  linkType: hard
+
+"@fluidframework/telemetry-utils@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/telemetry-utils@npm:1.3.6"
+  dependencies:
+    "@fluidframework/common-definitions": ^0.20.1
+    "@fluidframework/common-utils": ^0.32.2
+    debug: ^4.1.1
+    events: ^3.1.0
+    uuid: ^8.3.1
+  checksum: e007aa33cca9edbd21a4f7fa9003d71ef7aa78fdbfd0245c3cf6ab78f8b951a77a2575cbf423c01d4bcfd85178bd571fb9c787ea70e031f1addfa55716fb7628
   languageName: node
   linkType: hard
 
@@ -942,21 +973,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluidframework/view-interfaces@npm:1.3.0-100520":
-  version: 1.3.0-100520
-  resolution: "@fluidframework/view-interfaces@npm:1.3.0-100520"
-  dependencies:
-    "@fluidframework/core-interfaces": 1.3.0-100520
-  checksum: ba3ada8b9102e003af091285def9d8cf0cf39c4f95091e672ada140b8b56191d0d0bbf132b9d03079bfa76b47d2fbe210b4b253d11f8eb7642387e5f740ecfae
-  languageName: node
-  linkType: hard
-
 "@fluidframework/view-interfaces@npm:^1.3.1":
   version: 1.3.1
   resolution: "@fluidframework/view-interfaces@npm:1.3.1"
   dependencies:
     "@fluidframework/core-interfaces": ^1.3.1
   checksum: fe2fad89ca094b9115a3e25424efae1ef00c959b3878f015cf6ff815c4ecee170a45646443c65ef34542a15bd9e101d2fba3165f86db2317fbbcdae581c55e16
+  languageName: node
+  linkType: hard
+
+"@fluidframework/view-interfaces@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "@fluidframework/view-interfaces@npm:1.3.6"
+  dependencies:
+    "@fluidframework/core-interfaces": ^1.3.6
+  checksum: 29ba45cdb9e25755e418fa0761fbf9f4243e4fea2b351cb31bfbea5fd2f050f43d20bb77f237542bbba6c2c8508147fb72fc0474fb5caaf34c6e5cde18f7fe48
   languageName: node
   linkType: hard
 
@@ -1223,16 +1254,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcel/bundler-default@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/bundler-default@npm:2.6.2"
+"@parcel/bundler-default@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/bundler-default@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/hash": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/graph": 2.8.3
+    "@parcel/hash": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
     nullthrows: ^1.1.1
-  checksum: f99c2b673beee732a88867354397ca9414f7528febfc03a6083c79e279f35dd385b8c606508a2a15954f3623ca72eb6f8873e6851039ee3218e6d241c1fb8860
+  checksum: 219b2be341cad20991659b7a3031454a081ce0787c161a4da8a73ae8a4af4468667b284caea9488e869b162763d308cfd6495ab35fe386413b14325d6667ea86
   languageName: node
   linkType: hard
 
@@ -1250,6 +1282,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/cache@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/cache@npm:2.8.3"
+  dependencies:
+    "@parcel/fs": 2.8.3
+    "@parcel/logger": 2.8.3
+    "@parcel/utils": 2.8.3
+    lmdb: 2.5.2
+  peerDependencies:
+    "@parcel/core": ^2.8.3
+  checksum: cd679053d229f8d06536a8fc9d857e5fa58905492e1a97c4f6b1da82de0dcef202a609c1e36206d3cdb32e5da3a214525f868b98dfd7aa671a53dacceb004fd9
+  languageName: node
+  linkType: hard
+
 "@parcel/codeframe@npm:2.6.2":
   version: 2.6.2
   resolution: "@parcel/codeframe@npm:2.6.2"
@@ -1259,73 +1305,82 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcel/compressor-raw@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/compressor-raw@npm:2.6.2"
+"@parcel/codeframe@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/codeframe@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-  checksum: fb147eb18952f68b6d2a63fe36a0810f503d326aa524bf46c1864091ef8abe05c3990d3228275e19597054296d5abea850d224d5355ced0def73cec381c02398
+    chalk: ^4.1.0
+  checksum: a6e82c30e6251dcae14f247a14f6cb265f766b8bf18b62dd6a1c4a103cfae364a08897b36c5c379d0d867169647cb72962266f77571f718ff68ef70a16b81c02
   languageName: node
   linkType: hard
 
-"@parcel/config-default@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/config-default@npm:2.6.2"
+"@parcel/compressor-raw@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/compressor-raw@npm:2.8.3"
   dependencies:
-    "@parcel/bundler-default": 2.6.2
-    "@parcel/compressor-raw": 2.6.2
-    "@parcel/namer-default": 2.6.2
-    "@parcel/optimizer-css": 2.6.2
-    "@parcel/optimizer-htmlnano": 2.6.2
-    "@parcel/optimizer-image": 2.6.2
-    "@parcel/optimizer-svgo": 2.6.2
-    "@parcel/optimizer-terser": 2.6.2
-    "@parcel/packager-css": 2.6.2
-    "@parcel/packager-html": 2.6.2
-    "@parcel/packager-js": 2.6.2
-    "@parcel/packager-raw": 2.6.2
-    "@parcel/packager-svg": 2.6.2
-    "@parcel/reporter-dev-server": 2.6.2
-    "@parcel/resolver-default": 2.6.2
-    "@parcel/runtime-browser-hmr": 2.6.2
-    "@parcel/runtime-js": 2.6.2
-    "@parcel/runtime-react-refresh": 2.6.2
-    "@parcel/runtime-service-worker": 2.6.2
-    "@parcel/transformer-babel": 2.6.2
-    "@parcel/transformer-css": 2.6.2
-    "@parcel/transformer-html": 2.6.2
-    "@parcel/transformer-image": 2.6.2
-    "@parcel/transformer-js": 2.6.2
-    "@parcel/transformer-json": 2.6.2
-    "@parcel/transformer-postcss": 2.6.2
-    "@parcel/transformer-posthtml": 2.6.2
-    "@parcel/transformer-raw": 2.6.2
-    "@parcel/transformer-react-refresh-wrap": 2.6.2
-    "@parcel/transformer-svg": 2.6.2
+    "@parcel/plugin": 2.8.3
+  checksum: ca3b8a4f60e5193cffaa8041e709513df9c6cb54f32c9d20fef993a9af2d84f1e2d8bf8f4092220a8abaec24679498f854e683511876187f35b4f94a5852cf85
+  languageName: node
+  linkType: hard
+
+"@parcel/config-default@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/config-default@npm:2.8.3"
+  dependencies:
+    "@parcel/bundler-default": 2.8.3
+    "@parcel/compressor-raw": 2.8.3
+    "@parcel/namer-default": 2.8.3
+    "@parcel/optimizer-css": 2.8.3
+    "@parcel/optimizer-htmlnano": 2.8.3
+    "@parcel/optimizer-image": 2.8.3
+    "@parcel/optimizer-svgo": 2.8.3
+    "@parcel/optimizer-terser": 2.8.3
+    "@parcel/packager-css": 2.8.3
+    "@parcel/packager-html": 2.8.3
+    "@parcel/packager-js": 2.8.3
+    "@parcel/packager-raw": 2.8.3
+    "@parcel/packager-svg": 2.8.3
+    "@parcel/reporter-dev-server": 2.8.3
+    "@parcel/resolver-default": 2.8.3
+    "@parcel/runtime-browser-hmr": 2.8.3
+    "@parcel/runtime-js": 2.8.3
+    "@parcel/runtime-react-refresh": 2.8.3
+    "@parcel/runtime-service-worker": 2.8.3
+    "@parcel/transformer-babel": 2.8.3
+    "@parcel/transformer-css": 2.8.3
+    "@parcel/transformer-html": 2.8.3
+    "@parcel/transformer-image": 2.8.3
+    "@parcel/transformer-js": 2.8.3
+    "@parcel/transformer-json": 2.8.3
+    "@parcel/transformer-postcss": 2.8.3
+    "@parcel/transformer-posthtml": 2.8.3
+    "@parcel/transformer-raw": 2.8.3
+    "@parcel/transformer-react-refresh-wrap": 2.8.3
+    "@parcel/transformer-svg": 2.8.3
   peerDependencies:
-    "@parcel/core": ^2.6.2
-  checksum: 08cf9d08bb0a19900cbe3512970b9be0aaf074af3d266a3bbb47808201e36bcaeb1b7c8764620810bb66a4c98924d4000bb365d3f384764aec18b326409fd86f
+    "@parcel/core": ^2.8.3
+  checksum: 08c700a7a253f39e84e1d341b3e0f558a2410bb27bf8a128113d8d157c32a7ef6b6ebd95e2c26d9f35c1040b98ff229ab56782247746189b4c41b925d1efd251
   languageName: node
   linkType: hard
 
-"@parcel/core@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/core@npm:2.6.2"
+"@parcel/core@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/core@npm:2.8.3"
   dependencies:
     "@mischnic/json-sourcemap": ^0.1.0
-    "@parcel/cache": 2.6.2
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/events": 2.6.2
-    "@parcel/fs": 2.6.2
-    "@parcel/graph": 2.6.2
-    "@parcel/hash": 2.6.2
-    "@parcel/logger": 2.6.2
-    "@parcel/package-manager": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/source-map": ^2.0.0
-    "@parcel/types": 2.6.2
-    "@parcel/utils": 2.6.2
-    "@parcel/workers": 2.6.2
+    "@parcel/cache": 2.8.3
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/events": 2.8.3
+    "@parcel/fs": 2.8.3
+    "@parcel/graph": 2.8.3
+    "@parcel/hash": 2.8.3
+    "@parcel/logger": 2.8.3
+    "@parcel/package-manager": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/types": 2.8.3
+    "@parcel/utils": 2.8.3
+    "@parcel/workers": 2.8.3
     abortcontroller-polyfill: ^1.1.9
     base-x: ^3.0.8
     browserslist: ^4.6.6
@@ -1336,97 +1391,7 @@ __metadata:
     msgpackr: ^1.5.4
     nullthrows: ^1.1.1
     semver: ^5.7.1
-  checksum: f550cbbd5ee9db5c9c9dda79ad6b4c307d8d16ca52d6abc42d1df846ad6f5a9dedf0aa1dcb6550a66611b8e89a52bc4036039ef4bc62e007c6faab63541d4c69
-  languageName: node
-  linkType: hard
-
-"@parcel/css-darwin-arm64@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@parcel/css-darwin-arm64@npm:1.12.2"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@parcel/css-darwin-x64@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@parcel/css-darwin-x64@npm:1.12.2"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@parcel/css-linux-arm-gnueabihf@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@parcel/css-linux-arm-gnueabihf@npm:1.12.2"
-  conditions: os=linux & cpu=arm
-  languageName: node
-  linkType: hard
-
-"@parcel/css-linux-arm64-gnu@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@parcel/css-linux-arm64-gnu@npm:1.12.2"
-  conditions: os=linux & cpu=arm64 & libc=glibc
-  languageName: node
-  linkType: hard
-
-"@parcel/css-linux-arm64-musl@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@parcel/css-linux-arm64-musl@npm:1.12.2"
-  conditions: os=linux & cpu=arm64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@parcel/css-linux-x64-gnu@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@parcel/css-linux-x64-gnu@npm:1.12.2"
-  conditions: os=linux & cpu=x64 & libc=glibc
-  languageName: node
-  linkType: hard
-
-"@parcel/css-linux-x64-musl@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@parcel/css-linux-x64-musl@npm:1.12.2"
-  conditions: os=linux & cpu=x64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@parcel/css-win32-x64-msvc@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@parcel/css-win32-x64-msvc@npm:1.12.2"
-  conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@parcel/css@npm:^1.10.1":
-  version: 1.12.2
-  resolution: "@parcel/css@npm:1.12.2"
-  dependencies:
-    "@parcel/css-darwin-arm64": 1.12.2
-    "@parcel/css-darwin-x64": 1.12.2
-    "@parcel/css-linux-arm-gnueabihf": 1.12.2
-    "@parcel/css-linux-arm64-gnu": 1.12.2
-    "@parcel/css-linux-arm64-musl": 1.12.2
-    "@parcel/css-linux-x64-gnu": 1.12.2
-    "@parcel/css-linux-x64-musl": 1.12.2
-    "@parcel/css-win32-x64-msvc": 1.12.2
-    detect-libc: ^1.0.3
-  dependenciesMeta:
-    "@parcel/css-darwin-arm64":
-      optional: true
-    "@parcel/css-darwin-x64":
-      optional: true
-    "@parcel/css-linux-arm-gnueabihf":
-      optional: true
-    "@parcel/css-linux-arm64-gnu":
-      optional: true
-    "@parcel/css-linux-arm64-musl":
-      optional: true
-    "@parcel/css-linux-x64-gnu":
-      optional: true
-    "@parcel/css-linux-x64-musl":
-      optional: true
-    "@parcel/css-win32-x64-msvc":
-      optional: true
-  checksum: b96d703f599f2273964ff527ba1f40f90289ed4f0439fc7562af5546fedc51d8f9926e6c22956f2f1756c673aeca32eb6f05d1a84006aa190406c4fc4a9589de
+  checksum: 68adceb1b041208fe922bb52da218e6be90d6e016322f4eac5a5dbfbac72838080cf9bbce51785d65556a258293c02dffba4482217dbd9b723258101d925fb0e
   languageName: node
   linkType: hard
 
@@ -1440,10 +1405,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/diagnostic@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/diagnostic@npm:2.8.3"
+  dependencies:
+    "@mischnic/json-sourcemap": ^0.1.0
+    nullthrows: ^1.1.1
+  checksum: c24d98a2dbf068ef334c595d51504cd063310c0327477b5d7bcf817af3f8ad79d56593cdf91d8d45cb4a41a48baf9090ae4100a96d2c197d4ed20bc5db9df2d9
+  languageName: node
+  linkType: hard
+
 "@parcel/events@npm:2.6.2":
   version: 2.6.2
   resolution: "@parcel/events@npm:2.6.2"
   checksum: 272898db0c5de72bd59d7f43acce188a9c6574abc7235f6b47bf0376a73b49ea634f1fab5c3cdcf846a16e541f40ced16275325f80cc04332543d25d297973d1
+  languageName: node
+  linkType: hard
+
+"@parcel/events@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/events@npm:2.8.3"
+  checksum: 9d23c6663e9afce1d1094c46d38eba0b0171835201140258c1dcd33f63cfbc20bb1abdc163cbb7a01d407a8cf06c8742c10035c8a835ebca261b19d8ee0fbf7e
   languageName: node
   linkType: hard
 
@@ -1453,6 +1435,15 @@ __metadata:
   dependencies:
     detect-libc: ^1.0.3
   checksum: 99850b1fd81009bbfb150421cfe9a7fc5936b617eb682a154227e563f53dc60baeb131c3825dda2d8bc240fcc3e96889f96b2a85ef7063c1d4925f4c0f9f7842
+  languageName: node
+  linkType: hard
+
+"@parcel/fs-search@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/fs-search@npm:2.8.3"
+  dependencies:
+    detect-libc: ^1.0.3
+  checksum: 25e8eda6942fbf28e02cef1f5e94acafb3e33275a20b0a3e553402f04d2d24026be796b645728e872949dc8555b03a7d26d615a4f8eeed03a3af76aed535cc10
   languageName: node
   linkType: hard
 
@@ -1471,13 +1462,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcel/graph@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/graph@npm:2.6.2"
+"@parcel/fs@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/fs@npm:2.8.3"
   dependencies:
-    "@parcel/utils": 2.6.2
+    "@parcel/fs-search": 2.8.3
+    "@parcel/types": 2.8.3
+    "@parcel/utils": 2.8.3
+    "@parcel/watcher": ^2.0.7
+    "@parcel/workers": 2.8.3
+  peerDependencies:
+    "@parcel/core": ^2.8.3
+  checksum: cc421552daef3c7676030867a1b4ed45d64d5f4221b0b12d487a86183a39544290fd3e7ed9104b1b58c05f2a6b5ec0698ce37a9cd49c484d94ed6b445f26d598
+  languageName: node
+  linkType: hard
+
+"@parcel/graph@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/graph@npm:2.8.3"
+  dependencies:
     nullthrows: ^1.1.1
-  checksum: 74490009e804b14bcf795fe4a1518ae8dd21f04ac4a26fde43cfad69cf6874fe9a1ab7e7b4305d6ceb15b11600e8156504a8ee3279134b22133ffbb4cdab3398
+  checksum: ceed8445f5a23396cca001a54ee0620bd7d6ecbb455977c16bd2f446da14c1791817ed715a4cf70d6ba66310991eeee44d692f15f70ff52e75b98b629da25a88
   languageName: node
   linkType: hard
 
@@ -1491,6 +1496,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/hash@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/hash@npm:2.8.3"
+  dependencies:
+    detect-libc: ^1.0.3
+    xxhash-wasm: ^0.4.2
+  checksum: 29cef199feda672756c930a8b45ee91e46607aa1b6659c38658758fe2f88870c20e0d4e8738d96ca8b44df60c1b767b5593110e2d24b99382214158c759258d0
+  languageName: node
+  linkType: hard
+
 "@parcel/logger@npm:2.6.2":
   version: 2.6.2
   resolution: "@parcel/logger@npm:2.6.2"
@@ -1498,6 +1513,16 @@ __metadata:
     "@parcel/diagnostic": 2.6.2
     "@parcel/events": 2.6.2
   checksum: d3536408dac9a28476821f6ba536f8f2b4efba635581d603fdadc78ec062084bdbeec17ab8d38c11c0b368092f63a1db1b757c986ede702654ab69d94b4b815c
+  languageName: node
+  linkType: hard
+
+"@parcel/logger@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/logger@npm:2.8.3"
+  dependencies:
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/events": 2.8.3
+  checksum: 04fd46313138ea8e38c5bd051cd79ee245ad0a7bb6d5d12a892cafa79755af81ec1b6ddc83a79224bb74170bc1323f016cf849981326adb391f43920976ec9dc
   languageName: node
   linkType: hard
 
@@ -1510,93 +1535,102 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcel/namer-default@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/namer-default@npm:2.6.2"
+"@parcel/markdown-ansi@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/markdown-ansi@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/plugin": 2.6.2
-    nullthrows: ^1.1.1
-  checksum: 259053a59f24b46cf2618d548c4e10806f029e95cf61c4cafff90adb88cbbc2075d96412753df9278759448b09666e7abf3ec9ac8fbefb353a2463f3f6b2c4a0
+    chalk: ^4.1.0
+  checksum: 1985f149b2ac08347f954230922fdcc45d7ceedba9b7f458078843a018d950a56cb512fb951537b4f995e861b9290b0757cfc0eadf542a13b124175b5ef02945
   languageName: node
   linkType: hard
 
-"@parcel/node-resolver-core@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/node-resolver-core@npm:2.6.2"
+"@parcel/namer-default@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/namer-default@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/plugin": 2.8.3
+    nullthrows: ^1.1.1
+  checksum: 7c2c3434460d8fa6c9d482a9bfc681e47322ad82c8beef193eee9e45831374860d0f89de4c69e2e5cf41301cad19c7e87f5b536ca7d684aa383e783bcce02ef1
+  languageName: node
+  linkType: hard
+
+"@parcel/node-resolver-core@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/node-resolver-core@npm:2.8.3"
+  dependencies:
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/utils": 2.8.3
     nullthrows: ^1.1.1
     semver: ^5.7.1
-  checksum: 7746b309fa87eeeba08e61e1a192b84feecd792a5f5b484edbda2da11a1e665ef27093e0b6d821f11dc74dd62a50601ae89de9b62efa7dd3d182a52faebaed8c
+  checksum: 4976d3ecc9acc6ee05c7709291f4576c269bc84f896c8bf9e6171ce6f9fbd9c2dd7e3db4e11542b3b29093c73f5451724c94bf7b0735b9920ddcdeecf1809968
   languageName: node
   linkType: hard
 
-"@parcel/optimizer-css@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/optimizer-css@npm:2.6.2"
+"@parcel/optimizer-css@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/optimizer-css@npm:2.8.3"
   dependencies:
-    "@parcel/css": ^1.10.1
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/source-map": ^2.0.0
-    "@parcel/utils": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/utils": 2.8.3
     browserslist: ^4.6.6
+    lightningcss: ^1.16.1
     nullthrows: ^1.1.1
-  checksum: d1179276f49bdc756b8002050d9952d8724a157e5021886c9df4300ce8f6313d633b546cda3c7cd962e7017721fe5fe5d69d4a92d9094833c0a886e0bf4e6599
+  checksum: ffac43a2c20243d57b8627257b5a74462ebc0f4aa780b3117237240c9c3e9ca37ddcc8312296be9fe571a78f5a44cc14fa47ca9490d3796d673d8313d6cd8c9a
   languageName: node
   linkType: hard
 
-"@parcel/optimizer-htmlnano@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/optimizer-htmlnano@npm:2.6.2"
+"@parcel/optimizer-htmlnano@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/optimizer-htmlnano@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
+    "@parcel/plugin": 2.8.3
     htmlnano: ^2.0.0
     nullthrows: ^1.1.1
     posthtml: ^0.16.5
     svgo: ^2.4.0
-  checksum: 3b86fb1b17d0af5dd2d25a3c9d5f1d587563305ca36afd12429c4de43d8ea29cdfdaed2d5434c2e83c85de7b5f856d4a90ba5b0119255fe3ba5150943c81bcf2
+  checksum: ca1cab7b1ecc16f209ad867fbdd8b2f446fd831d8688db068491fa22786a5aa3a0debb4290e0f003830c6b06c6f3a4c3a3cd9cdb033e7fa6cded8a19887d5f23
   languageName: node
   linkType: hard
 
-"@parcel/optimizer-image@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/optimizer-image@npm:2.6.2"
+"@parcel/optimizer-image@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/optimizer-image@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
-    "@parcel/workers": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
+    "@parcel/workers": 2.8.3
     detect-libc: ^1.0.3
-  checksum: d36e3c4d801bbaafa4720aa148c0c329bc957c3f890aa568e90f9cfbcdb78fa1e8fd306dcef98dcecddbec32474dfa783fd4c400df6a55f0a8b07f4241816259
+  checksum: 72c5acffaea833237f62e23c8fb183eb85863ccddeb11304b2299b28973b957daba1e34854d347314edf35d83cba695c0d7600e1ae125dec4cc3151abd8f2e31
   languageName: node
   linkType: hard
 
-"@parcel/optimizer-svgo@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/optimizer-svgo@npm:2.6.2"
+"@parcel/optimizer-svgo@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/optimizer-svgo@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
     svgo: ^2.4.0
-  checksum: 00b673780522f9594cea5ef0660cf06de5d8ab0542893e50ab52e5ff29a2b64c1fad0a1160abcc8e246239e66b4b67221bb1518755ac857148f2d2c80112a7a7
+  checksum: b3544c08fac4009de1ec6f88136a58cdec70b072433b13fb99f9e6584dc4731afea82ae13d27e4121ed5aaec9e4481225a54251ce52b6ece835908300c26fa33
   languageName: node
   linkType: hard
 
-"@parcel/optimizer-terser@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/optimizer-terser@npm:2.6.2"
+"@parcel/optimizer-terser@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/optimizer-terser@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/source-map": ^2.0.0
-    "@parcel/utils": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/utils": 2.8.3
     nullthrows: ^1.1.1
     terser: ^5.2.0
-  checksum: 1b9cdee1978ee56f03d86a3993cc07453bd1699a9624d79fbc14623c2e693256803863d3c0a77936e47b69777f6ba7e659edb3c15da206b15b97c3f6cd5c312e
+  checksum: ee1959f5965c7eee8ad1519f9d2554810030f326e959dd5e44aa014c29a51c2ab777dfbbf604a6b4436b75176a8694b7b8c9d99f945d57dea7828225762c8823
   languageName: node
   linkType: hard
 
@@ -1617,64 +1651,81 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcel/packager-css@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/packager-css@npm:2.6.2"
+"@parcel/package-manager@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/package-manager@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/source-map": ^2.0.0
-    "@parcel/utils": 2.6.2
-    nullthrows: ^1.1.1
-  checksum: 70d0c5195f75a88a2ffd71e320a9feb814cef8df23810a6bd914146513705b2396330fe1b02a14dbfdb0a0f06c631df5b2558fbb5a15775ef81d5fa0c94b5399
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/fs": 2.8.3
+    "@parcel/logger": 2.8.3
+    "@parcel/types": 2.8.3
+    "@parcel/utils": 2.8.3
+    "@parcel/workers": 2.8.3
+    semver: ^5.7.1
+  peerDependencies:
+    "@parcel/core": ^2.8.3
+  checksum: 572a5aacfd7bc545d9aa35ff2125f1231226b550f9b0fe2c36d68a82ec8ffb047035e25fdb883bc2331a6eaf69c98bb5d6752644546d962de7bf544c6243a959
   languageName: node
   linkType: hard
 
-"@parcel/packager-html@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/packager-html@npm:2.6.2"
+"@parcel/packager-css@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/packager-css@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/types": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/utils": 2.8.3
+    nullthrows: ^1.1.1
+  checksum: bb28fc9f02df83a1fd8eac7043466debb67398190819282a40a52ff299b0f4c3f474bfa7806be776ce36a66cc89574128a9fa210d2c0c9cb905bbb4dbbd2b926
+  languageName: node
+  linkType: hard
+
+"@parcel/packager-html@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/packager-html@npm:2.8.3"
+  dependencies:
+    "@parcel/plugin": 2.8.3
+    "@parcel/types": 2.8.3
+    "@parcel/utils": 2.8.3
     nullthrows: ^1.1.1
     posthtml: ^0.16.5
-  checksum: 5f0095111deca877361e604e0f48e9a514b7506f38915c85720d53c87eccf5a2cd106e181f4030c4f58e648a3583ae80da823cf825e74a912ee0d93026992841
+  checksum: 631f98fca0fdd3f11fe4cfbc1e0ad73b86f7fb00be7164fef5633c600a13282ae592b8f7d9aa31d4f66bd645ae57ce27e67db51a81b2a91c286ed5c8b36a4a87
   languageName: node
   linkType: hard
 
-"@parcel/packager-js@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/packager-js@npm:2.6.2"
+"@parcel/packager-js@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/packager-js@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/hash": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/source-map": ^2.0.0
-    "@parcel/utils": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/hash": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/utils": 2.8.3
     globals: ^13.2.0
     nullthrows: ^1.1.1
-  checksum: b441a709c668f4a0636fb872f672abd5fcd73a9830f89c6271c66c20b1d16c36d687ff3892605210e2305e76d44a01b108156f90f7e4f20e2ad8acbb9eac2d05
+  checksum: 92ac88244b6104c5905ab95d882b755134042654ab48106ca84ab18441fb7240b66f049e407146958aead0812345823da729a4a37f32be17afd2b44cbdebc926
   languageName: node
   linkType: hard
 
-"@parcel/packager-raw@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/packager-raw@npm:2.6.2"
+"@parcel/packager-raw@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/packager-raw@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-  checksum: c067a612c0b346a80448638cb6b5abc5461a3cc3bbb2a71da24497d09f8e2e9565b64c4de3cbe7d90905ded9363b5421b6708a5ab21eea00787a2266f9ede123
+    "@parcel/plugin": 2.8.3
+  checksum: 26236dd64624a25fc1d749fb96b1bc3a6854b14d4386109670572f55feda4bb6affde19b1c9e971c4e50bfb53fd88e32da8303c83a3cb18ceaf12dd310685c34
   languageName: node
   linkType: hard
 
-"@parcel/packager-svg@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/packager-svg@npm:2.6.2"
+"@parcel/packager-svg@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/packager-svg@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/types": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/types": 2.8.3
+    "@parcel/utils": 2.8.3
     posthtml: ^0.16.4
-  checksum: 50468d382f9423951b391025059d50264fb5f648c266c9d38e493c87d1f9d6d1f901dbc5487ba4d1a6d1fbe11ebaac3ab6b2df24439e7de4ebfea486d90f839d
+  checksum: 45c966ad8e6dbb25049adca66d761089a09cda83558d8767b46501a023b8d94b050f1a2899b1c8b18eac6cf87d2605ad5aa9a4cb2f9d90474794576dafb2e4fc
   languageName: node
   linkType: hard
 
@@ -1684,6 +1735,15 @@ __metadata:
   dependencies:
     "@parcel/types": 2.6.2
   checksum: 23da0fa37213a6aef0df3949eff7a53994ed68f413e396ee73d7246277b1e0b2f3ce5d34039cf25a5b79db05a1c769a74564d106e2005fe30b89a628a217294a
+  languageName: node
+  linkType: hard
+
+"@parcel/plugin@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/plugin@npm:2.8.3"
+  dependencies:
+    "@parcel/types": 2.8.3
+  checksum: a69ac66f5cc28197cf689f1c4144398457d62a086621a22b3b45fe863909a094b616dad415ec01673a9eb731b05fe9060bcb340c07efcd48343577a540fbfdf7
   languageName: node
   linkType: hard
 
@@ -1698,80 +1758,80 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcel/reporter-cli@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/reporter-cli@npm:2.6.2"
+"@parcel/reporter-cli@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/reporter-cli@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/types": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/types": 2.8.3
+    "@parcel/utils": 2.8.3
     chalk: ^4.1.0
     term-size: ^2.2.1
-  checksum: 27486b9c5cb82ddfd3d52039c3909efc1f5dcd6d478231e329c08f8c87eeaa298bbb5f8f6312c92a9613b7e5f993324d1331af6f10229a12268845c0316f1234
+  checksum: 791dd4706aac706427a563455d9db5fa330b77e94fe4226b3751cd527327d8540d62400a8040e85a5fd29ecb6e673507e9d4a1fa754c093f1c005078670eef85
   languageName: node
   linkType: hard
 
-"@parcel/reporter-dev-server@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/reporter-dev-server@npm:2.6.2"
+"@parcel/reporter-dev-server@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/reporter-dev-server@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
-  checksum: 44007a3bce0ed6d0a64c2d82644e36ea193a6f5871ba614c083b43a7204031214be7b9de018e497b7fb4fcf01458fa07a665e8213ae6e5b276277f3f2d25bedd
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
+  checksum: 329db9fd0cdc3ddc36d8156a7d67747335c76b1368116c98e266218f1e1ce4ea108981441bcb78961f64e2067a2d8a1745d8aa069398d50e67278e1333293723
   languageName: node
   linkType: hard
 
-"@parcel/resolver-default@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/resolver-default@npm:2.6.2"
+"@parcel/resolver-default@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/resolver-default@npm:2.8.3"
   dependencies:
-    "@parcel/node-resolver-core": 2.6.2
-    "@parcel/plugin": 2.6.2
-  checksum: e0dfff6e62892bfce11a76f66fa1a6013fdcf4f5f8d8afb80b43f0f2111ce0214bdc8348b32207658bd19b8bc046b53f77b1cb5a12892cc668df50373cacd78d
+    "@parcel/node-resolver-core": 2.8.3
+    "@parcel/plugin": 2.8.3
+  checksum: 40515a62c1a301050144e1427ac7a591afedea50e89baff0ab4ed05ad8424f5df6ad4a7b5e413956a199ecef18bf8220b353fb115af72fac4187a62e8a997d1d
   languageName: node
   linkType: hard
 
-"@parcel/runtime-browser-hmr@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/runtime-browser-hmr@npm:2.6.2"
+"@parcel/runtime-browser-hmr@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/runtime-browser-hmr@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
-  checksum: 39a324c4ef4014a8a122fe989d3802dd09eac9a40ff8a762c4e02b1cd49ab0bff4cb1e803333a707ae2ae6a84907c4331f8a39aad753048347f618ffb70e29a9
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
+  checksum: 56c276c7b03bb4c301d7dbe94c5183404af4064286f67682399e848ff894bfb5ea783dad11082290d40f2f07be64252dd236b993baf2e3e8fbb30a572f95a0dc
   languageName: node
   linkType: hard
 
-"@parcel/runtime-js@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/runtime-js@npm:2.6.2"
+"@parcel/runtime-js@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/runtime-js@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
     nullthrows: ^1.1.1
-  checksum: 861e89c53625b23b0e4c48a938db8f8bc168eb5d739416d3a2e81f91346dcdb163b03e73441fc609c8c8308f679497de7454ce86788251b995d57cf8c1908afe
+  checksum: ee5e04f84d522a6f53753c3956d37cacb2bdabb2539e2f40e640762b3cc43b20efc495331fe254d92d82a06c3e1b4690c17125090a12300d75ad7c3a9ca3e2f0
   languageName: node
   linkType: hard
 
-"@parcel/runtime-react-refresh@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/runtime-react-refresh@npm:2.6.2"
+"@parcel/runtime-react-refresh@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/runtime-react-refresh@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
     react-error-overlay: 6.0.9
     react-refresh: ^0.9.0
-  checksum: 0c33a13dd47a822bc962cf394d57989d60fc2396463c523f8058dfada537a1d96f3d681932d793304d6d37eea7a9e4c39745c6ce42d3f3f8ddd9c6bced640b21
+  checksum: 327159be0c8183f1cff139de973e8e8ca6b83dc2fc94846a89415fabf8cd8535e95ed3ae9750ac08e73a303de57c18c4e5da959ecbe73af75f1d3c9a98f5c20b
   languageName: node
   linkType: hard
 
-"@parcel/runtime-service-worker@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/runtime-service-worker@npm:2.6.2"
+"@parcel/runtime-service-worker@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/runtime-service-worker@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
     nullthrows: ^1.1.1
-  checksum: 2a9790ad275212746873f0ee7a4296156096bf89ceb0c53b8be1f04bc110cbe451bcc3d4f8dca994f2641280e6ae37cba0f507b630ac1b85403f7f385a97f765
+  checksum: 0646fee9a9378c0844c223d0eaf1c46e817738e70b2e993434717fb6aab998339b37a32c5bd9db891fcb8bc44dc3d7530564f84a5cd978d6dd47f204f18bd44a
   languageName: node
   linkType: hard
 
@@ -1784,161 +1844,172 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcel/transformer-babel@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-babel@npm:2.6.2"
+"@parcel/source-map@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@parcel/source-map@npm:2.1.1"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/source-map": ^2.0.0
-    "@parcel/utils": 2.6.2
+    detect-libc: ^1.0.3
+  checksum: 1fa27a7047ec08faf7fe1dd0e2ae95a27b84697ecfaed029d0b7d06e46d84ed8f98a9dc9d308fe623655f3c985052dcf7622de479bfa6103c44884fb7f6c810a
+  languageName: node
+  linkType: hard
+
+"@parcel/transformer-babel@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-babel@npm:2.8.3"
+  dependencies:
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/utils": 2.8.3
     browserslist: ^4.6.6
     json5: ^2.2.0
     nullthrows: ^1.1.1
     semver: ^5.7.0
-  checksum: c7f14b76bf70748995ea797f48bb61ceda8857426565e614560ed447597370869b647fa305a8d217a5e1b2ea7e88732264f8329fe3d6ee1efb954b18246f4881
+  checksum: a27bbe8d893854a77d9a8c9b45490728b2db81ad0782b7d9085d00c50155840477dd4ada8e382e0b02f9f5f8761da48bd6d3feb62ddd582e6608f92d4468df80
   languageName: node
   linkType: hard
 
-"@parcel/transformer-css@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-css@npm:2.6.2"
+"@parcel/transformer-css@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-css@npm:2.8.3"
   dependencies:
-    "@parcel/css": ^1.10.1
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/source-map": ^2.0.0
-    "@parcel/utils": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/utils": 2.8.3
     browserslist: ^4.6.6
+    lightningcss: ^1.16.1
     nullthrows: ^1.1.1
-  checksum: 2a8ac504571518fbd64d38cd1fe337cdeb43e5becd721b10c2cbba97271ad1c9929f7ecc7bca90b1e7657703be329c5cc8db635c381cfc6c172f942e9adbc3f3
+  checksum: 31375a140550968a36f7a8eb998c03f20200d202b7c62c98fb49b05f719777ca545d08f356dec9ca6d9a601ba0020abce5cf4672fe425bc99a540dccf262a6cc
   languageName: node
   linkType: hard
 
-"@parcel/transformer-html@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-html@npm:2.6.2"
+"@parcel/transformer-html@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-html@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/hash": 2.6.2
-    "@parcel/plugin": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/hash": 2.8.3
+    "@parcel/plugin": 2.8.3
     nullthrows: ^1.1.1
     posthtml: ^0.16.5
     posthtml-parser: ^0.10.1
     posthtml-render: ^3.0.0
     semver: ^5.7.1
-  checksum: 6d37d556aa7a744bc0c13e74d9a3769c6a85152fb2a609d334e016ce826b26bae04a63e9dad0ab36ca2c34573eafd534753c5c982d4c5855d84778dec98617d6
+    srcset: 4
+  checksum: 21600a3e0ac9e05aa6f6066ef94f8ba7e0de62a8ae59a812230907f5731dcf73dc5308fb74b32bfb6dab16089d13f72043965e1e87e8c4daec8447a9081af8eb
   languageName: node
   linkType: hard
 
-"@parcel/transformer-image@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-image@npm:2.6.2"
+"@parcel/transformer-image@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-image@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/workers": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
+    "@parcel/workers": 2.8.3
     nullthrows: ^1.1.1
   peerDependencies:
-    "@parcel/core": ^2.6.2
-  checksum: 2627a162b9bc730ad12086502edf043cac69b7e832b2c344478e2ed2b1c96db6686adbca32bd715c4421f8c360c301d029773e13209e6060639e40d020719d62
+    "@parcel/core": ^2.8.3
+  checksum: f4b3464828e1b3d44e7da5c7a71272f5f53f830d9bb371e8dd8b2f32040f4426f3efeae12949947e34b39f7755a253f0b48c6eeec6d86ad43baf0b30717f1f47
   languageName: node
   linkType: hard
 
-"@parcel/transformer-js@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-js@npm:2.6.2"
+"@parcel/transformer-js@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-js@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/source-map": ^2.0.0
-    "@parcel/utils": 2.6.2
-    "@parcel/workers": 2.6.2
-    "@swc/helpers": ^0.4.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/utils": 2.8.3
+    "@parcel/workers": 2.8.3
+    "@swc/helpers": ^0.4.12
     browserslist: ^4.6.6
     detect-libc: ^1.0.3
     nullthrows: ^1.1.1
     regenerator-runtime: ^0.13.7
     semver: ^5.7.1
   peerDependencies:
-    "@parcel/core": ^2.6.2
-  checksum: 32a0480b2986b843d55e0c48a965ff842bf7e4d99325d77c1a7e451a1afc41f7f2602b5a61c79dda1d5382b75834b8e5a452cfb7242d029226f750236cbd3bcf
+    "@parcel/core": ^2.8.3
+  checksum: 29fb203502309e11452837e4ae60589300c0d91fae35cf4774e70959e9f4532960ef4619959ce9c95f0060020faabbcfd024b076f41c7d5f7e126c3547244ff6
   languageName: node
   linkType: hard
 
-"@parcel/transformer-json@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-json@npm:2.6.2"
+"@parcel/transformer-json@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-json@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
+    "@parcel/plugin": 2.8.3
     json5: ^2.2.0
-  checksum: 0b4162ba936999e10ad66a569d16b42947c7e2f98f3ac83fcabe20aefac8990797f8032115441a1d49ad01ccb2555b31d70c3cf7f202ba2a1fcc1bc7e4703fe0
+  checksum: 04da28b0f0ff1ec1d7c6383b880daa2918f85ba1375351690a9a07ea4de102531d5f6addb3091ae5109623e270e1d2cdf582661f4a0805bd982a653a06d26890
   languageName: node
   linkType: hard
 
-"@parcel/transformer-postcss@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-postcss@npm:2.6.2"
+"@parcel/transformer-postcss@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-postcss@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/hash": 2.6.2
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/hash": 2.8.3
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
     clone: ^2.1.1
     nullthrows: ^1.1.1
     postcss-value-parser: ^4.2.0
     semver: ^5.7.1
-  checksum: 473d1e96f9290a158ffe0f662f50769d386773e9dc7f6c5cfec9bb9db2f51020a191639d9f9ad30d73e859ba1e4a78cf2079256095b5481c41230b611f73d453
+  checksum: 2c75cb5cec7112d12a28ac5cddc9f2e939f76e006929757804431b266e7541aae5df6ba8601727c33c7b53f0f971a6df5dfb4394fa0baf284bd2c6fc9b507650
   languageName: node
   linkType: hard
 
-"@parcel/transformer-posthtml@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-posthtml@npm:2.6.2"
+"@parcel/transformer-posthtml@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-posthtml@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
     nullthrows: ^1.1.1
     posthtml: ^0.16.5
     posthtml-parser: ^0.10.1
     posthtml-render: ^3.0.0
     semver: ^5.7.1
-  checksum: 3ddb727aa2f0ff8e867fee2c4a739d8cd4c213e7fbf61b672497a2b51559cb75ff4381881cb0262c511ff5c21a608dfa8805f96c9606a27cddbdff910dc9c2df
+  checksum: 130c95782aebb2491f2d89685db573b3b85ed1f7d9862684db2ab9d11fe8148995185a4e144b818de06d596cf687c5bd57b6b8648d2856cf830a9674c2ec3237
   languageName: node
   linkType: hard
 
-"@parcel/transformer-raw@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-raw@npm:2.6.2"
+"@parcel/transformer-raw@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-raw@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-  checksum: aa8543194f4958f21f74e8c06171116b63c17113d584b121128765277d604965f42a1acb8aca8a7babb2051697cc74edf4be9bd4c203601cff6c291da9cf5383
+    "@parcel/plugin": 2.8.3
+  checksum: 371263bb526373c229aa3e730f2a1d6687bd6b771203d73237c04da3a3ada86c4fcf0b534d3fb366a7b3842df0cf98ae1e033602613cafd9f702f47a6568a83c
   languageName: node
   linkType: hard
 
-"@parcel/transformer-react-refresh-wrap@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-react-refresh-wrap@npm:2.6.2"
+"@parcel/transformer-react-refresh-wrap@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-react-refresh-wrap@npm:2.8.3"
   dependencies:
-    "@parcel/plugin": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/plugin": 2.8.3
+    "@parcel/utils": 2.8.3
     react-refresh: ^0.9.0
-  checksum: 6655b93d5e362b4916eab061ec93badeefec0f07a28245d647d1eda2945f062874a6f2692446353e62c9a261a53840a31a6164775123192cd864d24af5f2e2ab
+  checksum: e9648e04b7f9b29f47ec7baedfba9cc36bbb7e44be6ad4b6b4433c20d1b5a3184a3043b712add16a5cc06300289305d5fa9ebb73c6dc926d04df7c52d9bc3316
   languageName: node
   linkType: hard
 
-"@parcel/transformer-svg@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@parcel/transformer-svg@npm:2.6.2"
+"@parcel/transformer-svg@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/transformer-svg@npm:2.8.3"
   dependencies:
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/hash": 2.6.2
-    "@parcel/plugin": 2.6.2
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/hash": 2.8.3
+    "@parcel/plugin": 2.8.3
     nullthrows: ^1.1.1
     posthtml: ^0.16.5
     posthtml-parser: ^0.10.1
     posthtml-render: ^3.0.0
     semver: ^5.7.1
-  checksum: b768ecc0c69f3b5dd8716453ad2aaa7928ccc8eb95469cdb9d925e9c2e0cf4b3a61abfb8057471d9f106f992548001b628d5af82b75cb29dbb15c697ecbdec53
+  checksum: 1f3db309e47d07849a2b4ffe11b508fd7ae792c0c0ce7b03e442fffb25f5e7425c5027428729bf2b587309265bba0be6da635d62c51ae8ab7e54483eff3f575e
   languageName: node
   linkType: hard
 
@@ -1981,6 +2052,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/types@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/types@npm:2.8.3"
+  dependencies:
+    "@parcel/cache": 2.8.3
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/fs": 2.8.3
+    "@parcel/package-manager": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    "@parcel/workers": 2.8.3
+    utility-types: ^3.10.0
+  checksum: ece0abdd5c7cce32a246155f6828f6a92830341dfbceb81c9aaf7da44e0733b87ea8a607412dfe4b5ec59d7c9a3c1b1463b94ec8a5a82b745541881952003a16
+  languageName: node
+  linkType: hard
+
 "@parcel/utils@npm:2.6.2":
   version: 2.6.2
   resolution: "@parcel/utils@npm:2.6.2"
@@ -1996,6 +2082,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/utils@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/utils@npm:2.8.3"
+  dependencies:
+    "@parcel/codeframe": 2.8.3
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/hash": 2.8.3
+    "@parcel/logger": 2.8.3
+    "@parcel/markdown-ansi": 2.8.3
+    "@parcel/source-map": ^2.1.1
+    chalk: ^4.1.0
+  checksum: 69edf3e7c3ef1ccd4caa6ca838a64b27b27668b213212579111405824ed969e6555857b33f0b9e793e97399a60f034904addde19b98628b37a2fcbbb9141cafa
+  languageName: node
+  linkType: hard
+
 "@parcel/watcher@npm:^2.0.0":
   version: 2.0.5
   resolution: "@parcel/watcher@npm:2.0.5"
@@ -2004,6 +2105,19 @@ __metadata:
     node-gyp: latest
     node-gyp-build: ^4.3.0
   checksum: ddc5b073e82cfadbc3bca3c1c0d5e64f445550f77a073fa3f7b1ac4547ec545fd6474ba5cd7e37aa0121d1ea37e70535172be74f9b081a17e7458849cedffdb0
+  languageName: node
+  linkType: hard
+
+"@parcel/watcher@npm:^2.0.7":
+  version: 2.1.0
+  resolution: "@parcel/watcher@npm:2.1.0"
+  dependencies:
+    is-glob: ^4.0.3
+    micromatch: ^4.0.5
+    node-addon-api: ^3.2.1
+    node-gyp: latest
+    node-gyp-build: ^4.3.0
+  checksum: 17f512ad6d5dbb40053ceea7091f8af754afc63786b8f050b225b89a8ba24900468aad8bc4edb25c0349b4c0c8d061f50aa19242c0af52cbc30e6ebf50c7bf4c
   languageName: node
   linkType: hard
 
@@ -2023,6 +2137,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/workers@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@parcel/workers@npm:2.8.3"
+  dependencies:
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/logger": 2.8.3
+    "@parcel/types": 2.8.3
+    "@parcel/utils": 2.8.3
+    chrome-trace-event: ^1.0.2
+    nullthrows: ^1.1.1
+  peerDependencies:
+    "@parcel/core": ^2.8.3
+  checksum: e3168b3e9ee6bd8e92472e11af9228aca689c5d31841410c908ab31f2a11adf939481d9f4d945ae44d7d3ec1e07980fb3ca5c2f87be82e31a02a94f4655c8e01
+  languageName: node
+  linkType: hard
+
 "@sindresorhus/is@npm:^4.0.0":
   version: 4.6.0
   resolution: "@sindresorhus/is@npm:4.6.0"
@@ -2037,12 +2167,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/helpers@npm:^0.4.2":
-  version: 0.4.3
-  resolution: "@swc/helpers@npm:0.4.3"
+"@swc/helpers@npm:^0.4.12":
+  version: 0.4.14
+  resolution: "@swc/helpers@npm:0.4.14"
   dependencies:
     tslib: ^2.4.0
-  checksum: 5c2f173e950dd3929d84ae48b3586a274d5a874e7cf2013b3d8081e4f8c723fa3a4d4e63b263e84bb7f06431f87b640e91a12655410463c81a3dc2bbc15eceda
+  checksum: 273fd3f3fc461a92f3790cc551ea054745c6d6959afbe1232e6d7aa1c722bbc114d308aab96bef5c78fc0303c85c7b472ef00e2253251cc89737f3b1af56e5a5
   languageName: node
   linkType: hard
 
@@ -2595,6 +2725,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"buffer@npm:^5.5.0":
+  version: 5.7.1
+  resolution: "buffer@npm:5.7.1"
+  dependencies:
+    base64-js: ^1.3.1
+    ieee754: ^1.1.13
+  checksum: e2cf8429e1c4c7b8cbd30834ac09bd61da46ce35f5c22a78e6c2f04497d6d25541b16881e30a019c6fd3154150650ccee27a308eff3e26229d788bbdeb08ab84
+  languageName: node
+  linkType: hard
+
 "buffer@npm:^6.0.3":
   version: 6.0.3
   resolution: "buffer@npm:6.0.3"
@@ -3080,10 +3220,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.1":
-  version: 16.0.1
-  resolution: "dotenv@npm:16.0.1"
-  checksum: f459ffce07b977b7f15d8cc4ee69cdff77d4dd8c5dc8c85d2d485ee84655352c2415f9dd09d42b5b5985ced3be186130871b34e2f3e2569ebc72fbc2e8096792
+"dotenv@npm:^16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
   languageName: node
   linkType: hard
 
@@ -3324,17 +3464,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fluid-framework@npm:^1.3.0-0":
-  version: 1.3.0-100520
-  resolution: "fluid-framework@npm:1.3.0-100520"
+"fluid-framework@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "fluid-framework@npm:1.3.6"
   dependencies:
-    "@fluidframework/container-definitions": 1.3.0-100520
-    "@fluidframework/container-loader": 1.3.0-100520
-    "@fluidframework/driver-definitions": 1.3.0-100520
-    "@fluidframework/fluid-static": 1.3.0-100520
-    "@fluidframework/map": 1.3.0-100520
-    "@fluidframework/sequence": 1.3.0-100520
-  checksum: 4eb8a2cc4ce47850c9d49c7494401726102034f68ae2f4a1d7b41a3cc4084ff192dbf1c3127c0a041c097a5942a02e27a47857795984ca8a89afba7cb878cb1c
+    "@fluidframework/container-definitions": ^1.3.6
+    "@fluidframework/container-loader": ^1.3.6
+    "@fluidframework/driver-definitions": ^1.3.6
+    "@fluidframework/fluid-static": ^1.3.6
+    "@fluidframework/map": ^1.3.6
+    "@fluidframework/sequence": ^1.3.6
+  checksum: c474fbfcc5fb5982405d7bc594ff8d42d7a636b622ad6bd58889726cd40e8012e61f9961d5fb51ff6adaf82f492c80425781ecbb556802284858ba620f7c07fe
   languageName: node
   linkType: hard
 
@@ -3356,18 +3496,19 @@ __metadata:
     "@types/uuid": ^8
     "@yarnpkg/pnpify": ^3.1.3
     assert: ^2.0.0
-    buffer: ^6.0.3
-    dotenv: ^16.0.1
-    fluid-framework: ^1.3.0-0
-    lorem-ipsum: 2.0.8
-    parcel: ^2.6.2
+    buffer: ^5.5.0
+    dotenv: ^16.0.3
+    fluid-framework: ^1.3.6
+    lorem-ipsum: ^2.0.8
+    parcel: ^2.8.3
     process: ^0.11.10
+    punycode: ^1.4.1
     querystring-es3: ^0.2.1
     react: ^18.2.0
     react-dom: ^18.2.0
-    typescript: ^4.7.4
+    typescript: ^5.0.4
     url: ^0.11.0
-    uuid: ^8.3.2
+    uuid: ^9.0.0
   languageName: unknown
   linkType: soft
 
@@ -3754,7 +3895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ieee754@npm:^1.2.1":
+"ieee754@npm:^1.1.13, ieee754@npm:^1.2.1":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
   checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
@@ -3909,7 +4050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-glob@npm:^4.0.1":
+"is-glob@npm:^4.0.1, is-glob@npm:^4.0.3":
   version: 4.0.3
   resolution: "is-glob@npm:4.0.3"
   dependencies:
@@ -4124,6 +4265,96 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lightningcss-darwin-arm64@npm:1.19.0":
+  version: 1.19.0
+  resolution: "lightningcss-darwin-arm64@npm:1.19.0"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"lightningcss-darwin-x64@npm:1.19.0":
+  version: 1.19.0
+  resolution: "lightningcss-darwin-x64@npm:1.19.0"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-arm-gnueabihf@npm:1.19.0":
+  version: 1.19.0
+  resolution: "lightningcss-linux-arm-gnueabihf@npm:1.19.0"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-arm64-gnu@npm:1.19.0":
+  version: 1.19.0
+  resolution: "lightningcss-linux-arm64-gnu@npm:1.19.0"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-arm64-musl@npm:1.19.0":
+  version: 1.19.0
+  resolution: "lightningcss-linux-arm64-musl@npm:1.19.0"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-x64-gnu@npm:1.19.0":
+  version: 1.19.0
+  resolution: "lightningcss-linux-x64-gnu@npm:1.19.0"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-x64-musl@npm:1.19.0":
+  version: 1.19.0
+  resolution: "lightningcss-linux-x64-musl@npm:1.19.0"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"lightningcss-win32-x64-msvc@npm:1.19.0":
+  version: 1.19.0
+  resolution: "lightningcss-win32-x64-msvc@npm:1.19.0"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lightningcss@npm:^1.16.1":
+  version: 1.19.0
+  resolution: "lightningcss@npm:1.19.0"
+  dependencies:
+    detect-libc: ^1.0.3
+    lightningcss-darwin-arm64: 1.19.0
+    lightningcss-darwin-x64: 1.19.0
+    lightningcss-linux-arm-gnueabihf: 1.19.0
+    lightningcss-linux-arm64-gnu: 1.19.0
+    lightningcss-linux-arm64-musl: 1.19.0
+    lightningcss-linux-x64-gnu: 1.19.0
+    lightningcss-linux-x64-musl: 1.19.0
+    lightningcss-win32-x64-msvc: 1.19.0
+  dependenciesMeta:
+    lightningcss-darwin-arm64:
+      optional: true
+    lightningcss-darwin-x64:
+      optional: true
+    lightningcss-linux-arm-gnueabihf:
+      optional: true
+    lightningcss-linux-arm64-gnu:
+      optional: true
+    lightningcss-linux-arm64-musl:
+      optional: true
+    lightningcss-linux-x64-gnu:
+      optional: true
+    lightningcss-linux-x64-musl:
+      optional: true
+    lightningcss-win32-x64-msvc:
+      optional: true
+  checksum: c51de34b7379f9da391d0c1157893bb1484357d1ce2212a8c7943690d7a4fed7f2fa0d2dd7a92004b4444662011564ec7bf31f458a1638c856c529fe07285177
+  languageName: node
+  linkType: hard
+
 "lines-and-columns@npm:^1.1.6":
   version: 1.2.4
   resolution: "lines-and-columns@npm:1.2.4"
@@ -4182,7 +4413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lorem-ipsum@npm:2.0.8":
+"lorem-ipsum@npm:^2.0.8":
   version: 2.0.8
   resolution: "lorem-ipsum@npm:2.0.8"
   dependencies:
@@ -4254,7 +4485,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -4694,27 +4925,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parcel@npm:^2.6.2":
-  version: 2.6.2
-  resolution: "parcel@npm:2.6.2"
+"parcel@npm:^2.8.3":
+  version: 2.8.3
+  resolution: "parcel@npm:2.8.3"
   dependencies:
-    "@parcel/config-default": 2.6.2
-    "@parcel/core": 2.6.2
-    "@parcel/diagnostic": 2.6.2
-    "@parcel/events": 2.6.2
-    "@parcel/fs": 2.6.2
-    "@parcel/logger": 2.6.2
-    "@parcel/package-manager": 2.6.2
-    "@parcel/reporter-cli": 2.6.2
-    "@parcel/reporter-dev-server": 2.6.2
-    "@parcel/utils": 2.6.2
+    "@parcel/config-default": 2.8.3
+    "@parcel/core": 2.8.3
+    "@parcel/diagnostic": 2.8.3
+    "@parcel/events": 2.8.3
+    "@parcel/fs": 2.8.3
+    "@parcel/logger": 2.8.3
+    "@parcel/package-manager": 2.8.3
+    "@parcel/reporter-cli": 2.8.3
+    "@parcel/reporter-dev-server": 2.8.3
+    "@parcel/utils": 2.8.3
     chalk: ^4.1.0
     commander: ^7.0.0
     get-port: ^4.2.0
     v8-compile-cache: ^2.0.0
   bin:
     parcel: lib/bin.js
-  checksum: 4c0de2d27ac9df2568c053f36523d0a549ff0317de37d28e47815d432332e3b56382d4855a3cdb5a7a21bd1297ea3511b93568bbcc59187d21c2e7ba78e6ec23
+  checksum: 09cd2dc23c2ec0417e9de93face185a08679d744c6cbb627fce6ffb507f8af1f8d0642f063e0cf771b699419a29db8ee7ca60cdb32966a65dd3b03da35473bfa
   languageName: node
   linkType: hard
 
@@ -4925,6 +5156,13 @@ __metadata:
   version: 1.3.2
   resolution: "punycode@npm:1.3.2"
   checksum: b8807fd594b1db33335692d1f03e8beeddde6fda7fbb4a2e32925d88d20a3aa4cd8dcc0c109ccaccbd2ba761c208dfaaada83007087ea8bfb0129c9ef1b99ed6
+  languageName: node
+  linkType: hard
+
+"punycode@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "punycode@npm:1.4.1"
+  checksum: fa6e698cb53db45e4628559e557ddaf554103d2a96a1d62892c8f4032cd3bc8871796cae9eabc1bc700e2b6677611521ce5bb1d9a27700086039965d0cf34518
   languageName: node
   linkType: hard
 
@@ -5296,6 +5534,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"srcset@npm:4":
+  version: 4.0.0
+  resolution: "srcset@npm:4.0.0"
+  checksum: aceb898c9281101ef43bfbf96bf04dfae828e1bf942a45df6fad74ae9f8f0a425f4bca1480e0d22879beb40dd2bc6947e0e1e5f4d307a714666196164bc5769d
+  languageName: node
+  linkType: hard
+
 "ssri@npm:^9.0.0":
   version: 9.0.1
   resolution: "ssri@npm:9.0.1"
@@ -5534,23 +5779,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.7.4":
-  version: 4.7.4
-  resolution: "typescript@npm:4.7.4"
+"typescript@npm:^5.0.4":
+  version: 5.0.4
+  resolution: "typescript@npm:5.0.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5750181b1cd7e6482c4195825547e70f944114fb47e58e4aa7553e62f11b3f3173766aef9c281783edfd881f7b8299cf35e3ca8caebe73d8464528c907a164df
+  checksum: 82b94da3f4604a8946da585f7d6c3025fff8410779e5bde2855ab130d05e4fd08938b9e593b6ebed165bda6ad9292b230984f10952cf82f0a0ca07bbeaa08172
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
-  version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=bda367"
+"typescript@patch:typescript@^5.0.4#~builtin<compat/typescript>":
+  version: 5.0.4
+  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 96d3030cb01143570567cb4f3a616b10df65f658f0e74e853e77a089a6a954e35c800be7db8b9bfe9a1ae05d9c2897e281359f65e4caa1caf266368e1c4febd3
+  checksum: 6a1fe9a77bb9c5176ead919cc4a1499ee63e46b4e05bf667079f11bf3a8f7887f135aa72460a4c3b016e6e6bb65a822cb8689a6d86cbfe92d22cc9f501f09213
   languageName: node
   linkType: hard
 
@@ -5646,12 +5891,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^8.3.1, uuid@npm:^8.3.2":
+"uuid@npm:^8.3.1":
   version: 8.3.2
   resolution: "uuid@npm:8.3.2"
   bin:
     uuid: dist/bin/uuid
   checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "uuid@npm:9.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 8dd2c83c43ddc7e1c71e36b60aea40030a6505139af6bee0f382ebcd1a56f6cd3028f7f06ffb07f8cf6ced320b76aea275284b224b002b289f89fe89c389b028
   languageName: node
   linkType: hard
 
