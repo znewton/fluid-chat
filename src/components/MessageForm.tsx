@@ -8,6 +8,7 @@ import { GenChatButton } from "./GenChatButton";
 import { GenTrafficButton } from "./GenTrafficButton";
 import { Menu } from "./Menu";
 import { ToolsMenu } from "./ToolsMenu";
+import { ConnectionTimer } from "./ConnectionTimer";
 
 export interface IMessageFormProps {
   container: IFluidContainer | undefined;
@@ -68,6 +69,7 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (
         &nbsp;&nbsp;Send
       </button>
       <GenChatButton currentUser={props.user} container={props.container} />
+      <ConnectionTimer container={props.container} />
     </form>
   );
 };

@@ -29,6 +29,8 @@ import {
   faPlus,
   faPlugCircleCheck,
   faPlugCircleXmark,
+  faUserPlus,
+  faFileCirclePlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Preload icons
@@ -51,6 +53,8 @@ library.add(
   faRightLeft,
   faSun,
   faUser,
+  faUserPlus,
+  faFileCirclePlus,
   faShuffle,
   faKey,
   faCirclePlay,

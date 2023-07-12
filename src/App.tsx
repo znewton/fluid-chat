@@ -10,32 +10,66 @@ import {
   ChatNavForm,
   FluidLogo,
 } from "./components";
-import { IFluidDocument } from "./definitions";
+import { IFluidDocument, IUser } from "./definitions";
 import { getFluidData } from "./fluid";
 import {
   getCurrentUser,
   getDocumentIdFromUrl,
   setDocumentIdInUrl,
 } from "./utils";
+import { v4 as uuid } from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+interface IChatTabProps {
+  documentId: string;
+  user: IUser;
+  onDocumentIdChange: (id: string) => void;
+}
+const ChatTab: React.FunctionComponent<IChatTabProps> = (
+  props: IChatTabProps
+) => {
+  const [document, setDocument] = React.useState<IFluidDocument>();
+  React.useEffect(() => {
+    if (document && document?.id === props.documentId) {
+      return;
+    }
+    getFluidData(props.documentId).then((fluidDocument) => {
+      setDocument(fluidDocument);
+      if (fluidDocument?.id !== props.documentId) {
+        props.onDocumentIdChange?.(fluidDocument.id);
+      }
+    });
+  }, [props.documentId]);
+  return (
+    <div className="chat">
+      <MessagesDisplay container={document?.container} user={props.user} />
+      <MessageForm container={document?.container} user={props.user} />
+    </div>
+  );
+};
 
 export function App() {
   const user = React.useMemo(() => getCurrentUser(), []);
-  const [document, setDocument] = React.useState<IFluidDocument>();
+  const [docId, setDocId] = React.useState<string | undefined>();
+  const [chatTabs, setChatTabs] = React.useState<string[]>([uuid()]);
 
   const navigateToDocument = (id?: string | "new"): void => {
     const docId = id === "new" ? undefined : id ?? getDocumentIdFromUrl();
-    getFluidData(docId).then((fluidDocument) => {
-      setDocument(fluidDocument);
-    });
+    setDocId(docId);
+  };
+
+  const handleDocumentIdChange = (newDocumentId: string) => {
+    setDocumentIdInUrl(newDocumentId);
+    setDocId(newDocumentId);
+  };
+
+  const addChatTab = () => {
+    setChatTabs([...chatTabs, uuid()]);
   };
 
   React.useEffect(() => {
     navigateToDocument();
   }, []);
-
-  React.useEffect(() => {
-    setDocumentIdInUrl(document?.id ?? "");
-  }, [document?.id]);
 
   return (
     <div className={`App`}>
@@ -56,23 +90,32 @@ export function App() {
           <div className="toolbar-column">
             <div className="toolbar-row">
               <ThemeToggle />
-              <ConnectionTimer container={document?.container} />
             </div>
           </div>
         </nav>
       </section>
       <main className="main-app">
         <nav className="toolbar">
-          <ChatNavForm
-            currentDocId={document?.id}
-            onSubmit={navigateToDocument}
-          />
+          <ChatNavForm currentDocId={docId} onSubmit={navigateToDocument} />
+          <button type="button" onClick={addChatTab}>
+            <FontAwesomeIcon
+              icon={["fas", "user-plus"]}
+              title="Add additional client"
+            />
+            &nbsp;&nbsp;Add Client
+          </button>
           <UserForm user={user} />
         </nav>
-        <div className="chat">
-          <MessagesDisplay container={document?.container} user={user} />
-          <MessageForm container={document?.container} user={user} />
-        </div>
+        {chatTabs.map((id) => {
+          return (
+            <ChatTab
+              key={id}
+              documentId={docId}
+              user={user}
+              onDocumentIdChange={handleDocumentIdChange}
+            />
+          );
+        })}
       </main>
     </div>
   );

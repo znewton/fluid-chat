@@ -54,8 +54,11 @@ export const ChatNavForm: React.FunctionComponent<IChatNavFormProps> = (
         &nbsp;&nbsp;Go
       </button>
       <button type="button" onClick={handleCreateNew}>
-        <FontAwesomeIcon icon={["fas", "plus"]} title="create new document" />
-        &nbsp;&nbsp;Create New
+        <FontAwesomeIcon
+          icon={["fas", "file-circle-plus"]}
+          title="create new document"
+        />
+        &nbsp;&nbsp;New Document
       </button>
     </form>
   );

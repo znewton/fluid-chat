@@ -56,7 +56,7 @@ export const FluidLogo: React.FunctionComponent<IFluidLogoProps> = (
           y="-.20458"
           x="-.26150"
           height="1.4092"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feGaussianBlur id="feGaussianBlur5646" stdDeviation="2.3899464" />
         </filter>
@@ -66,7 +66,7 @@ export const FluidLogo: React.FunctionComponent<IFluidLogoProps> = (
           y="-.27438"
           x="-.44767"
           height="1.5488"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feGaussianBlur id="feGaussianBlur5694" stdDeviation="1.7720207" />
         </filter>
