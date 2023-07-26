@@ -6,7 +6,6 @@ import {
   ThemeToggle,
   Menu,
   Help,
-  ConnectionTimer,
   ChatNavForm,
   FluidLogo,
 } from "./components";
@@ -50,7 +49,9 @@ const ChatTab: React.FunctionComponent<IChatTabProps> = (
 
 export function App() {
   const user = React.useMemo(() => getCurrentUser(), []);
-  const [docId, setDocId] = React.useState<string | undefined>();
+  const [docId, setDocId] = React.useState<string | undefined>(
+    getDocumentIdFromUrl()
+  );
   const [chatTabs, setChatTabs] = React.useState<string[]>([uuid()]);
 
   const navigateToDocument = (id?: string | "new"): void => {
