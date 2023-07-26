@@ -9,14 +9,14 @@ A chat app built on fluid. Useful for testing various scenarios like op and summ
 Run the app against a local Fluid service (like Routerlicious).
 
 1. Run `yarn start`
+2. Copy `src/config.example.ts` to a new file `src/config.ts`.
 
 ## Getting Started - Remote
 
 Run the app against a remote Fluid service (like Azure Fluid Relay).
 
-1. Copy `src/config.example.ts` to a new file `src/config.ts`.
-2. Update the new `config.ts` to export your service connection secrets. This file is gitignored so it will not be committed.
-3. Run `yarn start:remote`, then open the app at http://localhost:1234
+1. Update the new `config.ts` to export your service connection secrets. This file is gitignored so it will not be committed.
+2. Run `yarn start:remote`, then open the app at http://localhost:1234
 
 ## Using the App
 
