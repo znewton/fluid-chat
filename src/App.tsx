@@ -19,6 +19,7 @@ interface IChatTabProps {
   documentId: string;
   readonly?: boolean;
   onDocumentIdChange: (id: string) => void;
+  onCloseClient?: () => void;
 }
 const ChatTab: React.FunctionComponent<IChatTabProps> = (
   props: IChatTabProps
@@ -33,16 +34,32 @@ const ChatTab: React.FunctionComponent<IChatTabProps> = (
     []
   );
   React.useEffect(() => {
-    if (document && document?.id === props.documentId) {
-      return;
+    if (document) {
+      if (document?.id === props.documentId) {
+        return;
+      }
+      // DocId changed. Dispose old container before creating new one.
+      document?.container.dispose();
     }
+    let doc: IFluidDocument | undefined;
     getFluidData(props.documentId, user).then((fluidDocument) => {
       setDocument(fluidDocument);
+      doc = fluidDocument;
       if (fluidDocument?.id !== props.documentId) {
         props.onDocumentIdChange?.(fluidDocument.id);
       }
     });
+    return () => {
+      // Try to make sure we clean up on unmount
+      (doc ?? document)?.container.dispose();
+    };
   }, [props.documentId]);
+
+  const closeClient = React.useCallback(() => {
+    document?.container.dispose();
+    props.onCloseClient?.();
+  }, [props.onCloseClient]);
+
   return (
     <div className="chat">
       <nav className="toolbar">
@@ -50,6 +67,9 @@ const ChatTab: React.FunctionComponent<IChatTabProps> = (
           audience={document?.services?.audience}
           currentUser={user}
         />
+        <button onClick={closeClient} title="Close Client">
+          <FontAwesomeIcon icon={["fas", "xmark"]} title="Close client" />
+        </button>
       </nav>
       <MessagesDisplay container={document?.container} user={user} />
       <MessageForm container={document?.container} user={user} />
@@ -78,6 +98,10 @@ export function App() {
   };
   const addReaderChatTab = () => {
     setChatTabs([...chatTabs, `reader:${uuid()}`]);
+  };
+
+  const handleCloseChatTab = (id: string) => {
+    setChatTabs([...chatTabs].filter((tabId) => tabId !== id));
   };
 
   React.useEffect(() => {
@@ -144,9 +168,11 @@ export function App() {
               documentId={docId}
               readonly={id.startsWith("reader:")}
               onDocumentIdChange={handleDocumentIdChange}
+              onCloseClient={() => handleCloseChatTab(id)}
             />
           );
         })}
+        {chatTabs.length === 0 && <Help />}
       </main>
     </div>
   );

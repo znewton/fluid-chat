@@ -31,6 +31,7 @@ import {
   faPlugCircleXmark,
   faUserPlus,
   faFileCirclePlus,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -64,7 +65,8 @@ library.add(
   faPlus,
   faPlugCircleCheck,
   faPlugCircleXmark,
-  faGithub
+  faGithub,
+  faXmark
 );
 
 // Render app
