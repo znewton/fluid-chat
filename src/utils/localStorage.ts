@@ -1,4 +1,4 @@
-export const usernameKey = "username";
+export const userKey = "user";
 export const themeKey = "theme";
 export const tokenLifetimeKey = "tokenlifetime";
 

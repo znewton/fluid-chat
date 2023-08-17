@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { IUser } from "../definitions";
-import { localStorageManager, usernameKey } from "../utils";
+import { userStore } from "../utils";
 
 export interface IUserFormProps {
   user: IUser;
@@ -10,17 +10,24 @@ export interface IUserFormProps {
 export const UserForm: React.FunctionComponent<IUserFormProps> = (
   props: IUserFormProps
 ) => {
+  const [username, setUsername] = React.useState<string>(
+    `${props.user?.id ?? ""}`
+  );
   const handleLogin: React.FormEventHandler<HTMLFormElement> = (e) => {
     const name = (e.target as any).username.value;
     if (!name) {
       e.preventDefault();
       return;
     }
-    localStorageManager.set(usernameKey, name);
+    userStore.setCurrentUser({
+      id: name,
+      temp: false,
+      permissions: ["read", "write"],
+    });
   };
 
   const handleLogout: React.FormEventHandler<HTMLFormElement> = (e) => {
-    localStorageManager.delete(usernameKey);
+    userStore.clearCurrentUser();
   };
 
   if (!props.user || props.user.temp) {
@@ -32,6 +39,8 @@ export const UserForm: React.FunctionComponent<IUserFormProps> = (
             id="username-input"
             name="username"
             placeholder=""
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <label htmlFor="username-input">Username</label>
         </div>

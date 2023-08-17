@@ -1,3 +1,4 @@
+import { AzureContainerServices } from "@fluidframework/azure-client";
 import { IFluidContainer, SharedMap } from "fluid-framework";
 
 export const initialPayloadKey = "initialpayload";
@@ -8,6 +9,7 @@ export type Theme = "dark" | "light";
 
 export interface IFluidDocument {
     container: IFluidContainer;
+    services: AzureContainerServices;
     id: string;
 }
 

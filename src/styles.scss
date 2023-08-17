@@ -475,3 +475,15 @@ button {
         left: 0;
     }
 }
+
+.audience {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: flex-end;
+
+    .audience-member {
+        size: 1em;
+        border-radius: 1.5em;
+        padding: 0.75em 0.5em;
+    }
+}

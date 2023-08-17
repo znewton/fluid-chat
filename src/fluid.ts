@@ -1,4 +1,4 @@
-import { AzureClient, AzureRemoteConnectionConfig, AzureUser } from "@fluidframework/azure-client";
+import { AzureClient, AzureContainerServices, AzureRemoteConnectionConfig, AzureUser } from "@fluidframework/azure-client";
 import { ContainerSchema, IFluidContainer, SharedMap } from "fluid-framework";
 import { v4 as uuid } from "uuid";
 import { contentKey, IFluidDocument, initialPayloadKey, IPlainMessage, IPointerMessage, IUser, Messages, messagesKey } from "./definitions";
@@ -46,10 +46,11 @@ export const getFluidData = async (documentId: string | undefined): Promise<IFlu
         dynamicObjectTypes: [SharedMap],
     };
     let container: IFluidContainer;
-    let id = documentId;
+    let services: AzureContainerServices;
+    let id: string = documentId;
     console.time("disconnected");
     if (!id) {
-        ({ container } = await client.createContainer(containerSchema));
+        ({ container, services } = await client.createContainer(containerSchema));
         const map: SharedMap = (container.initialObjects.map as SharedMap);
         map.set(messagesKey, []);
         if (window.location.search.includes(initialPayloadKey)) {
@@ -61,9 +62,9 @@ export const getFluidData = async (documentId: string | undefined): Promise<IFlu
         createAndSetPointerMessage(container, { id: "test-user", temp: true, permissions: ["read", "write"] }, "test message")
         id = await container.attach();
     } else {
-        ({ container } = await client.getContainer(id, containerSchema));
+        ({ container, services } = await client.getContainer(id, containerSchema));
     }
-    return { container, id };
+    return { container, services, id };
 };
 
 const getMessages = (container: IFluidContainer): Messages => {

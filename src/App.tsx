@@ -18,6 +18,7 @@ import {
 } from "./utils";
 import { v4 as uuid } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AudienceDisplay } from "./components/AudienceDisplay";
 
 interface IChatTabProps {
   documentId: string;
@@ -41,6 +42,10 @@ const ChatTab: React.FunctionComponent<IChatTabProps> = (
   }, [props.documentId]);
   return (
     <div className="chat">
+      <AudienceDisplay
+        audience={document?.services?.audience}
+        currentUser={props.user}
+      />
       <MessagesDisplay container={document?.container} user={props.user} />
       <MessageForm container={document?.container} user={props.user} />
     </div>
