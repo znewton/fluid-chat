@@ -2,10 +2,9 @@ import { AzureClient, AzureContainerServices, AzureRemoteConnectionConfig, Azure
 import { ContainerSchema, IFluidContainer, SharedMap } from "fluid-framework";
 import { v4 as uuid } from "uuid";
 import { contentKey, IFluidDocument, initialPayloadKey, IPlainMessage, IPointerMessage, IUser, Messages, messagesKey } from "./definitions";
-import { CustomInsecureTokenProvider, getCurrentUser, Kilobyte, randomString, setDocumentIdInUrl } from "./utils";
+import { CustomInsecureTokenProvider, Kilobyte, randomString } from "./utils";
 
-const azureClientP = (async (): Promise<AzureClient> => {
-    const user = getCurrentUser();
+const getAzureClient = async (user?: IUser): Promise<AzureClient> => {
     const azureUser: AzureUser<IUser> = {
         name: user.id,
         id: user.id,
@@ -37,10 +36,10 @@ const azureClientP = (async (): Promise<AzureClient> => {
         } as AzureRemoteConnectionConfig,
     });
     return client;
-})();
+};
 
-export const getFluidData = async (documentId: string | undefined): Promise<IFluidDocument> => {
-    const client = await azureClientP;
+export const getFluidData = async (documentId: string | undefined, user: IUser): Promise<IFluidDocument> => {
+    const client = await getAzureClient(user);
     const containerSchema: ContainerSchema = {
         initialObjects: { map: SharedMap, hiddenData: SharedMap },
         dynamicObjectTypes: [SharedMap],

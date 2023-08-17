@@ -1,7 +1,6 @@
 import React from "react";
 import {
   MessagesDisplay,
-  UserForm,
   MessageForm,
   ThemeToggle,
   Menu,
@@ -11,29 +10,33 @@ import {
 } from "./components";
 import { IFluidDocument, IUser } from "./definitions";
 import { getFluidData } from "./fluid";
-import {
-  getCurrentUser,
-  getDocumentIdFromUrl,
-  setDocumentIdInUrl,
-} from "./utils";
+import { genUserId, getDocumentIdFromUrl, setDocumentIdInUrl } from "./utils";
 import { v4 as uuid } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AudienceDisplay } from "./components/AudienceDisplay";
 
 interface IChatTabProps {
   documentId: string;
-  user: IUser;
+  readonly?: boolean;
   onDocumentIdChange: (id: string) => void;
 }
 const ChatTab: React.FunctionComponent<IChatTabProps> = (
   props: IChatTabProps
 ) => {
   const [document, setDocument] = React.useState<IFluidDocument>();
+  const user: IUser = React.useMemo(
+    () => ({
+      id: genUserId(),
+      temp: true,
+      permissions: props.readonly ? ["read"] : ["read", "write"],
+    }),
+    []
+  );
   React.useEffect(() => {
     if (document && document?.id === props.documentId) {
       return;
     }
-    getFluidData(props.documentId).then((fluidDocument) => {
+    getFluidData(props.documentId, user).then((fluidDocument) => {
       setDocument(fluidDocument);
       if (fluidDocument?.id !== props.documentId) {
         props.onDocumentIdChange?.(fluidDocument.id);
@@ -42,18 +45,19 @@ const ChatTab: React.FunctionComponent<IChatTabProps> = (
   }, [props.documentId]);
   return (
     <div className="chat">
-      <AudienceDisplay
-        audience={document?.services?.audience}
-        currentUser={props.user}
-      />
-      <MessagesDisplay container={document?.container} user={props.user} />
-      <MessageForm container={document?.container} user={props.user} />
+      <nav className="toolbar">
+        <AudienceDisplay
+          audience={document?.services?.audience}
+          currentUser={user}
+        />
+      </nav>
+      <MessagesDisplay container={document?.container} user={user} />
+      <MessageForm container={document?.container} user={user} />
     </div>
   );
 };
 
 export function App() {
-  const user = React.useMemo(() => getCurrentUser(), []);
   const [docId, setDocId] = React.useState<string | undefined>(
     getDocumentIdFromUrl()
   );
@@ -71,6 +75,9 @@ export function App() {
 
   const addChatTab = () => {
     setChatTabs([...chatTabs, uuid()]);
+  };
+  const addReaderChatTab = () => {
+    setChatTabs([...chatTabs, `reader:${uuid()}`]);
   };
 
   React.useEffect(() => {
@@ -96,6 +103,16 @@ export function App() {
           <div className="toolbar-column">
             <div className="toolbar-row">
               <ThemeToggle />
+              <a
+                href="https://github.com/znewton/fluid-chat"
+                target="_blank"
+                style={{ color: "white", fontSize: "1.5em" }}
+              >
+                <FontAwesomeIcon
+                  icon={["fab", "github"]}
+                  title="View source on GitHub"
+                />
+              </a>
             </div>
           </div>
         </nav>
@@ -103,21 +120,29 @@ export function App() {
       <main className="main-app">
         <nav className="toolbar">
           <ChatNavForm currentDocId={docId} onSubmit={navigateToDocument} />
-          <button type="button" onClick={addChatTab}>
-            <FontAwesomeIcon
-              icon={["fas", "user-plus"]}
-              title="Add additional client"
-            />
-            &nbsp;&nbsp;Add Client
-          </button>
-          <UserForm user={user} />
+          <div>
+            <button type="button" onClick={addChatTab}>
+              <FontAwesomeIcon
+                icon={["fas", "user-plus"]}
+                title="Add additional client"
+              />
+              &nbsp;&nbsp;Add Client
+            </button>
+            <button type="button" onClick={addReaderChatTab}>
+              <FontAwesomeIcon
+                icon={["fas", "user-plus"]}
+                title="Add additional client"
+              />
+              &nbsp;&nbsp;Add Read Client
+            </button>
+          </div>
         </nav>
         {chatTabs.map((id) => {
           return (
             <ChatTab
               key={id}
               documentId={docId}
-              user={user}
+              readonly={id.startsWith("reader:")}
               onDocumentIdChange={handleDocumentIdChange}
             />
           );

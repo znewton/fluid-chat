@@ -1,8 +1,7 @@
 import {uniqueNamesGenerator, adjectives, colors, animals} from "unique-names-generator";
 import { IUser } from "../definitions";
-import { localStorageManager, userKey } from "./localStorage";
 
-const genUserId = (): string => {
+export const genUserId = (): string => {
     return uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals], separator: "-" });
 };
 
@@ -22,36 +21,3 @@ export const getRandomUser = (currentUser: IUser): IUser => {
 };
 
 export const canWrite = (user: IUser): boolean => user.permissions.includes("write");
-
-class CurrentUserStore {
-    public setCurrentUser(user: IUser) {
-        localStorageManager.set(userKey, JSON.stringify(user));
-    }
-    public getCurrentUser(): IUser | undefined {
-        try {
-            const user = JSON.parse(localStorageManager.get(userKey) ?? "");
-            return user || undefined;
-        } catch {
-            return undefined;
-        }
-    }
-    public clearCurrentUser() {
-        localStorageManager.delete(userKey);
-    }
-}
-export const userStore = new CurrentUserStore();
-
-export const getCurrentUser = (): IUser => {
-    const currentUser = userStore.getCurrentUser();
-    if (currentUser === undefined) {
-        const name = genUserId();
-        const newTempUser: IUser = {
-            id: name,
-            temp: true,
-            permissions: ["read", "write"],
-        }
-        userStore.setCurrentUser(newTempUser);
-        return newTempUser;
-    }
-    return currentUser;
-}

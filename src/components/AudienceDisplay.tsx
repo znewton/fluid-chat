@@ -2,6 +2,7 @@ import React from "react";
 import { IAzureAudience } from "@fluidframework/azure-client";
 import { IUser } from "../definitions";
 import { getHexCodeColorFromString } from "../utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface IAudienceDisplayProps {
   audience: IAzureAudience | undefined;
@@ -36,11 +37,19 @@ export const AudienceDisplay: React.FunctionComponent<IAudienceDisplayProps> = (
           style.border = `3px solid #${userColor}`;
         }
         return (
-          <div className="audience-member" key={userId} style={style}>
-            {userId
-              .split("-")
-              .map((part) => part[0].toUpperCase())
-              .join("")}
+          <div
+            className="audience-member"
+            key={userId}
+            style={style}
+            title={userId}
+          >
+            <FontAwesomeIcon icon={["fas", "user"]} />{" "}
+            <span style={{ marginLeft: "0.4em" }}>
+              {userId
+                .split("-")
+                .map((part) => part[0].toUpperCase())
+                .join("")}
+            </span>
           </div>
         );
       })}

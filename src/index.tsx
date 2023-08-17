@@ -32,6 +32,7 @@ import {
   faUserPlus,
   faFileCirclePlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 // Preload icons
 library.add(
@@ -62,7 +63,8 @@ library.add(
   faLocationArrow,
   faPlus,
   faPlugCircleCheck,
-  faPlugCircleXmark
+  faPlugCircleXmark,
+  faGithub
 );
 
 // Render app
