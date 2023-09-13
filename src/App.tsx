@@ -38,6 +38,10 @@ const ChatTab: React.FunctionComponent<IChatTabProps> = (
       if (document?.id === props.documentId) {
         return;
       }
+      console.log("new container detected, disposing old one", {
+        old: document?.id,
+        new: props.documentId,
+      });
       // DocId changed. Dispose old container before creating new one.
       document?.container.dispose();
     }
@@ -49,16 +53,12 @@ const ChatTab: React.FunctionComponent<IChatTabProps> = (
         props.onDocumentIdChange?.(fluidDocument.id);
       }
     });
-    return () => {
-      // Try to make sure we clean up on unmount
-      (doc ?? document)?.container.dispose();
-    };
   }, [props.documentId]);
 
   const closeClient = React.useCallback(() => {
     document?.container.dispose();
     props.onCloseClient?.();
-  }, [props.onCloseClient]);
+  }, [props.onCloseClient, document]);
 
   return (
     <div className="chat">
@@ -85,6 +85,9 @@ export function App() {
 
   const navigateToDocument = (id?: string | "new"): void => {
     const docId = id === "new" ? undefined : id ?? getDocumentIdFromUrl();
+    if (chatTabs.length === 0) {
+      setChatTabs([uuid()]);
+    }
     setDocId(docId);
   };
 

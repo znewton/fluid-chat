@@ -56,10 +56,14 @@ export const getFluidData = async (documentId: string | undefined, user: IUser):
             const hiddenData: SharedMap = (container.initialObjects.hiddenData as SharedMap);
             hiddenData.set(initialPayloadKey, `${randomString().repeat(Kilobyte * Kilobyte)}`); // 10Mb initial payload size
         }
-        createAndSetPointerMessage(container, { id: "test-user", temp: true, permissions: ["read", "write"] }, "test message")
-        createAndSetPointerMessage(container, { id: "test-user", temp: true, permissions: ["read", "write"] }, "test message")
-        createAndSetPointerMessage(container, { id: "test-user", temp: true, permissions: ["read", "write"] }, "test message")
+        await Promise.all([
+            createAndSetPointerMessage(container, { id: "test-user", temp: true, permissions: ["read", "write"] }, "test message"),
+            createAndSetPointerMessage(container, { id: "test-user", temp: true, permissions: ["read", "write"] }, "test message"),
+            createAndSetPointerMessage(container, { id: "test-user", temp: true, permissions: ["read", "write"] }, "test message"),
+        ]);
+        
         id = await container.attach();
+        console.log("attached container", id);
     } else {
         ({ container, services } = await client.getContainer(id, containerSchema));
     }
