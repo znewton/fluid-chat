@@ -1,11 +1,11 @@
 import React from "react";
+import { RiCloseFill } from "react-icons/ri";
 import { MessagesDisplay } from "./MessageDisplay";
 import { MessageForm } from "./MessageForm";
 import { AudienceDisplay } from "./AudienceDisplay";
 import { IFluidDocument, IUser } from "../definitions";
 import { getFluidData } from "../fluid";
 import { genUserId } from "../utils";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface IChatTabProps {
   documentId: string;
@@ -61,7 +61,7 @@ export const ChatTab: React.FunctionComponent<IChatTabProps> = (
           currentUser={user}
         />
         <button onClick={closeClient} title="Close Client">
-          <FontAwesomeIcon icon={["fas", "xmark"]} title="Close client" />
+          <RiCloseFill />
         </button>
       </nav>
       <MessagesDisplay container={document?.container} user={user} />

@@ -1,10 +1,9 @@
-import type { IconName, IconPrefix } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
 
 export interface IMenuProps {
   content: React.ReactElement;
-  icon: [IconPrefix, IconName];
+  icon: React.ReactElement;
   name: string;
   vPosition: "from-top" | "from-bottom";
   hPosition: "from-left" | "from-right";
@@ -33,12 +32,9 @@ export const Menu: React.FunctionComponent<IMenuProps> = (
         onClick={() => setOpen(!open)}
         className={`menu-toggle ${open ? "open" : "closed"}`}
       >
-        <FontAwesomeIcon
-          icon={props.icon}
-          title={`open / close ${props.name} menu`}
-        />
+        {props.icon}
         &nbsp;&nbsp;{props.name}&nbsp;&nbsp;
-        <FontAwesomeIcon icon={["fas", open ? "caret-down" : "caret-up"]} />
+        {open ? <RiArrowDownSFill /> : <RiArrowUpSFill />}
       </button>
     </div>
   );

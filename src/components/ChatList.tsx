@@ -1,6 +1,6 @@
 import React from "react";
-import { IChat, clearChatList } from "../utils";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RiChatHistoryFill, RiDeleteBinFill } from "react-icons/ri";
+import { IChat } from "../utils";
 
 export interface IChatListProps {
   activeChatId?: string;
@@ -18,56 +18,37 @@ export const ChatList: React.FunctionComponent<IChatListProps> = ({
   return (
     <div className="chat-list">
       <div className="chat-list-title">
-        <span>
-          <span className="fa-layers fa-fw fa-lg" title="create new chat">
-            <FontAwesomeIcon
-              icon={["fas", "message"]}
-              transform="shrink-4 up-2 left-2"
-            />
-            <FontAwesomeIcon
-              icon={["fas", "message"]}
-              transform="shrink-4 down-4 right-4 flip-h"
-              inverse
-            />
-            <FontAwesomeIcon
-              icon={["fas", "message"]}
-              transform="shrink-6 down-4 right-4 flip-h"
-            />
-          </span>
-          &nbsp;&nbsp;Recent Chat History
+        <span className="text-icon-row">
+          <RiChatHistoryFill />
+          &nbsp;Recent Chat History
         </span>
         <button className="chat-list-clear" onClick={onClearHistory}>
-          <FontAwesomeIcon icon={["fas", "trash"]} />
+          <RiDeleteBinFill />
           &nbsp;&nbsp;Clear
         </button>
       </div>
-      <menu className="chat-list-menu">
+      <nav className="chat-list-menu">
         {chats.slice(0, 5).map((chat) => {
           return (
-            <li
+            <a
+              href={`/#${chat.id}`}
               className={`btn chat-list-item ${
                 activeChatId === chat.id ? "active" : ""
               }`}
+              onClick={() => onChatSelect(chat.id)}
             >
-              <a
-                href={`/#${chat.id}`}
-                className="chat-list-item-link"
-                onClick={() => onChatSelect(chat.id)}
-              >
-                <span className="chat-list-item-title">{chat.id}</span>
-                <span className="chat-list-item-subtext">
-                  Created:{" "}
-                  {new Date(chat.creationDatetime).toLocaleDateString()}
-                </span>
-                <span className="chat-list-item-subtext">
-                  Last Opened:{" "}
-                  {new Date(chat.lastOpenedDatetime).toLocaleDateString()}
-                </span>
-              </a>
-            </li>
+              <span className="chat-list-item-title">{chat.id}</span>
+              <span className="chat-list-item-subtext">
+                Created: {new Date(chat.creationDatetime).toLocaleDateString()}
+              </span>
+              <span className="chat-list-item-subtext">
+                Last Opened:{" "}
+                {new Date(chat.lastOpenedDatetime).toLocaleDateString()}
+              </span>
+            </a>
           );
         })}
-      </menu>
+      </nav>
     </div>
   );
 };

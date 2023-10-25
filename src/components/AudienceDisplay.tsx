@@ -1,8 +1,8 @@
 import React from "react";
 import { IAzureAudience } from "@fluidframework/azure-client";
+import { RiUserFill } from "react-icons/ri";
 import { IUser } from "../definitions";
 import { getHexCodeColorFromString } from "../utils";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface IAudienceDisplayProps {
   audience: IAzureAudience | undefined;
@@ -43,7 +43,7 @@ export const AudienceDisplay: React.FunctionComponent<IAudienceDisplayProps> = (
             style={style}
             title={userId}
           >
-            <FontAwesomeIcon icon={["fas", "user"]} />{" "}
+            <RiUserFill />{" "}
             <span style={{ marginLeft: "0.4em" }}>
               {userId
                 .split("-")

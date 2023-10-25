@@ -1,5 +1,11 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import {
+  RiDoorOpenFill,
+  RiKey2Fill,
+  RiMailSendFill,
+  RiUpload2Fill,
+  RiWifiOffFill,
+} from "react-icons/ri";
 import { createAndSetPointerMessage } from "../fluid";
 import {
   canWrite,
@@ -30,7 +36,7 @@ const SendLargeMessageTool: React.FunctionComponent<
     <li role="menuitem" onClick={handleClick} data-disabled={disabled}>
       <p>
         <span className="menu-icon">
-          <FontAwesomeIcon icon={["fas", "envelope"]} />
+          <RiMailSendFill />
         </span>
         <strong>Send {props.sizeKb}Kb Message</strong>
       </p>
@@ -65,7 +71,7 @@ const SendLargeMessagesTool: React.FunctionComponent<
     <li role="menuitem" onClick={handleClick} data-disabled={disabled}>
       <p>
         <span className="menu-icon">
-          <FontAwesomeIcon icon={["fas", "envelopes-bulk"]} />
+          <RiMailSendFill />
         </span>
         <strong>
           Send {props.count}x {props.sizeKb}Kb Messages
@@ -119,7 +125,7 @@ export const ToolsMenu: React.FunctionComponent<IToolsMenuProps> = (
       <li role="menuitem" onClick={handleDisconnect}>
         <p>
           <span className="menu-icon">
-            <FontAwesomeIcon icon={["fas", "plug-circle-exclamation"]} />
+            <RiWifiOffFill />
           </span>
           <strong>Disconnect</strong>
         </p>
@@ -131,7 +137,7 @@ export const ToolsMenu: React.FunctionComponent<IToolsMenuProps> = (
       <li role="menuitem" onClick={handleLeave}>
         <p>
           <span className="menu-icon">
-            <FontAwesomeIcon icon={["fas", "hand-peace"]} />
+            <RiDoorOpenFill />
           </span>
           <strong>Leave</strong>
         </p>
@@ -143,7 +149,7 @@ export const ToolsMenu: React.FunctionComponent<IToolsMenuProps> = (
       <li role="menuitem" onClick={handleCreateNewSessionWithHeavyPayload}>
         <p>
           <span className="menu-icon">
-            <FontAwesomeIcon icon={["fas", "weight-hanging"]} />
+            <RiUpload2Fill />
           </span>
           <strong>Create New Session with 10Mb Initial Payload</strong>
         </p>
@@ -156,7 +162,7 @@ export const ToolsMenu: React.FunctionComponent<IToolsMenuProps> = (
       <li role="menuitem" onClick={handleToggleTokenLifetimeReduction}>
         <p>
           <span className="menu-icon">
-            <FontAwesomeIcon icon={["fas", "key"]} />
+            <RiKey2Fill />
           </span>
           <strong>
             {configuredTokenLifetime !== undefined

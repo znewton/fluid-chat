@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IFluidContainer } from "fluid-framework";
+import { RiShuffleFill } from "react-icons/ri";
 import { IUser } from "../definitions";
 import { createAndSetPlainMessage } from "../fluid";
 import { canWrite, generateLoremIpsumMessage, getRandomUser } from "../utils";
@@ -26,7 +26,7 @@ export const GenChatButton: React.FunctionComponent<IGenChatButtonProps> = (
 
   return (
     <button type="button" onClick={handleGenChat} disabled={disableInputs}>
-      <FontAwesomeIcon icon={["fas", "shuffle"]} title="send random message" />
+      <RiShuffleFill />
       &nbsp;&nbsp;Gen Chat
     </button>
   );

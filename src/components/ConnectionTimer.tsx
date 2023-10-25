@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ConnectionState, IFluidContainer } from "fluid-framework";
 import React from "react";
+import { RiWifiFill, RiWifiOffFill } from "react-icons/ri";
 import { Timer } from "./Timer";
 
 interface IConnectionTimerProps {
@@ -41,14 +41,14 @@ export const ConnectionTimer: React.FunctionComponent<IConnectionTimerProps> = (
       {connected ? (
         <div className="connected" title="Connected to service">
           <span className="timer-label">
-            <FontAwesomeIcon icon={["fas", "plug-circle-check"]} />
+            <RiWifiFill />
           </span>
           <Timer key="connected" />
         </div>
       ) : (
         <div className="disconnected" title="Disconnected from service">
           <span className="timer-label">
-            <FontAwesomeIcon icon={["fas", "plug-circle-exclamation"]} />
+            <RiWifiOffFill />
           </span>
           <Timer key="disconnected" />
         </div>

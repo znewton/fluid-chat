@@ -1,5 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RiLoopRightFill } from "react-icons/ri";
 import type { IFluidContainer } from "fluid-framework";
 import { IUser } from "../definitions";
 import { createAndSetPlainMessage, createAndSetPointerMessage } from "../fluid";
@@ -62,10 +62,7 @@ export const GenTrafficButton: React.FunctionComponent<
       onClick={handleToggleGenTraffic}
       disabled={disableInputs}
     >
-      <FontAwesomeIcon
-        icon={["fas", working ? "circle-stop" : "circle-play"]}
-        title="toggle traffic generation"
-      />
+      <RiLoopRightFill className={working ? "spin" : ""} />
       &nbsp;&nbsp;Gen Traffic
     </button>
   );

@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { RiChatForwardFill, RiChatNewFill } from "react-icons/ri";
 
 export interface IChatNavFormProps {
   currentDocId: string | undefined;
@@ -47,22 +47,11 @@ export const ChatNavForm: React.FunctionComponent<IChatNavFormProps> = (
         <label htmlFor="document-id-input">Chat ID</label>
       </div>
       <button type="submit" disabled={props.currentDocId === input}>
-        <FontAwesomeIcon icon={["fas", "location-arrow"]} title="go to chat" />
+        <RiChatForwardFill />
         &nbsp;&nbsp;Go
       </button>
       <button type="button" onClick={handleCreateNew}>
-        <span className="fa-layers fa-fw fa-lg" title="create new chat">
-          <FontAwesomeIcon icon={["fas", "message"]} />
-          <FontAwesomeIcon
-            icon={["fas", "circle"]}
-            transform="shrink-4 down-6 right-6"
-            inverse
-          />
-          <FontAwesomeIcon
-            icon={["fas", "circle-plus"]}
-            transform="shrink-6 down-6 right-6"
-          />
-        </span>
+        <RiChatNewFill />
         &nbsp;&nbsp;New Chat
       </button>
     </form>
