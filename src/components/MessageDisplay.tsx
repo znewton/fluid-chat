@@ -1,11 +1,10 @@
 import { IFluidContainer, SharedMap } from "fluid-framework";
 import React from "react";
 import {
-  contentKey,
   IPointerMessage,
   IUser,
   Messages,
-  messagesKey,
+  SharedMapKeys,
 } from "../definitions";
 import { getHexCodeColorFromString } from "../utils";
 import { Help } from "./Help";
@@ -49,7 +48,7 @@ const PointerMessage: React.FunctionComponent<IPointerMessageProps> = (
   React.useEffect(() => {
     (async () => {
       const map = (await props.pointer.get()) as SharedMap;
-      setContent(map.get<string>(contentKey));
+      setContent(map.get<string>(SharedMapKeys.content));
     })();
   }, []);
   return (
@@ -84,7 +83,7 @@ export const MessagesDisplay: React.FunctionComponent<IMessageDisplayProps> = (
     }
     const map: SharedMap = props.container.initialObjects.map as SharedMap;
     const updateMessages = () => {
-      setMessages([...(map.get(messagesKey) ?? [])]);
+      setMessages([...(map.get(SharedMapKeys.messages) ?? [])]);
     };
     updateMessages();
     map.on("valueChanged", updateMessages);

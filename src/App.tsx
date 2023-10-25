@@ -115,25 +115,35 @@ export function App() {
     <div className={`App`}>
       <section className="side-nav">
         <nav className="toolbar">
-          <div className="toolbar-row">
-            <h1>
-              <FluidLogo /> Fluid Chat
-            </h1>
-            <Menu
-              name="Help"
-              icon={["fas", "question-circle"]}
-              content={<Help />}
-              hPosition="from-left"
-              vPosition="from-bottom"
-            />
+          <div className="toolbar-column">
+            <div className="toolbar-row">
+              <h1>
+                <FluidLogo /> Fluid Chat
+              </h1>
+            </div>
+            <div className="toolbar-row" style={{ marginTop: "1em" }}>
+              <ThemeToggle />
+              <Menu
+                name="Help"
+                icon={["fas", "question-circle"]}
+                content={<Help />}
+                hPosition="from-left"
+                vPosition="from-bottom"
+              />
+            </div>
           </div>
           <div className="toolbar-column">
             <div className="toolbar-row">
-              <ThemeToggle />
+              <span>
+                Created by{" "}
+                <a href="https://github.com/znewton" target="_blank">
+                  Zach
+                </a>
+              </span>
               <a
                 href="https://github.com/znewton/fluid-chat"
                 target="_blank"
-                style={{ color: "white", fontSize: "1.5em" }}
+                style={{ fontSize: "1.5em" }}
               >
                 <FontAwesomeIcon
                   icon={["fab", "github"]}

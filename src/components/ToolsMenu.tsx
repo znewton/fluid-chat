@@ -1,14 +1,11 @@
-import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { createAndSetPointerMessage } from "../fluid";
 import {
   canWrite,
   generateLargeMessage,
-  Kilobyte,
   localStorageManager,
-  randomString,
-  tokenLifetimeKey,
+  StorageKeys,
 } from "../utils";
 import { IMessageFormProps } from "./MessageForm";
 
@@ -96,16 +93,17 @@ export const ToolsMenu: React.FunctionComponent<IToolsMenuProps> = (
     console.log("Leaving...");
     props.container.dispose();
   };
-  const configuredTokenLifetime: string =
-    localStorageManager.get(tokenLifetimeKey);
+  const configuredTokenLifetime: string = localStorageManager.get(
+    StorageKeys.tokenLifetime
+  );
   const handleToggleTokenLifetimeReduction: React.MouseEventHandler<
     HTMLLIElement
   > = (e) => {
     if (configuredTokenLifetime !== undefined) {
-      localStorageManager.delete(tokenLifetimeKey);
+      localStorageManager.delete(StorageKeys.tokenLifetime);
     } else {
       localStorageManager.set(
-        tokenLifetimeKey,
+        StorageKeys.tokenLifetime,
         `${45 * 1000}` /* 45 seconds in milliseconds */
       );
     }

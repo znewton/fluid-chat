@@ -1,9 +1,13 @@
 import { AzureContainerServices } from "@fluidframework/azure-client";
 import { IFluidContainer, SharedMap } from "fluid-framework";
 
-export const initialPayloadKey = "initialpayload";
-export const messagesKey = "messages";
-export const contentKey = "content";
+export const QueryStringKeys = Object.freeze({
+    initialPayload: "initialpayload",
+});
+export const SharedMapKeys = Object.freeze({
+    messages: "messages",
+    content: "content",
+});
 
 export type Theme = "dark" | "light";
 

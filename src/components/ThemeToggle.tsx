@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Theme } from "../definitions";
-import { localStorageManager, themeKey } from "../utils";
+import { StorageKeys, localStorageManager } from "../utils";
 
 const defaultTheme: Theme = window.matchMedia("(prefers-color-scheme: dark)")
   .matches
@@ -15,7 +15,7 @@ export const ThemeToggle: React.FunctionComponent<IThemeToggleProps> = (
   const [theme, setTheme] = React.useState<Theme>(defaultTheme);
 
   React.useEffect(() => {
-    const storedTheme = localStorageManager.get(themeKey);
+    const storedTheme = localStorageManager.get(StorageKeys.theme);
     if (storedTheme !== "dark" && storedTheme !== "light") {
       setTheme(defaultTheme);
     }
@@ -23,7 +23,7 @@ export const ThemeToggle: React.FunctionComponent<IThemeToggleProps> = (
   }, []);
 
   React.useEffect(() => {
-    localStorageManager.set(themeKey, theme);
+    localStorageManager.set(StorageKeys.theme, theme);
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
@@ -31,7 +31,7 @@ export const ThemeToggle: React.FunctionComponent<IThemeToggleProps> = (
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
-    localStorageManager.set(themeKey, newTheme);
+    localStorageManager.set(StorageKeys.theme, newTheme);
   };
 
   const icons = [

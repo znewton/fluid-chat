@@ -1,6 +1,9 @@
-export const userKey = "user";
-export const themeKey = "theme";
-export const tokenLifetimeKey = "tokenlifetime";
+export const StorageKeys = Object.freeze({
+    user: "user",
+    theme: "theme",
+    tokenLifetime: "tokenlifetime",
+    documents: "documents",
+});
 
 class LocalStorageManager {
     private readonly prefix = "fluid-chat";
