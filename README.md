@@ -22,7 +22,7 @@ Run the app against a remote Fluid service (like Azure Fluid Relay).
 
 - Opening a new window at http://localhost:1234/ will create a new chat session (i.e. document)
 - Opening a new window at http://localhost:1234/#existing-document-id will open an existing chat session (i.e. document)
-- View the "Help" dialogue when opening a new document, or any time from the "?" button at the top left.
+- View the "Help" dialogue when opening a new chat session (i.e. document), or any time from the "?" button at the top left.
 
 ## Validate local `routerlicious-driver` changes
 

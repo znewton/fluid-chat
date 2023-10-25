@@ -2,7 +2,7 @@ import { AzureClient, AzureContainerServices, AzureRemoteConnectionConfig, Azure
 import { ContainerSchema, IFluidContainer, SharedMap } from "fluid-framework";
 import { v4 as uuid } from "uuid";
 import { IFluidDocument, IPlainMessage, IPointerMessage, IUser, Messages, QueryStringKeys, SharedMapKeys } from "./definitions";
-import { CustomInsecureTokenProvider, Kilobyte, randomString } from "./utils";
+import { CustomInsecureTokenProvider, Kilobyte, randomString, getServiceConfig } from "./utils";
 
 /**
  * Create an AzureClient instance with configured service endpoint and credentials.
@@ -13,22 +13,7 @@ const getAzureClient = async (user?: IUser): Promise<AzureClient> => {
         id: user.id,
         additionalDetails: user,
     };
-    const { tenantId, tenantKey, endpoint } = await (async () => {
-        if (process.env.FLUID_CONFIG === "local") {
-            console.log("Using local connection configs");
-            return {
-                tenantId: "fluid",
-                tenantKey: "create-new-tenants-if-going-to-production",
-                endpoint: "http://localhost:3003",
-            };
-        }
-        const { config } = await import("./config/config");
-        return {
-            tenantId: config.tenantId,
-            tenantKey: config.tenantKey,
-            endpoint: config.serviceEndpoint,
-        };
-    })();
+    const { tenantId, tenantKey, serviceEndpoint: endpoint } = await getServiceConfig();
     console.log({ tenantId, tenantKey, endpoint, user })
     const client = new AzureClient({
         connection: {

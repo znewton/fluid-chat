@@ -1,87 +1,29 @@
 import React from "react";
 import {
-  MessagesDisplay,
-  MessageForm,
   ThemeToggle,
   Menu,
   Help,
   ChatNavForm,
   FluidLogo,
+  ChatTab,
+  ChatList,
 } from "./components";
-import { IFluidDocument, IUser } from "./definitions";
-import { getFluidData } from "./fluid";
-import { genUserId, getDocumentIdFromUrl, setDocumentIdInUrl } from "./utils";
+import {
+  IChat,
+  clearChatList,
+  getDocumentIdFromUrl,
+  setDocumentIdInUrl,
+  updateChatList,
+} from "./utils";
 import { v4 as uuid } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AudienceDisplay } from "./components/AudienceDisplay";
-
-interface IChatTabProps {
-  documentId: string;
-  readonly?: boolean;
-  onDocumentIdChange: (id: string) => void;
-  onCloseClient?: () => void;
-}
-const ChatTab: React.FunctionComponent<IChatTabProps> = (
-  props: IChatTabProps
-) => {
-  const [document, setDocument] = React.useState<IFluidDocument>();
-  const user: IUser = React.useMemo(
-    () => ({
-      id: genUserId(),
-      temp: true,
-      permissions: props.readonly ? ["read"] : ["read", "write"],
-    }),
-    []
-  );
-  React.useEffect(() => {
-    if (document) {
-      if (document?.id === props.documentId) {
-        return;
-      }
-      console.log("new container detected, disposing old one", {
-        old: document?.id,
-        new: props.documentId,
-      });
-      // DocId changed. Dispose old container before creating new one.
-      document?.container.dispose();
-    }
-    let doc: IFluidDocument | undefined;
-    getFluidData(props.documentId, user).then((fluidDocument) => {
-      setDocument(fluidDocument);
-      doc = fluidDocument;
-      if (fluidDocument?.id !== props.documentId) {
-        props.onDocumentIdChange?.(fluidDocument.id);
-      }
-    });
-  }, [props.documentId]);
-
-  const closeClient = React.useCallback(() => {
-    document?.container.dispose();
-    props.onCloseClient?.();
-  }, [props.onCloseClient, document]);
-
-  return (
-    <div className="chat">
-      <nav className="toolbar">
-        <AudienceDisplay
-          audience={document?.services?.audience}
-          currentUser={user}
-        />
-        <button onClick={closeClient} title="Close Client">
-          <FontAwesomeIcon icon={["fas", "xmark"]} title="Close client" />
-        </button>
-      </nav>
-      <MessagesDisplay container={document?.container} user={user} />
-      <MessageForm container={document?.container} user={user} />
-    </div>
-  );
-};
 
 export function App() {
   const [docId, setDocId] = React.useState<string | undefined>(
     getDocumentIdFromUrl()
   );
   const [chatTabs, setChatTabs] = React.useState<string[]>([uuid()]);
+  const [chatList, setChatList] = React.useState<IChat[]>([]);
 
   const navigateToDocument = (id?: string | "new"): void => {
     const docId = id === "new" ? undefined : id ?? getDocumentIdFromUrl();
@@ -107,9 +49,25 @@ export function App() {
     setChatTabs([...chatTabs].filter((tabId) => tabId !== id));
   };
 
+  const handleClearChatHistory = () => {
+    clearChatList()
+      .then(() => {
+        setChatList([]);
+      })
+      .catch((e) => {
+        console.error("Failed to clear chat history.", e);
+      });
+  };
+
   React.useEffect(() => {
     navigateToDocument();
   }, []);
+
+  React.useEffect(() => {
+    updateChatList(docId).then((chats) => {
+      setChatList(chats);
+    });
+  }, [docId]);
 
   return (
     <div className={`App`}>
@@ -131,6 +89,14 @@ export function App() {
                 vPosition="from-bottom"
               />
             </div>
+          </div>
+          <div className="toolbar-column">
+            <ChatList
+              chats={chatList}
+              onChatSelect={navigateToDocument}
+              activeChatId={docId}
+              onClearHistory={handleClearChatHistory}
+            />
           </div>
           <div className="toolbar-column">
             <div className="toolbar-row">

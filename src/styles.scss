@@ -278,7 +278,8 @@ form {
     }
 }
 
-button {
+button,
+.btn {
     font: inherit;
     text-align: center;
     vertical-align: middle;
@@ -291,7 +292,8 @@ button {
     border: 1px solid var(--neutral-text-color);
     transition: color 100ms, border-color 100ms;
 
-    &:not(:disabled):hover {
+    &:not(:disabled):hover,
+    &:not(:disabled).active {
         position: relative;
         cursor: pointer;
         z-index: 2;
@@ -494,4 +496,59 @@ button {
             margin-left: 0.5em;
         }
     }
+}
+
+.chat-list-title {
+    margin-bottom: 0.5em;
+    opacity: 0.9;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-list-menu {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    .chat-list-item {
+        &:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    .chat-list-item-link {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        text-align: start;
+
+
+        .chat-list-item-title,
+        .chat-list-item-subtext {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chat-list-item-title {
+            font-weight: 500;
+        }
+
+        .chat-list-item-subtext {
+            font-weight: 300;
+            opacity: 0.75;
+            font-size: 0.8em;
+        }
+    }
+}
+
+.chat-list-clear {
+    // border: none;
+    margin-top: 0.5em;
+    opacity: 0.9;
+    font-size: 0.75em;
 }

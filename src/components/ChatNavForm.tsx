@@ -40,25 +40,30 @@ export const ChatNavForm: React.FunctionComponent<IChatNavFormProps> = (
           value={input}
           onBlur={handleBlur}
           onChange={handleInput}
-          placeholder="Navigate to a different document..."
+          placeholder="Navigate to a different chat..."
           size={36}
           autoComplete="on"
         />
-        <label htmlFor="document-id-input">Document ID</label>
+        <label htmlFor="document-id-input">Chat ID</label>
       </div>
       <button type="submit" disabled={props.currentDocId === input}>
-        <FontAwesomeIcon
-          icon={["fas", "location-arrow"]}
-          title="go to document"
-        />
+        <FontAwesomeIcon icon={["fas", "location-arrow"]} title="go to chat" />
         &nbsp;&nbsp;Go
       </button>
       <button type="button" onClick={handleCreateNew}>
-        <FontAwesomeIcon
-          icon={["fas", "file-circle-plus"]}
-          title="create new document"
-        />
-        &nbsp;&nbsp;New Document
+        <span className="fa-layers fa-fw fa-lg" title="create new chat">
+          <FontAwesomeIcon icon={["fas", "message"]} />
+          <FontAwesomeIcon
+            icon={["fas", "circle"]}
+            transform="shrink-4 down-6 right-6"
+            inverse
+          />
+          <FontAwesomeIcon
+            icon={["fas", "circle-plus"]}
+            transform="shrink-6 down-6 right-6"
+          />
+        </span>
+        &nbsp;&nbsp;New Chat
       </button>
     </form>
   );

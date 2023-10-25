@@ -32,6 +32,11 @@ import {
   faUserPlus,
   faFileCirclePlus,
   faXmark,
+  faMessage,
+  faClockRotateLeft,
+  faCirclePlus,
+  faCircle,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -61,12 +66,16 @@ library.add(
   faKey,
   faCirclePlay,
   faCircleStop,
+  faCirclePlus,
+  faCircle,
   faLocationArrow,
   faPlus,
   faPlugCircleCheck,
   faPlugCircleXmark,
   faGithub,
-  faXmark
+  faXmark,
+  faMessage,
+  faTrash
 );
 
 // Render app

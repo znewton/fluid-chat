@@ -2,7 +2,7 @@ export const StorageKeys = Object.freeze({
     user: "user",
     theme: "theme",
     tokenLifetime: "tokenlifetime",
-    documents: "documents",
+    chats: "chats",
 });
 
 class LocalStorageManager {
