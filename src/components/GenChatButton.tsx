@@ -1,5 +1,5 @@
 import React from "react";
-import type { IFluidContainer } from "fluid-framework";
+import type { IFluidContainer } from "@fluidframework/fluid-static";
 import { RiShuffleFill } from "react-icons/ri";
 import { IUser } from "../definitions";
 import { createAndSetPlainMessage } from "../fluid";

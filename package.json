@@ -9,10 +9,13 @@
     "build:report": "parcel build --reporter @parcel/reporter-bundle-analyzer"
   },
   "dependencies": {
-    "@fluidframework/azure-client": "^2.0.0-internal.4.3.0",
-    "@fluidframework/azure-service-utils": "^2.0.0-internal.4.3.0",
-    "@fluidframework/test-runtime-utils": "^2.0.0-internal.4.3.0",
-    "fluid-framework": "^2.0.0-internal.4.3.0",
+    "@fluidframework/azure-client": "2.0.0-internal.7.1.0",
+    "@fluidframework/azure-service-utils": "2.0.0-internal.7.1.0",
+    "@fluidframework/container-definitions": "2.0.0-internal.7.1.0",
+    "@fluidframework/container-loader": "2.0.0-internal.7.1.0",
+    "@fluidframework/fluid-static": "2.0.0-internal.7.1.0",
+    "@fluidframework/map": "2.0.0-internal.7.1.0",
+    "@fluidframework/test-runtime-utils": "2.0.0-internal.7.1.0",
     "lorem-ipsum": "^2.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,5 +40,10 @@
     "querystring-es3": "^0.2.1",
     "typescript": "^5.0.4",
     "url": "^0.11.0"
+  },
+  "targets": {
+    "main": {
+      "optimize": true
+    }
   }
 }

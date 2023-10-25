@@ -1,5 +1,6 @@
 import { AzureContainerServices } from "@fluidframework/azure-client";
-import { IFluidContainer, SharedMap } from "fluid-framework";
+import { IFluidContainer } from "@fluidframework/fluid-static";
+import { SharedMap } from "@fluidframework/map";
 
 export const QueryStringKeys = Object.freeze({
     initialPayload: "initialpayload",

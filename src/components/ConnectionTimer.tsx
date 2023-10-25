@@ -1,4 +1,5 @@
-import { ConnectionState, IFluidContainer } from "fluid-framework";
+import { IFluidContainer } from "@fluidframework/fluid-static";
+import { ConnectionState } from "@fluidframework/container-loader";
 import React from "react";
 import { RiWifiFill, RiWifiOffFill } from "react-icons/ri";
 import { Timer } from "./Timer";

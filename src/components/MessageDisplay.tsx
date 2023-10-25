@@ -1,4 +1,5 @@
-import { IFluidContainer, SharedMap } from "fluid-framework";
+import type { IFluidContainer } from "@fluidframework/fluid-static";
+import { SharedMap } from "@fluidframework/map";
 import React from "react";
 import {
   IPointerMessage,

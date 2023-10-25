@@ -1,5 +1,6 @@
 import { AzureClient, AzureContainerServices, AzureRemoteConnectionConfig, AzureUser } from "@fluidframework/azure-client";
-import { ContainerSchema, IFluidContainer, SharedMap } from "fluid-framework";
+import type { IFluidContainer, ContainerSchema } from "@fluidframework/fluid-static";
+import { SharedMap } from "@fluidframework/map";
 import { v4 as uuid } from "uuid";
 import { IFluidDocument, IPlainMessage, IPointerMessage, IUser, Messages, QueryStringKeys, SharedMapKeys } from "./definitions";
 import { CustomInsecureTokenProvider, Kilobyte, randomString, getServiceConfig } from "./utils";

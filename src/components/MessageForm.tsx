@@ -1,4 +1,5 @@
-import { ConnectionState, IFluidContainer } from "fluid-framework";
+import { IFluidContainer } from "@fluidframework/fluid-static";
+import { ConnectionState } from "@fluidframework/container-loader";
 import React from "react";
 import { IUser } from "../definitions";
 import { createAndSetPlainMessage, createAndSetPointerMessage } from "../fluid";

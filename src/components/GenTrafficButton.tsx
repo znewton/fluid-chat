@@ -1,6 +1,6 @@
 import React from "react";
 import { RiLoopRightFill } from "react-icons/ri";
-import type { IFluidContainer } from "fluid-framework";
+import type { IFluidContainer } from "@fluidframework/fluid-static";
 import { IUser } from "../definitions";
 import { createAndSetPlainMessage, createAndSetPointerMessage } from "../fluid";
 import {

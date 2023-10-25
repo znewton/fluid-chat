@@ -1,12 +1,12 @@
 {
-    "compilerOptions": {
-        "isolatedModules": true,
-        "experimentalDecorators": true,
-        "jsx": "react",
-        "esModuleInterop": true,
-        "lib": [
-            "DOM",
-            "es2019"
-        ],
-    }
+  "compilerOptions": {
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "lib": [
+      "DOM",
+      "es2019"
+    ]
+  }
 }
