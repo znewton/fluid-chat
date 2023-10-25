@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ConnectionState, IFluidContainer } from "fluid-framework";
 import React from "react";
 import { IUser } from "../definitions";
@@ -9,6 +8,7 @@ import { GenTrafficButton } from "./GenTrafficButton";
 import { Menu } from "./Menu";
 import { ToolsMenu } from "./ToolsMenu";
 import { ConnectionTimer } from "./ConnectionTimer";
+import { RiSendPlaneFill, RiToolsFill } from "react-icons/ri";
 
 export interface IMessageFormProps {
   container: IFluidContainer | undefined;
@@ -52,7 +52,7 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (
     <form onSubmit={handleSubmit}>
       <Menu
         name="Tools"
-        icon={["fas", "screwdriver-wrench"]}
+        icon={<RiToolsFill />}
         content={<ToolsMenu {...props} />}
         vPosition="from-top"
         hPosition="from-left"
@@ -65,7 +65,7 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (
         disabled={disableInputs}
       />
       <button type="submit" disabled={disableInputs}>
-        <FontAwesomeIcon icon={["fas", "paper-plane"]} title="send message" />
+        <RiSendPlaneFill />
         &nbsp;&nbsp;Send
       </button>
       <GenChatButton currentUser={props.user} container={props.container} />

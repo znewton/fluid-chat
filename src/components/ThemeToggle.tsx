@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { RiArrowLeftRightFill, RiMoonFill, RiSunFill } from "react-icons/ri";
 import { Theme } from "../definitions";
 import { StorageKeys, localStorageManager } from "../utils";
 
@@ -34,11 +34,7 @@ export const ThemeToggle: React.FunctionComponent<IThemeToggleProps> = (
     localStorageManager.set(StorageKeys.theme, newTheme);
   };
 
-  const icons = [
-    <FontAwesomeIcon icon={["fas", "moon"]} key="moon" />,
-    <FontAwesomeIcon icon={["fas", "right-left"]} key="right-left" />,
-    <FontAwesomeIcon icon={["fas", "sun"]} key="sun" />,
-  ];
+  const icons = [<RiMoonFill />, <RiArrowLeftRightFill />, <RiSunFill />];
 
   return (
     <button

@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { RiSendPlaneFill, RiToolsFill, RiUserAddFill } from "react-icons/ri";
 
 export const Help: React.FunctionComponent = () => {
   return (
@@ -26,8 +26,7 @@ export const Help: React.FunctionComponent = () => {
           </p>
           <p>
             Type something here then press "Enter" or click the "
-            <FontAwesomeIcon icon={["fas", "paper-plane"]} /> Send" icon (bottom
-            right) to send a message.
+            <RiSendPlaneFill /> Send" icon (bottom right) to send a message.
           </p>
           <p>
             At a low-level, this sends an individual "op" by adding a string
@@ -73,11 +72,10 @@ export const Help: React.FunctionComponent = () => {
           <p>
             Adding strings to an array is pretty limiting for reproducing
             various user scenarios. Several tools have been added to the "
-            <FontAwesomeIcon icon={["fas", "screwdriver-wrench"]} /> Tools" menu
-            to the left of the input bar. Click the "
-            <FontAwesomeIcon icon={["fas", "screwdriver-wrench"]} /> Tools" menu
-            button to view a complete list of special utilities and their main
-            usecases.
+            <RiToolsFill /> Tools" menu to the left of the input bar. Click the
+            "
+            <RiToolsFill /> Tools" menu button to view a complete list of
+            special utilities and their main usecases.
           </p>
         </li>
         <li>
@@ -93,20 +91,17 @@ export const Help: React.FunctionComponent = () => {
         </li>
         <li>
           <p>
-            <strong>User Login (top right):</strong>
+            <strong>Add Client (top right):</strong>
           </p>
           <p>
-            By default, you will be assigned a GUID name per page load. To send
-            messages with a consistent user id across windows/refreshes, enter a
-            username into the "username" input then "Log in{" "}
-            <FontAwesomeIcon icon={["fas", "right-to-bracket"]} />
-            ". This will cause you to rejoin the session as the given username.
-            Username is stored across page loads. Username can be cleared by
-            clicking "Log out{" "}
-            <FontAwesomeIcon icon={["fas", "right-from-bracket"]} />
-            ".
+            By default, you will see one chat window. To add another chat client
+            in the same window, click the "<RiUserAddFill />
+            &nbsp; Add Client" button in the top right.
           </p>
-          <p>To establish a read-only client, log in as "reader".</p>
+          <p>
+            To establish a read-only client, click the "<RiUserAddFill />
+            &nbsp; Add Read Client".
+          </p>
         </li>
       </ul>
     </main>

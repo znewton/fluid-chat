@@ -17,6 +17,8 @@ body {
     --neutral-text-color: #d1d1d1;
     --primary-text-color: #7520f5;
     --fa-inverse: var(--background-color);
+    --success-color: rgba(50, 200, 50);
+    --failure-color: rgba(177, 72, 107);
     /* Non-color specific */
     --border-radius-small: 0.5em;
     --border-radius-large: 1em;
@@ -35,6 +37,8 @@ body {
     --neutral-text-color: #666666;
     --primary-text-color: #a375ff;
     --fa-inverse: var(--background-color);
+    --success-color: palegreen;
+    --failure-color: palevioletred;
 }
 
 .theme-toggle {
@@ -87,7 +91,7 @@ body {
 .side-nav {
     display: flex;
     flex-direction: column;
-    width: 20em;
+    width: 15em;
     height: calc(100vh - 2em);
     padding: 1em 1em;
     position: relative;
@@ -141,36 +145,28 @@ body {
     .connected,
     .disconnected {
         position: relative;
+        display: flex;
         border-radius: var(--border-radius-small);
         padding: var(--interactive-element-padding);
         border-width: 1px;
         border-style: solid;
+        align-items: center;
     }
 
     .timer-label {
         font-size: 0.9em;
-        margin-right: 0.5em;
+        margin-right: 0.3em;
     }
 }
 
 .connected {
-    color: rgba(50, 200, 50);
-    box-shadow: rgba(50, 200, 50, 0.7) 0px 2px 19px 0px;
-}
-
-[data-theme="dark"] .connected {
-    color: palegreen;
-    box-shadow: rgba(151, 251, 151, 0.7) 0px 2px 19px 0px;
+    color: var(--success-color);
+    box-shadow: color-mix(in srgb, var(--success-color) 70%, transparent) 0px 2px 19px 0px;
 }
 
 .disconnected {
-    color: rgba(177, 72, 107);
-    box-shadow: rgba(177, 72, 107, 0.7) 0px 7px 29px 0px;
-}
-
-[data-theme="dark"] .disconnected {
-    color: palevioletred;
-    box-shadow: rgba(217, 112, 147, 0.7) 0px 7px 29px 0px;
+    color: var(--failure-color);
+    box-shadow: color-mix(in srgb, var(--failure-color) 70%, transparent) 0px 7px 29px 0px;
 }
 
 .chat {
@@ -283,8 +279,9 @@ form {
 button,
 .btn {
     font: inherit;
-    text-align: center;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: var(--border-radius-small);
     padding: var(--interactive-element-padding);
@@ -335,7 +332,7 @@ button,
     opacity: 0.2;
     z-index: 2;
 
-    .open {
+    &.open {
         display: block;
     }
 }
@@ -358,7 +355,7 @@ button,
 
     &.open {
         display: block;
-        z-index: 2;
+        z-index: 4;
     }
 
     &.from-top {
@@ -379,6 +376,8 @@ button,
 
     .help-display {
         padding: 1em;
+        max-height: 50vh;
+        overflow: auto;
     }
 }
 
@@ -500,6 +499,10 @@ button,
     }
 }
 
+.chat-list {
+    width: 100%;
+}
+
 .chat-list-title {
     margin-bottom: 0.5em;
     opacity: 0.9;
@@ -511,26 +514,26 @@ button,
 }
 
 .chat-list-menu {
+    z-index: 0;
     list-style: none;
     padding-left: 0;
     margin: 0;
 
     .chat-list-item {
-        &:not(:last-child) {
-            margin-bottom: 0.5em;
-        }
-    }
-
-    .chat-list-item-link {
         display: flex;
         flex-direction: column;
         text-decoration: none;
         color: inherit;
-        text-align: start;
+        align-items: start;
+        justify-content: center;
 
+        &:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
 
         .chat-list-item-title,
         .chat-list-item-subtext {
+            width: 100%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -553,4 +556,31 @@ button,
     margin-top: 0.5em;
     opacity: 0.9;
     font-size: 0.75em;
+
+    &:hover {
+        color: var(--failure-color) !important;
+        border-color: var(--failure-color) !important;
+    }
+}
+
+.text-icon-row {
+    display: inline-flex;
+    align-items: center;
+}
+
+.spin {
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { RiGithubFill, RiQuestionFill, RiUserAddFill } from "react-icons/ri";
 import {
   ThemeToggle,
   Menu,
@@ -16,7 +17,6 @@ import {
   updateChatList,
 } from "./utils";
 import { v4 as uuid } from "uuid";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function App() {
   const [docId, setDocId] = React.useState<string | undefined>(
@@ -83,7 +83,7 @@ export function App() {
               <ThemeToggle />
               <Menu
                 name="Help"
-                icon={["fas", "question-circle"]}
+                icon={<RiQuestionFill />}
                 content={<Help />}
                 hPosition="from-left"
                 vPosition="from-bottom"
@@ -111,10 +111,7 @@ export function App() {
                 target="_blank"
                 style={{ fontSize: "1.5em" }}
               >
-                <FontAwesomeIcon
-                  icon={["fab", "github"]}
-                  title="View source on GitHub"
-                />
+                <RiGithubFill />
               </a>
             </div>
           </div>
@@ -125,17 +122,11 @@ export function App() {
           <ChatNavForm currentDocId={docId} onSubmit={navigateToDocument} />
           <div>
             <button type="button" onClick={addChatTab}>
-              <FontAwesomeIcon
-                icon={["fas", "user-plus"]}
-                title="Add additional client"
-              />
+              <RiUserAddFill />
               &nbsp;&nbsp;Add Client
             </button>
             <button type="button" onClick={addReaderChatTab}>
-              <FontAwesomeIcon
-                icon={["fas", "user-plus"]}
-                title="Add additional client"
-              />
+              <RiUserAddFill />
               &nbsp;&nbsp;Add Read Client
             </button>
           </div>
