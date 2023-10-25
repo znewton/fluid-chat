@@ -15,11 +15,6 @@ export const ChatList: React.FunctionComponent<IChatListProps> = ({
   onChatSelect,
   onClearHistory,
 }) => {
-  const handleClearHistory = () => {
-    clearChatList().catch((e) => {
-      console.error("Failed to clear chat history.", e);
-    });
-  };
   return (
     <div className="chat-list">
       <div className="chat-list-title">

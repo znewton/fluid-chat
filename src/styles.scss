@@ -16,6 +16,7 @@ body {
     --text-color: #242424;
     --neutral-text-color: #d1d1d1;
     --primary-text-color: #7520f5;
+    --fa-inverse: var(--background-color);
     /* Non-color specific */
     --border-radius-small: 0.5em;
     --border-radius-large: 1em;
@@ -33,6 +34,7 @@ body {
     --text-color: #f8f8ff;
     --neutral-text-color: #666666;
     --primary-text-color: #a375ff;
+    --fa-inverse: var(--background-color);
 }
 
 .theme-toggle {
