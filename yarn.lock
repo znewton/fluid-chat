@@ -55,6 +55,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fluid-experimental/data-objects@npm:2.0.0-internal.7.1.0":
+  version: 2.0.0-internal.7.1.0
+  resolution: "@fluid-experimental/data-objects@npm:2.0.0-internal.7.1.0"
+  dependencies:
+    "@fluid-internal/client-utils": ">=2.0.0-internal.7.1.0 <2.0.0-internal.7.2.0"
+    "@fluidframework/aqueduct": ">=2.0.0-internal.7.1.0 <2.0.0-internal.7.2.0"
+    "@fluidframework/core-interfaces": ">=2.0.0-internal.7.1.0 <2.0.0-internal.7.2.0"
+    "@fluidframework/core-utils": ">=2.0.0-internal.7.1.0 <2.0.0-internal.7.2.0"
+    "@fluidframework/datastore-definitions": ">=2.0.0-internal.7.1.0 <2.0.0-internal.7.2.0"
+    "@fluidframework/map": ">=2.0.0-internal.7.1.0 <2.0.0-internal.7.2.0"
+    "@fluidframework/runtime-definitions": ">=2.0.0-internal.7.1.0 <2.0.0-internal.7.2.0"
+    events: ^3.1.0
+  checksum: c1cd2d0727e2e92a313856e8ff4b5b897bdd89a72f163b3a63804b4c0143cbe86a2308a672e34d0a7fa0656038d593fd114e264e9e07e3f47afdf0c94740fc3e
+  languageName: node
+  linkType: hard
+
 "@fluid-internal/client-utils@npm:>=2.0.0-internal.7.1.0 <2.0.0-internal.7.2.0":
   version: 2.0.0-internal.7.1.0
   resolution: "@fluid-internal/client-utils@npm:2.0.0-internal.7.1.0"
@@ -2991,6 +3007,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fluid-react@workspace:."
   dependencies:
+    "@fluid-experimental/data-objects": 2.0.0-internal.7.1.0
     "@fluidframework/azure-client": 2.0.0-internal.7.1.0
     "@fluidframework/azure-service-utils": 2.0.0-internal.7.1.0
     "@fluidframework/container-definitions": 2.0.0-internal.7.1.0

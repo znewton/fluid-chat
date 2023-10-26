@@ -4,6 +4,7 @@ import { SharedMap } from "@fluidframework/map";
 import { v4 as uuid } from "uuid";
 import { IFluidDocument, IPlainMessage, IPointerMessage, IUser, Messages, QueryStringKeys, SharedMapKeys } from "./definitions";
 import { CustomInsecureTokenProvider, Kilobyte, randomString, getServiceConfig } from "./utils";
+import { Signaler } from "@fluid-experimental/data-objects";
 
 /**
  * Create an AzureClient instance with configured service endpoint and credentials.
@@ -34,7 +35,7 @@ const getAzureClient = async (user?: IUser): Promise<AzureClient> => {
 export const getFluidData = async (documentId: string | undefined, user: IUser): Promise<IFluidDocument> => {
     const client = await getAzureClient(user);
     const containerSchema: ContainerSchema = {
-        initialObjects: { map: SharedMap, hiddenData: SharedMap },
+        initialObjects: { map: SharedMap, hiddenData: SharedMap, signaler: Signaler },
         dynamicObjectTypes: [SharedMap],
     };
     let container: IFluidContainer;

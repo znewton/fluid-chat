@@ -9,6 +9,7 @@
     "build:report": "parcel build --reporter @parcel/reporter-bundle-analyzer"
   },
   "dependencies": {
+    "@fluid-experimental/data-objects": "2.0.0-internal.7.1.0",
     "@fluidframework/azure-client": "2.0.0-internal.7.1.0",
     "@fluidframework/azure-service-utils": "2.0.0-internal.7.1.0",
     "@fluidframework/container-definitions": "2.0.0-internal.7.1.0",
