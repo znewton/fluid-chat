@@ -3,10 +3,16 @@ import { ConnectionState } from "@fluidframework/container-loader";
 import React from "react";
 import { RiWifiFill, RiWifiOffFill } from "react-icons/ri";
 import { Timer } from "./Timer";
+import { Signaler } from "@fluid-experimental/data-objects";
 
 interface IConnectionTimerProps {
   container: IFluidContainer;
 }
+
+function delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms) );
+}
+
 export const ConnectionTimer: React.FunctionComponent<IConnectionTimerProps> = (
   props
 ) => {
@@ -24,8 +30,12 @@ export const ConnectionTimer: React.FunctionComponent<IConnectionTimerProps> = (
       console.time("disconnected");
       setConnected(false);
     });
-    props.container.on("connected", () => {
+    props.container.on("connected", async () => {
       console.log("-- connected to document --");
+      const signaler = props.container.initialObjects.signaler as Signaler;
+      // Add the submitSignal use here to future reference.
+      signaler.submitSignal("connectRequest");
+      await delay(100);
       console.timeEnd("disconnected");
       setConnected(true);
     });
