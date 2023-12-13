@@ -34,7 +34,11 @@ export const ThemeToggle: React.FunctionComponent<IThemeToggleProps> = (
     localStorageManager.set(StorageKeys.theme, newTheme);
   };
 
-  const icons = [<RiMoonFill />, <RiArrowLeftRightFill />, <RiSunFill />];
+  const icons = [
+    <RiMoonFill key="moon" />,
+    <RiArrowLeftRightFill key="arrows" />,
+    <RiSunFill key="sun" />,
+  ];
 
   return (
     <button

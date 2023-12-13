@@ -36,6 +36,7 @@ export const ChatList: React.FunctionComponent<IChatListProps> = ({
                 activeChatId === chat.id ? "active" : ""
               }`}
               onClick={() => onChatSelect(chat.id)}
+              key={chat.id}
             >
               <span className="chat-list-item-title">{chat.id}</span>
               <span className="chat-list-item-subtext">
