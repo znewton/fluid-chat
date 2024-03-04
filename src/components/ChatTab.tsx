@@ -3,7 +3,7 @@ import { RiCloseFill } from "react-icons/ri";
 import { MessagesDisplay } from "./MessageDisplay";
 import { MessageForm } from "./MessageForm";
 import { AudienceDisplay } from "./AudienceDisplay";
-import { IFluidDocument, IUser } from "../definitions";
+import { IFluidDocument, IFluidChatUser } from "../definitions";
 import { getFluidData } from "../fluid";
 import { genUserId } from "../utils";
 import { ConnectionTimer } from "./ConnectionTimer";
@@ -21,7 +21,7 @@ export const ChatTab: React.FunctionComponent<IChatTabProps> = (
   props: IChatTabProps
 ) => {
   const [document, setDocument] = React.useState<IFluidDocument>();
-  const user: IUser = React.useMemo(
+  const user: IFluidChatUser = React.useMemo(
     () => ({
       id: genUserId(),
       temp: true,

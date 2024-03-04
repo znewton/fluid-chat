@@ -1,7 +1,7 @@
 import React from "react";
 import { RiLoopRightFill } from "react-icons/ri";
 import type { IFluidContainer } from "@fluidframework/fluid-static";
-import { IUser } from "../definitions";
+import { IFluidChatUser } from "../definitions";
 import { createAndSetPlainMessage, createAndSetPointerMessage } from "../fluid";
 import {
   canWrite,
@@ -11,7 +11,7 @@ import {
 } from "../utils";
 
 export interface IGenTrafficButtonProps {
-  currentUser: IUser;
+  currentUser: IFluidChatUser;
   container: IFluidContainer;
 }
 

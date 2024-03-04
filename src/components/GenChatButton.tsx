@@ -1,12 +1,12 @@
 import React from "react";
 import type { IFluidContainer } from "@fluidframework/fluid-static";
 import { RiShuffleFill } from "react-icons/ri";
-import { IUser } from "../definitions";
+import { IFluidChatUser } from "../definitions";
 import { createAndSetPlainMessage } from "../fluid";
 import { canWrite, generateLoremIpsumMessage, getRandomUser } from "../utils";
 
 export interface IGenChatButtonProps {
-  currentUser: IUser;
+  currentUser: IFluidChatUser;
   container: IFluidContainer;
 }
 

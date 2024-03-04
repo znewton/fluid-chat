@@ -1,6 +1,6 @@
 import { AzureUser, ITokenProvider, ITokenResponse, ScopeType } from "@fluidframework/azure-client";
 import { generateToken } from "@fluidframework/azure-service-utils";
-import { IUser } from "../definitions";
+import { IFluidChatUser } from "../definitions";
 import { localStorageManager, StorageKeys } from "./localStorage";
 
 export class CustomInsecureTokenProvider implements ITokenProvider {
@@ -16,7 +16,7 @@ export class CustomInsecureTokenProvider implements ITokenProvider {
         /**
          * User with whom generated tokens will be associated.
          */
-        private readonly user: AzureUser<IUser>,
+        private readonly user: AzureUser<IFluidChatUser>,
     ) {
         const tokenLifetimeFromLocalStorage = localStorageManager.get(StorageKeys.tokenLifetime);
         this.tokenLifetimeMs = tokenLifetimeFromLocalStorage ? Number.parseInt(tokenLifetimeFromLocalStorage) : undefined;

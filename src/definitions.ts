@@ -38,7 +38,7 @@ export interface IPointerMessage extends IMessage {
     handle: SharedMap["handle"];
 }
 export type Messages = (IPlainMessage | IPointerMessage)[];
-export interface IUser {
+export interface IFluidChatUser {
     id: string;
     temp: boolean;
     permissions: ("read" | "write")[];

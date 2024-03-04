@@ -3,7 +3,7 @@ import { SharedMap } from "@fluidframework/map";
 import React from "react";
 import {
   IPointerMessage,
-  IUser,
+  IFluidChatUser,
   Messages,
   SharedMapKeys,
 } from "../definitions";
@@ -62,16 +62,12 @@ const PointerMessage: React.FunctionComponent<IPointerMessageProps> = (
 };
 
 const EmptySessionDisplay: React.FunctionComponent = () => {
-  return (
-    <div className="empty-session-display">
-      <Help />
-    </div>
-  );
+  return <Help />;
 };
 
 interface IMessageDisplayProps {
   container: IFluidContainer;
-  user: IUser;
+  user: IFluidChatUser;
 }
 export const MessagesDisplay: React.FunctionComponent<IMessageDisplayProps> = (
   props

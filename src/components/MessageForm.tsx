@@ -1,7 +1,7 @@
 import { IFluidContainer } from "@fluidframework/fluid-static";
 import { ConnectionState } from "@fluidframework/container-loader";
 import React from "react";
-import { IUser } from "../definitions";
+import { IFluidChatUser } from "../definitions";
 import { createAndSetPlainMessage, createAndSetPointerMessage } from "../fluid";
 import { canWrite } from "../utils";
 import { GenChatButton } from "./GenChatButton";
@@ -12,7 +12,7 @@ import { RiSendPlaneFill, RiToolsFill } from "react-icons/ri";
 
 export interface IMessageFormProps {
   container: IFluidContainer | undefined;
-  user: IUser;
+  user: IFluidChatUser;
 }
 
 export const MessageForm: React.FunctionComponent<IMessageFormProps> = (

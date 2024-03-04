@@ -2,15 +2,15 @@ import { AzureClient, AzureContainerServices, AzureRemoteConnectionConfig, Azure
 import type { IFluidContainer, ContainerSchema } from "@fluidframework/fluid-static";
 import { SharedMap } from "@fluidframework/map";
 import { v4 as uuid } from "uuid";
-import { IFluidDocument, IPlainMessage, IPointerMessage, IUser, Messages, QueryStringKeys, SharedMapKeys } from "./definitions";
+import { IFluidDocument, IPlainMessage, IPointerMessage, IFluidChatUser, Messages, QueryStringKeys, SharedMapKeys } from "./definitions";
 import { CustomInsecureTokenProvider, Kilobyte, randomString, getServiceConfig } from "./utils";
 import { Signaler } from "@fluid-experimental/data-objects";
 
 /**
  * Create an AzureClient instance with configured service endpoint and credentials.
  */
-const getAzureClient = async (user: IUser): Promise<AzureClient> => {
-    const azureUser: AzureUser<IUser> = {
+const getAzureClient = async (user: IFluidChatUser): Promise<AzureClient> => {
+    const azureUser: AzureUser<IFluidChatUser> = {
         name: user.id,
         id: user.id,
         additionalDetails: user,
@@ -32,7 +32,7 @@ const getAzureClient = async (user: IUser): Promise<AzureClient> => {
  * Creates an AzureClient instance, then uses that to create a new attached container or get an existing container.
  * Before attaching a new container, it will first add 3 new "pointer" messages to the initial "map" SharedMap object while detached.
  */
-export const getFluidData = async (documentId: string | undefined, user: IUser): Promise<IFluidDocument> => {
+export const getFluidData = async (documentId: string | undefined, user: IFluidChatUser): Promise<IFluidDocument> => {
     const client = await getAzureClient(user);
     const containerSchema: ContainerSchema = {
         initialObjects: { map: SharedMap, hiddenData: SharedMap, signaler: Signaler },
@@ -59,7 +59,15 @@ export const getFluidData = async (documentId: string | undefined, user: IUser):
         id = await container.attach();
         console.log("attached container", id);
     } else {
-        ({ container, services } = await client.getContainer(id, containerSchema));
+        const AzureUserAssertBugText = 'Provided user was not an "AzureUser".';
+        const getContainer = () => client.getContainer(id, containerSchema).catch((error) => {
+            if (error.message === AzureUserAssertBugText) {
+                console.warn("AzureUser assertion bug, retrying");
+                return getContainer();
+            }
+            throw error;
+        });
+        ({ container, services } = await getContainer());
     }
     return { container, services, id };
 };
@@ -75,7 +83,7 @@ const getMessages = (container: IFluidContainer): Messages => {
  * Creates an {@link IPlainMessage} message in a new SharedMap which is then pointed to by the initial "map" SharedMap object.
  * This is useful for sending large messages, because it will be in its own DO, which will not meaningfully increase the size of the initial SharedMap DO.
  */
-export const createAndSetPointerMessage = async (container: IFluidContainer, user: IUser, messageContent: string): Promise<IPointerMessage> => {
+export const createAndSetPointerMessage = async (container: IFluidContainer, user: IFluidChatUser, messageContent: string): Promise<IPointerMessage> => {
     const map = container.initialObjects.map as SharedMap;
     const messages = getMessages(container);
     const sharedMap = await container.create(SharedMap);
@@ -94,7 +102,7 @@ export const createAndSetPointerMessage = async (container: IFluidContainer, use
  * Creates an {@link IPlainMessage} message on the initial "map" SharedMap object.
  * Be careful setting this to a large message, because it will continue to increase the same DO, which could then eventually cause the DO to be too large.
  */
-export const createAndSetPlainMessage = (container: IFluidContainer, user: IUser, messageContent: string): IPlainMessage => {
+export const createAndSetPlainMessage = (container: IFluidContainer, user: IFluidChatUser, messageContent: string): IPlainMessage => {
     const map = container.initialObjects.map as SharedMap;
     const messages = getMessages(container);
     const message: IPlainMessage = {

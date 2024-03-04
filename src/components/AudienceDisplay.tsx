@@ -1,12 +1,12 @@
 import React from "react";
 import { AzureMember, IAzureAudience } from "@fluidframework/azure-client";
 import { RiUserFill } from "react-icons/ri";
-import { IUser } from "../definitions";
+import { IFluidChatUser } from "../definitions";
 import { getHexCodeColorFromString } from "../utils";
 
 export interface IAudienceDisplayProps {
   audience: IAzureAudience | undefined;
-  currentUser: IUser;
+  currentUser: IFluidChatUser;
 }
 
 export const AudienceDisplay: React.FunctionComponent<IAudienceDisplayProps> = (

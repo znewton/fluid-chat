@@ -10,7 +10,7 @@ import {
   RiEmotionSadFill,
 } from "react-icons/ri";
 import { v4 as uuid } from "uuid";
-import { IUser } from "../definitions";
+import { IFluidChatUser } from "../definitions";
 import { INotification } from "./NotificationDisplay";
 
 export enum Reaction {
@@ -33,7 +33,7 @@ export const ReactionToEmojiMap: { [key in Reaction]: JSX.Element } = {
 
 export interface IReactionMenuProps {
   container: IFluidContainer;
-  user: IUser;
+  user: IFluidChatUser;
 }
 
 export const ReactionMenu: React.FunctionComponent<IReactionMenuProps> = ({

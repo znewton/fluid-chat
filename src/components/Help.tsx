@@ -1,5 +1,10 @@
 import React from "react";
-import { RiSendPlaneFill, RiToolsFill, RiUserAddFill } from "react-icons/ri";
+import {
+  RiSendPlaneFill,
+  RiToolsFill,
+  RiUserAddFill,
+  RiUserFill,
+} from "react-icons/ri";
 
 export const Help: React.FunctionComponent = () => {
   return (
@@ -105,7 +110,22 @@ export const Help: React.FunctionComponent = () => {
         </li>
         <li>
           <p>
-            <strong>Send Signal Notification (top right):</strong>
+            <strong>View Audience (top left):</strong>
+          </p>
+          <p>
+            Useful for testing if Audience is working. Each connected client
+            should be represented by a small 3 letter acronym and user icon,
+            like "<RiUserFill /> PAL". The active client for that tab will be
+            highlighted with a bright border.
+          </p>
+          <p>
+            <span style={{ color: "red", fontWeight: "bold" }}>BUG:</span>{" "}
+            Read-only clients <i>should</i> appear in audience, but they don't.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Send Signal Notification (bottom right):</strong>
           </p>
           <p>
             Useful for testing if Signals are working. Click the desired
@@ -114,7 +134,9 @@ export const Help: React.FunctionComponent = () => {
             the reaction notification in the top right.
           </p>
           <p>
-            Read-only clients <i>should</i> be able to send signals.
+            <span style={{ color: "red", fontWeight: "bold" }}>BUG:</span>{" "}
+            Read-only clients <i>should</i> be able to send signals, but they
+            can't.
           </p>
         </li>
       </ul>

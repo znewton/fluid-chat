@@ -1,6 +1,6 @@
 import { IFluidContainer } from "@fluidframework/fluid-static";
 import React from "react";
-import { IUser } from "../definitions";
+import { IFluidChatUser } from "../definitions";
 import { Signaler } from "@fluid-experimental/data-objects";
 import { Reaction, ReactionToEmojiMap } from "./Reactions";
 
@@ -8,13 +8,13 @@ const NotificationTimeoutMs = 3000; // 3 seconds
 
 export interface INotificationDisplayProps {
   container: IFluidContainer;
-  user: IUser;
+  user: IFluidChatUser;
 }
 
 export interface INotification {
   id: string;
   type: "reaction";
-  sender: IUser;
+  sender: IFluidChatUser;
   content: Reaction;
 }
 
