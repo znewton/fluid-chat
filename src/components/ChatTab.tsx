@@ -7,6 +7,8 @@ import { IFluidDocument, IUser } from "../definitions";
 import { getFluidData } from "../fluid";
 import { genUserId } from "../utils";
 import { ConnectionTimer } from "./ConnectionTimer";
+import { ReactionMenu } from "./Reactions";
+import { NotificationDisplay } from "./NotificationDisplay";
 
 export interface IChatTabProps {
   documentId: string;
@@ -70,6 +72,8 @@ export const ChatTab: React.FunctionComponent<IChatTabProps> = (
         </div>
       </nav>
       <MessagesDisplay container={document?.container} user={user} />
+      <NotificationDisplay container={document?.container} user={user} />
+      <ReactionMenu container={document?.container} user={user} />
       <MessageForm container={document?.container} user={user} />
     </div>
   );

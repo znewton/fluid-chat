@@ -223,6 +223,7 @@ body {
     }
 
     .messages {
+        width: 90%;
         position: relative;
         padding: 1em;
         flex-grow: 1;
@@ -620,5 +621,61 @@ button,
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+.reaction-menu {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+    max-height: 50%;
+    overflow-y: auto;
+
+    &>button {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.reaction-menu-title {
+    font-size: 0.8em;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.notifications-list {
+    position: absolute;
+    top: 4rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-end;
+
+    .notification-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+        border-radius: var(--border-radius-small);
+        box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
+        margin-bottom: 0.5rem;
+        background-color: var(--background-color);
+
+        .notification-icon {
+            margin-right: 0.5rem;
+        }
     }
 }

@@ -103,6 +103,20 @@ export const Help: React.FunctionComponent = () => {
             &nbsp; Add Read Client".
           </p>
         </li>
+        <li>
+          <p>
+            <strong>Send Signal Notification (top right):</strong>
+          </p>
+          <p>
+            Useful for testing if Signals are working. Click the desired
+            "reaction" emoji to send a signal to all clients containing that
+            emoji and who the reaction is from. Other client windows will show
+            the reaction notification in the top right.
+          </p>
+          <p>
+            Read-only clients <i>should</i> be able to send signals.
+          </p>
+        </li>
       </ul>
     </main>
   );
