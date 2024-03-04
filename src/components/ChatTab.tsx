@@ -38,6 +38,7 @@ export const ChatTab: React.FunctionComponent<IChatTabProps> = (
       // DocId changed. Dispose old container before creating new one.
       document?.container.dispose();
     }
+    console.log("Connecting User:", user);
     let doc: IFluidDocument | undefined;
     getFluidData(props.documentId, user).then((fluidDocument) => {
       setDocument(fluidDocument);

@@ -9,7 +9,7 @@ import { Signaler } from "@fluid-experimental/data-objects";
 /**
  * Create an AzureClient instance with configured service endpoint and credentials.
  */
-const getAzureClient = async (user?: IUser): Promise<AzureClient> => {
+const getAzureClient = async (user: IUser): Promise<AzureClient> => {
     const azureUser: AzureUser<IUser> = {
         name: user.id,
         id: user.id,
