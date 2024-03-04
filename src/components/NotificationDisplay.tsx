@@ -27,7 +27,12 @@ export const NotificationDisplay: React.FunctionComponent<
       return;
     }
     const timeouts: Set<ReturnType<typeof setTimeout>> = new Set();
-    const signaler: Signaler | undefined = container?.initialObjects?.signaler;
+    const signaler: Signaler | undefined = container?.initialObjects
+      ?.signaler as Signaler | undefined;
+    if (!signaler) {
+      console.warn("No Signaler found in container");
+      return;
+    }
     const notificationListener = (
       clientId: string,
       local: boolean,
@@ -38,9 +43,6 @@ export const NotificationDisplay: React.FunctionComponent<
         notification.type,
         notification.content
       );
-      if (notification.sender.id === user.id) {
-        return;
-      }
       setNotifications((prev) => [...prev, notification]);
       timeouts.add(
         setTimeout(() => {
@@ -59,7 +61,9 @@ export const NotificationDisplay: React.FunctionComponent<
       {notifications.map((notification) => (
         <li
           key={notification.id}
-          className={`notification-item ${notification.type}-notification`}
+          className={`notification-item ${notification.type}-notification ${
+            notification.sender.id === user.id ? "self-notification" : ""
+          }`}
         >
           {notification.type === "reaction" && (
             <>

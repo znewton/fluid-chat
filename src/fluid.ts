@@ -6,6 +6,8 @@ import { IFluidDocument, IPlainMessage, IPointerMessage, IFluidChatUser, Message
 import { CustomInsecureTokenProvider, Kilobyte, randomString, getServiceConfig } from "./utils";
 import { Signaler } from "@fluid-experimental/data-objects";
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 /**
  * Create an AzureClient instance with configured service endpoint and credentials.
  */
@@ -59,11 +61,13 @@ export const getFluidData = async (documentId: string | undefined, user: IFluidC
         id = await container.attach();
         console.log("attached container", id);
     } else {
+        let retryDelay = 1000;
         const AzureUserAssertBugText = 'Provided user was not an "AzureUser".';
         const getContainer = () => client.getContainer(id, containerSchema).catch((error) => {
             if (error.message === AzureUserAssertBugText) {
-                console.warn("AzureUser assertion bug, retrying");
-                return getContainer();
+                retryDelay = Math.min(retryDelay * 2, 8000);
+                console.warn(`AzureUser assertion bug; retrying with delay (${retryDelay}ms)`);
+                return delay(retryDelay).then(() => getContainer());
             }
             throw error;
         });

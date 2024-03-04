@@ -22,12 +22,12 @@ export const AudienceDisplay: React.FunctionComponent<IAudienceDisplayProps> = (
       );
     };
     const memberAddListener = (clientId: string, member: AzureMember) => {
-      console.log("Audience Member Added: ", member.userId);
+      console.log("Audience Member Added: ", clientId, member.userId);
       updateMembers();
     };
     props.audience.on("memberAdded", memberAddListener);
     const memberRemoveListener = (clientId: string, member: AzureMember) => {
-      console.log("Audience Member Removed: ", member.userId);
+      console.log("Audience Member Removed: ", clientId, member.userId);
       updateMembers();
     };
     props.audience.on("memberRemoved", memberRemoveListener);
