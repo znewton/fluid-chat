@@ -131,17 +131,21 @@ export function App() {
             </button>
           </div>
         </nav>
-        {chatTabs.map((id) => {
-          return (
-            <ChatTab
-              key={id}
-              documentId={docId}
-              readonly={id.startsWith("reader:")}
-              onDocumentIdChange={handleDocumentIdChange}
-              onCloseClient={() => handleCloseChatTab(id)}
-            />
-          );
-        })}
+        {chatTabs.length !== 0 && (
+          <section className="chat-tabs">
+            {chatTabs.map((id) => {
+              return (
+                <ChatTab
+                  key={id}
+                  documentId={docId}
+                  readonly={id.startsWith("reader:")}
+                  onDocumentIdChange={handleDocumentIdChange}
+                  onCloseClient={() => handleCloseChatTab(id)}
+                />
+              );
+            })}
+          </section>
+        )}
         {chatTabs.length === 0 && <Help />}
       </main>
     </div>

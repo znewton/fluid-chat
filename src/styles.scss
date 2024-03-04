@@ -137,6 +137,24 @@ body {
     align-items: flex-end;
 }
 
+.chat-tabs {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .chat {
+        min-width: 40%;
+        max-width: 40%;
+        position: relative;
+        flex-shrink: 1;
+    }
+}
+
 .connection-status {
     display: flex;
     align-items: center;
@@ -171,12 +189,15 @@ body {
 
 .chat {
     flex-grow: 1;
-    width: 60em;
+    max-width: 60em;
     align-self: stretch;
-    margin: 0 auto;
-    margin-top: 0.5em;
+    margin: 0.5em;
+    padding: 0.5em;
+    border-radius: var(--border-radius-small);
     display: flex;
     flex-direction: column;
+
+    box-shadow: var(--standard-shadow-color) 0px 7px 29px 0px;
 
     >* {
         margin-bottom: 1em;
@@ -518,6 +539,8 @@ button,
     list-style: none;
     padding-left: 0;
     margin: 0;
+    max-height: 20rem;
+    overflow-y: auto;
 
     .chat-list-item {
         display: flex;

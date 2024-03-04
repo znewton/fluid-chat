@@ -8,7 +8,6 @@ import { GenChatButton } from "./GenChatButton";
 import { GenTrafficButton } from "./GenTrafficButton";
 import { Menu } from "./Menu";
 import { ToolsMenu } from "./ToolsMenu";
-import { ConnectionTimer } from "./ConnectionTimer";
 import { RiSendPlaneFill, RiToolsFill } from "react-icons/ri";
 
 export interface IMessageFormProps {
@@ -70,7 +69,6 @@ export const MessageForm: React.FunctionComponent<IMessageFormProps> = (
         &nbsp;&nbsp;Send
       </button>
       <GenChatButton currentUser={props.user} container={props.container} />
-      <ConnectionTimer container={props.container} />
     </form>
   );
 };

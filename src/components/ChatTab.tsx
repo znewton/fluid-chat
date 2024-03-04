@@ -6,6 +6,7 @@ import { AudienceDisplay } from "./AudienceDisplay";
 import { IFluidDocument, IUser } from "../definitions";
 import { getFluidData } from "../fluid";
 import { genUserId } from "../utils";
+import { ConnectionTimer } from "./ConnectionTimer";
 
 export interface IChatTabProps {
   documentId: string;
@@ -61,6 +62,7 @@ export const ChatTab: React.FunctionComponent<IChatTabProps> = (
           audience={document?.services?.audience}
           currentUser={user}
         />
+        <ConnectionTimer container={document?.container} />
         <button onClick={closeClient} title="Close Client">
           <RiCloseFill />
         </button>
