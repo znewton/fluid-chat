@@ -70,6 +70,15 @@ body {
     background-color: var(--secondary-background-color);
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+
+    &>*:not(:first-child) {
+        margin-left: 0.5em;
+    }
+}
+
 .toolbar {
     width: 100%;
     display: flex;
@@ -85,6 +94,12 @@ body {
         justify-self: flex-end;
         display: flex;
         align-items: center;
+    }
+
+    .audience {
+        max-width: 60%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
     }
 }
 
@@ -148,8 +163,8 @@ body {
     justify-content: center;
 
     .chat {
-        min-width: 40%;
-        max-width: 40%;
+        min-width: 45%;
+        max-width: 45%;
         position: relative;
         flex-shrink: 1;
     }
@@ -503,7 +518,7 @@ button,
 .audience {
     padding: 0.5em 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 
     .audience-member {
         display: flex;

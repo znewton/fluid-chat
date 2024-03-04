@@ -62,10 +62,12 @@ export const ChatTab: React.FunctionComponent<IChatTabProps> = (
           audience={document?.services?.audience}
           currentUser={user}
         />
-        <ConnectionTimer container={document?.container} />
-        <button onClick={closeClient} title="Close Client">
-          <RiCloseFill />
-        </button>
+        <div className="flex-row">
+          <ConnectionTimer container={document?.container} />
+          <button onClick={closeClient} title="Close Client">
+            <RiCloseFill />
+          </button>
+        </div>
       </nav>
       <MessagesDisplay container={document?.container} user={user} />
       <MessageForm container={document?.container} user={user} />
