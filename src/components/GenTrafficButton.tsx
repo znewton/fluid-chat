@@ -24,28 +24,33 @@ export const GenTrafficButton: React.FunctionComponent<
     if (!working) {
       return;
     }
-    const genTraffic = (): void => {
+    const genTraffic = (stress = false): void => {
       // Generate user
       const user = getRandomUser(props.currentUser);
 
       // Generate & send message
-      const rand = Math.random();
-      if (rand < 0.01) {
-        // 1% chance to send 700kb message
-        const message = generateLargeMessage(700);
-        createAndSetPointerMessage(props.container, user, message);
-      } else if (rand < 0.2) {
-        // 10% chance to send 200kb message
-        const message = generateLargeMessage(200);
-        createAndSetPointerMessage(props.container, user, message);
+      if (stress) {
+        const rand = Math.random();
+        if (rand < 0.01) {
+          // 1% chance to send 700kb message
+          const message = generateLargeMessage(700);
+          createAndSetPointerMessage(props.container, user, message);
+        } else if (rand < 0.2) {
+          // 10% chance to send 200kb message
+          const message = generateLargeMessage(200);
+          createAndSetPointerMessage(props.container, user, message);
+        } else {
+          // 80% chance to send small message
+          const message = generateLoremIpsumMessage();
+          createAndSetPlainMessage(props.container, user, message);
+        }
       } else {
-        // 80% chance to send small message
         const message = generateLoremIpsumMessage();
         createAndSetPlainMessage(props.container, user, message);
       }
     };
-    // Send a new message every 200ms
-    const interval = setInterval(genTraffic, 400);
+    // Send a new message every 500ms
+    const interval = setInterval(genTraffic, 500);
     return () => clearInterval(interval);
   }, [props.container, props.currentUser, working]);
   const handleToggleGenTraffic: React.MouseEventHandler<HTMLButtonElement> = (
