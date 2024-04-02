@@ -64,6 +64,7 @@ export function App() {
 	}, [navigateToDocument]);
 
 	React.useEffect(() => {
+		if (!docId) return;
 		updateChatList(docId).then((chats) => {
 			setChatList(chats);
 		});
@@ -139,6 +140,7 @@ export function App() {
 				{chatTabs.length !== 0 && (
 					<section className="chat-tabs">
 						{chatTabs.map((id) => {
+							if (!docId) return undefined;
 							return (
 								<ChatTab
 									key={id}

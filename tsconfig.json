@@ -5,6 +5,7 @@
 		"jsx": "react-jsx",
 		"esModuleInterop": true,
 		"lib": ["DOM", "es2019"],
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"strictNullChecks": true
 	}
 }

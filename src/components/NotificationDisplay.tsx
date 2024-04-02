@@ -7,7 +7,7 @@ import { type Reaction, ReactionToEmojiMap } from "./Reactions";
 const NotificationTimeoutMs = 3000; // 3 seconds
 
 export interface INotificationDisplayProps {
-	container: IFluidContainer;
+	container: IFluidContainer | undefined;
 	user: IFluidChatUser;
 }
 

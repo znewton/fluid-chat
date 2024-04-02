@@ -12,7 +12,7 @@ import {
 
 export interface IGenTrafficButtonProps {
 	currentUser: IFluidChatUser;
-	container: IFluidContainer;
+	container: IFluidContainer | undefined;
 }
 
 export const GenTrafficButton: React.FunctionComponent<IGenTrafficButtonProps> =
@@ -24,6 +24,7 @@ export const GenTrafficButton: React.FunctionComponent<IGenTrafficButtonProps> =
 				return;
 			}
 			const genTraffic = (stress = false): void => {
+				if (!props.container) return;
 				// Generate user
 				const user = getRandomUser(props.currentUser);
 

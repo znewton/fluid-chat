@@ -71,9 +71,9 @@ export class CustomInsecureTokenProvider implements ITokenProvider {
 		};
 	}
 
-	private signToken(tenantId: string, documentId: string): string {
+	private signToken(tenantId: string, documentId: string | undefined): string {
 		const scopes: ScopeType[] =
-			this.user.additionalDetails.permissions.includes("write")
+			this.user.additionalDetails?.permissions.includes("write") || !documentId
 				? [ScopeType.DocRead, ScopeType.DocWrite, ScopeType.SummaryWrite]
 				: [ScopeType.DocRead];
 		return generateToken(

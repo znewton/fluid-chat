@@ -15,8 +15,9 @@ export const AudienceDisplay: React.FunctionComponent<IAudienceDisplayProps> = (
 	const [members, setMembers] = React.useState<Set<string>>(new Set());
 	React.useEffect(() => {
 		if (!props.audience) return;
+		const audience = props.audience;
 		const updateMembers = () => {
-			const allMembers = props.audience.getMembers();
+			const allMembers = audience.getMembers();
 			setMembers(
 				new Set(Array.from(allMembers.entries()).map(([, m]) => m.userId)),
 			);
@@ -25,15 +26,15 @@ export const AudienceDisplay: React.FunctionComponent<IAudienceDisplayProps> = (
 			console.log("Audience Member Added: ", clientId, member.userId);
 			updateMembers();
 		};
-		props.audience.on("memberAdded", memberAddListener);
+		audience.on("memberAdded", memberAddListener);
 		const memberRemoveListener = (clientId: string, member: AzureMember) => {
 			console.log("Audience Member Removed: ", clientId, member.userId);
 			updateMembers();
 		};
-		props.audience.on("memberRemoved", memberRemoveListener);
+		audience.on("memberRemoved", memberRemoveListener);
 		return () => {
-			props.audience.off("memberAdded", memberAddListener);
-			props.audience.off("memberRemoved", memberRemoveListener);
+			audience.off("memberAdded", memberAddListener);
+			audience.off("memberRemoved", memberRemoveListener);
 		};
 	}, [props.audience]);
 

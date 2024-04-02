@@ -5,7 +5,7 @@ import { RiWifiFill, RiWifiOffFill } from "react-icons/ri";
 import { Timer } from "./Timer";
 
 interface IConnectionTimerProps {
-	container: IFluidContainer;
+	container: IFluidContainer | undefined;
 }
 
 export const ConnectionTimer: React.FunctionComponent<IConnectionTimerProps> = (
@@ -17,25 +17,34 @@ export const ConnectionTimer: React.FunctionComponent<IConnectionTimerProps> = (
 		if (!props.container) {
 			return;
 		}
-		props.container.on("disconnected", () => {
-			if (props.container.disposed) {
+		const container = props.container;
+		const disconnectedListener = () => {
+			if (container.disposed) {
 				console.log("Disconnected due to container close. Goodbye");
 			}
 			console.log("-- disconnected from document --");
 			console.time("disconnected");
 			setConnected(false);
-		});
-		props.container.on("connected", async () => {
+		};
+		container.on("disconnected", disconnectedListener);
+		const connectedListener = async () => {
 			console.log("-- connected to document --");
 			console.timeEnd("disconnected");
 			setConnected(true);
-		});
-		props.container.on("disposed", () => {
+		};
+		container.on("connected", connectedListener);
+		const disposedListener = () => {
 			console.log("Container disposed");
-		});
-		if (props.container.connectionState === ConnectionState.Connected) {
+		};
+		container.on("disposed", disposedListener);
+		if (container.connectionState === ConnectionState.Connected) {
 			setConnected(true);
 		}
+		return () => {
+			container.off("disconnected", disconnectedListener);
+			container.off("connected", connectedListener);
+			container.off("disposed", disposedListener);
+		};
 	}, [props.container]);
 
 	return (

@@ -32,7 +32,7 @@ export const ReactionToEmojiMap: { [key in Reaction]: JSX.Element } = {
 };
 
 export interface IReactionMenuProps {
-	container: IFluidContainer;
+	container: IFluidContainer | undefined;
 	user: IFluidChatUser;
 }
 
@@ -42,7 +42,7 @@ export const ReactionMenu: React.FunctionComponent<IReactionMenuProps> = ({
 }) => {
 	const handleReaction = React.useCallback(
 		(reaction: Reaction) => {
-			const signaler: Signaler | undefined = container.initialObjects.signaler;
+			const signaler: Signaler | undefined = container?.initialObjects.signaler;
 			const reactionNotification: INotification = {
 				id: uuid(),
 				type: "reaction",

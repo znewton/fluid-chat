@@ -74,7 +74,7 @@ export const getFluidData = async (
 	};
 	let container: IFluidContainer;
 	let services: AzureContainerServices;
-	let id: string = documentId;
+	let id: string | undefined = documentId;
 	console.time("disconnected");
 	if (!id) {
 		({ container, services } = await client.createContainer(containerSchema));
@@ -111,8 +111,9 @@ export const getFluidData = async (
 	} else {
 		let retryDelay = 1000;
 		const AzureUserAssertBugText = 'Provided user was not an "AzureUser".';
+		const documentId = id;
 		const getContainer = () =>
-			client.getContainer(id, containerSchema).catch((error) => {
+			client.getContainer(documentId, containerSchema).catch((error) => {
 				if (error.message === AzureUserAssertBugText) {
 					retryDelay = Math.min(retryDelay * 2, 8000);
 					console.warn(

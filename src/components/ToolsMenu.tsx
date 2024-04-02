@@ -26,7 +26,7 @@ const SendLargeMessageTool: React.FunctionComponent<
 > = (props) => {
 	const disabled = !canWrite(props.user);
 	const handleClick = accessibleClickHandler(() => {
-		if (disabled) return;
+		if (disabled || !props.container) return;
 		createAndSetPointerMessage(
 			props.container,
 			props.user,
@@ -59,8 +59,8 @@ const SendLargeMessagesTool: React.FunctionComponent<
 > = (props) => {
 	const disabled = !canWrite(props.user);
 	const handleClick = accessibleClickHandler(() => {
-		if (disabled) return;
-		const messageContents = [];
+		if (disabled || !props.container) return;
+		const messageContents: string[] = [];
 		for (let i = 0; i < props.count; i++) {
 			messageContents.push(`${i + 1} - ${generateLargeMessage(props.sizeKb)}`);
 		}
@@ -95,13 +95,13 @@ export const ToolsMenu: React.FunctionComponent<IToolsMenuProps> = (
 ) => {
 	const handleDisconnect = accessibleClickHandler(() => {
 		console.log("-- disconnecting from document --");
-		props.container.disconnect();
+		props.container?.disconnect();
 	});
 	const handleLeave = accessibleClickHandler(() => {
 		console.log("Leaving...");
-		props.container.dispose();
+		props.container?.dispose();
 	});
-	const configuredTokenLifetime: string = localStorageManager.get(
+	const configuredTokenLifetime: string | undefined = localStorageManager.get(
 		StorageKeys.tokenLifetime,
 	);
 	const handleToggleTokenLifetimeReduction = accessibleClickHandler(() => {

@@ -7,13 +7,14 @@ import { canWrite, generateLoremIpsumMessage, getRandomUser } from "../utils";
 
 export interface IGenChatButtonProps {
 	currentUser: IFluidChatUser;
-	container: IFluidContainer;
+	container: IFluidContainer | undefined;
 }
 
 export const GenChatButton: React.FunctionComponent<IGenChatButtonProps> = (
 	props,
 ) => {
 	const handleGenChat: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+		if (!props.container) return;
 		// Generate user
 		const user = getRandomUser(props.currentUser);
 		// Generate message

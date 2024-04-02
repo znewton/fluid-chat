@@ -27,7 +27,7 @@ export const ChatNavForm: React.FunctionComponent<IChatNavFormProps> = (
 		props.onSubmit("new");
 	};
 	const handleBlur = () => {
-		if (!input) {
+		if (!input && props.currentDocId) {
 			setInput(props.currentDocId);
 		}
 	};

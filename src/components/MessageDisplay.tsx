@@ -49,7 +49,7 @@ const PointerMessage: React.FunctionComponent<IPointerMessageProps> = (
 	React.useEffect(() => {
 		(async () => {
 			const map = (await props.pointer.get()) as SharedMap;
-			setContent(map.get<string>(SharedMapKeys.content));
+			setContent(map.get<string>(SharedMapKeys.content) ?? "");
 		})();
 	}, [props.pointer]);
 	return (
@@ -66,7 +66,7 @@ const EmptySessionDisplay: React.FunctionComponent = () => {
 };
 
 interface IMessageDisplayProps {
-	container: IFluidContainer;
+	container: IFluidContainer | undefined;
 	user: IFluidChatUser;
 }
 export const MessagesDisplay: React.FunctionComponent<IMessageDisplayProps> = (
