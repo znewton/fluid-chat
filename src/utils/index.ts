@@ -1,3 +1,4 @@
+export * from "./a11y";
 export * from "./chats";
 export * from "./colors";
 export * from "./configs";

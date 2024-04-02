@@ -1,33 +1,33 @@
 export const StorageKeys = Object.freeze({
-    user: "user",
-    theme: "theme",
-    tokenLifetime: "tokenlifetime",
-    chats: "chats",
+	user: "user",
+	theme: "theme",
+	tokenLifetime: "tokenlifetime",
+	chats: "chats",
 });
 
 class LocalStorageManager {
-    private readonly prefix = "fluid-chat";
+	private readonly prefix = "fluid-chat";
 
-    public set(key: string, value: string): void {
-        window.localStorage.setItem(this.getStorageKey(key), value)
-    }
+	public set(key: string, value: string): void {
+		window.localStorage.setItem(this.getStorageKey(key), value);
+	}
 
-    public get(key: string): string | undefined {
-        const value = window.localStorage.getItem(this.getStorageKey(key));
-        return value === null ? undefined : value;
-    }
+	public get(key: string): string | undefined {
+		const value = window.localStorage.getItem(this.getStorageKey(key));
+		return value === null ? undefined : value;
+	}
 
-    public delete(key: string): void {
-        window.localStorage.removeItem(this.getStorageKey(key));
-    }
+	public delete(key: string): void {
+		window.localStorage.removeItem(this.getStorageKey(key));
+	}
 
-    public clear(): void {
-        window.localStorage.clear();
-    }
+	public clear(): void {
+		window.localStorage.clear();
+	}
 
-    private getStorageKey(key: string): string {
-        return [this.prefix, key].join("-");
-    }
+	private getStorageKey(key: string): string {
+		return [this.prefix, key].join("-");
+	}
 }
 
 export const localStorageManager = new LocalStorageManager();

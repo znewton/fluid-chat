@@ -5,6 +5,6 @@ export const Kilobyte = 1000;
  * @returns random string of 10 characters
  */
 export const randomString = (): string => {
-    const randomStr = (Math.random() + 1).toString(36);
-    return randomStr.substring(randomStr.length - 10);
-}
+	const randomStr = (Math.random() + 1).toString(36);
+	return randomStr.substring(randomStr.length - 10);
+};
