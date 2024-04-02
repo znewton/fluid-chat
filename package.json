@@ -55,6 +55,7 @@
 		}
 	},
 	"resolutions": {
-		"@fluid-experimental/data-objects@2.0.0-rc.1.0.4": "patch:@fluid-experimental/data-objects@npm:2.0.0-rc.1.0.4#.yarn/patches/@fluid-experimental-data-objects-npm-2.0.0-rc.1.0.4-46f9458e1b.patch"
+		"@fluid-experimental/data-objects@2.0.0-rc.1.0.4": "patch:@fluid-experimental/data-objects@npm:2.0.0-rc.1.0.4#.yarn/patches/@fluid-experimental-data-objects-npm-2.0.0-rc.1.0.4-46f9458e1b.patch",
+		"@fluidframework/routerlicious-driver@npm:>=2.0.0-rc.1.0.4 <2.0.0-rc.1.1.0": "patch:@fluidframework/routerlicious-driver@npm%3A2.0.0-rc.1.0.4#~/.yarn/patches/@fluidframework-routerlicious-driver-npm-2.0.0-rc.1.0.4-8ca612b43e.patch"
 	}
 }

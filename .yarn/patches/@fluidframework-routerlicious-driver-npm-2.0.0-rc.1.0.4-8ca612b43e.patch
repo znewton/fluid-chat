@@ -1,0 +1,39 @@
+diff --git a/dist/documentServiceFactory.js b/dist/documentServiceFactory.js
+index 9e914021b37e080a0932e5b8d82082c2540666a2..c1b01042032b1d1cbc451ea57a285a47d4427a17 100644
+--- a/dist/documentServiceFactory.js
++++ b/dist/documentServiceFactory.js
+@@ -26,7 +26,7 @@ const defaultRouterliciousDriverPolicies = {
+     enableRestLess: true,
+     enableInternalSummaryCaching: true,
+     enableLongPollingDowngrade: true,
+-    isEphemeralContainer: false,
++    isEphemeralContainer: true,
+ };
+ /**
+  * Factory for creating the routerlicious document service. Use this if you want to
+diff --git a/lib/documentServiceFactory.mjs b/lib/documentServiceFactory.mjs
+index efa26f3bd2547d2304d322ea0b3ea827c858ea5d..61472b9b019ada85edc314c0be0d7a095bf183ad 100644
+--- a/lib/documentServiceFactory.mjs
++++ b/lib/documentServiceFactory.mjs
+@@ -23,7 +23,7 @@ const defaultRouterliciousDriverPolicies = {
+     enableRestLess: true,
+     enableInternalSummaryCaching: true,
+     enableLongPollingDowngrade: true,
+-    isEphemeralContainer: false,
++    isEphemeralContainer: true,
+ };
+ /**
+  * Factory for creating the routerlicious document service. Use this if you want to
+diff --git a/src/documentServiceFactory.ts b/src/documentServiceFactory.ts
+index 96cd8e3a5e610e6d3f249ab556bbefadbb1c5360..d07b4fd86e383a11921864ab999e86dd6c4d67e5 100644
+--- a/src/documentServiceFactory.ts
++++ b/src/documentServiceFactory.ts
+@@ -52,7 +52,7 @@ const defaultRouterliciousDriverPolicies: IRouterliciousDriverPolicies = {
+ 	enableRestLess: true,
+ 	enableInternalSummaryCaching: true,
+ 	enableLongPollingDowngrade: true,
+-	isEphemeralContainer: false,
++	isEphemeralContainer: true,
+ };
+ 
+ /**
