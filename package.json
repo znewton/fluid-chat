@@ -1,6 +1,6 @@
 {
 	"name": "fluid-react",
-	"packageManager": "yarn@3.2.0",
+	"packageManager": "yarn@4.1.1",
 	"source": "src/index.html",
 	"type": "commonjs",
 	"scripts": {
@@ -14,7 +14,7 @@
 		"lint:fix": "biome check . --apply"
 	},
 	"dependencies": {
-		"@fluid-experimental/data-objects": "^2.0.0-rc.1.0.4",
+		"@fluid-experimental/data-objects": "2.0.0-rc.1.0.4",
 		"@fluidframework/azure-client": "^2.0.0-rc.1.0.4",
 		"@fluidframework/azure-service-utils": "^2.0.0-rc.1.0.4",
 		"@fluidframework/container-definitions": "^2.0.0-rc.1.0.4",
@@ -53,5 +53,8 @@
 		"main": {
 			"optimize": true
 		}
+	},
+	"resolutions": {
+		"@fluid-experimental/data-objects@2.0.0-rc.1.0.4": "patch:@fluid-experimental/data-objects@npm:2.0.0-rc.1.0.4#.yarn/patches/@fluid-experimental-data-objects-npm-2.0.0-rc.1.0.4-46f9458e1b.patch"
 	}
 }

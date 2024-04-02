@@ -1,0 +1,72 @@
+diff --git a/dist/signaler/signaler.js b/dist/signaler/signaler.js
+index 3f905735a79831fef2d307f24071fef473edd8f5..5203f9b3779cc4cb6826ad6ba7f7b3772bdb0990 100644
+--- a/dist/signaler/signaler.js
++++ b/dist/signaler/signaler.js
+@@ -39,7 +39,7 @@ class InternalSignaler extends TypedEventEmitter {
+             // Only call listeners when the runtime is connected and if the signal has an
+             // identifiable sender clientId.  The listener is responsible for deciding how
+             // it wants to handle local/remote signals
+-            if (this.signaler.connected && clientId !== null) {
++            if (clientId !== null) {
+                 this.emitter.emit(message.type, clientId, local, message.content);
+             }
+         });
+@@ -60,9 +60,7 @@ class InternalSignaler extends TypedEventEmitter {
+     }
+     submitSignal(signalName, payload) {
+         const signalerSignalName = this.getSignalerSignalName(signalName);
+-        if (this.signaler.connected) {
+-            this.signaler.submitSignal(signalerSignalName, payload);
+-        }
++        this.signaler.submitSignal(signalerSignalName, payload);
+     }
+ }
+ /**
+diff --git a/lib/signaler/signaler.js b/lib/signaler/signaler.js
+index 3f905735a79831fef2d307f24071fef473edd8f5..5203f9b3779cc4cb6826ad6ba7f7b3772bdb0990 100644
+--- a/lib/signaler/signaler.js
++++ b/lib/signaler/signaler.js
+@@ -39,7 +39,7 @@ class InternalSignaler extends TypedEventEmitter {
+             // Only call listeners when the runtime is connected and if the signal has an
+             // identifiable sender clientId.  The listener is responsible for deciding how
+             // it wants to handle local/remote signals
+-            if (this.signaler.connected && clientId !== null) {
++            if (clientId !== null) {
+                 this.emitter.emit(message.type, clientId, local, message.content);
+             }
+         });
+@@ -60,9 +60,7 @@ class InternalSignaler extends TypedEventEmitter {
+     }
+     submitSignal(signalName, payload) {
+         const signalerSignalName = this.getSignalerSignalName(signalName);
+-        if (this.signaler.connected) {
+-            this.signaler.submitSignal(signalerSignalName, payload);
+-        }
++        this.signaler.submitSignal(signalerSignalName, payload);
+     }
+ }
+ /**
+diff --git a/src/signaler/signaler.ts b/src/signaler/signaler.ts
+index 248768b7696f124729461c6acb226a39d71cd815..3fde9a805c208e8a301024bdfe7e71709020faa2 100644
+--- a/src/signaler/signaler.ts
++++ b/src/signaler/signaler.ts
+@@ -98,7 +98,7 @@ class InternalSignaler extends TypedEventEmitter<IErrorEvent> implements ISignal
+ 			// Only call listeners when the runtime is connected and if the signal has an
+ 			// identifiable sender clientId.  The listener is responsible for deciding how
+ 			// it wants to handle local/remote signals
+-			if (this.signaler.connected && clientId !== null) {
++			if (clientId !== null) {
+ 				this.emitter.emit(message.type, clientId, local, message.content);
+ 			}
+ 		});
+@@ -124,9 +124,7 @@ class InternalSignaler extends TypedEventEmitter<IErrorEvent> implements ISignal
+ 
+ 	public submitSignal<T>(signalName: string, payload?: Jsonable<T>) {
+ 		const signalerSignalName = this.getSignalerSignalName(signalName);
+-		if (this.signaler.connected) {
+-			this.signaler.submitSignal(signalerSignalName, payload);
+-		}
++		this.signaler.submitSignal(signalerSignalName, payload);
+ 	}
+ }
+ 
