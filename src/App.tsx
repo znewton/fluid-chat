@@ -17,6 +17,7 @@ import {
 	updateChatList,
 } from "./utils";
 import { v4 as uuid } from "uuid";
+import { QueryStringKeys } from "./definitions";
 
 export function App() {
 	const [docId, setDocId] = React.useState<string | undefined>(
@@ -140,12 +141,14 @@ export function App() {
 				{chatTabs.length !== 0 && (
 					<section className="chat-tabs">
 						{chatTabs.map((id) => {
-							if (!docId) return undefined;
 							return (
 								<ChatTab
 									key={id}
 									documentId={docId}
-									readonly={id.startsWith("reader:")}
+									readonly={
+										id.startsWith("reader:") ||
+										window.location.search.includes(QueryStringKeys.readOnly)
+									}
 									onDocumentIdChange={handleDocumentIdChange}
 									onCloseClient={() => handleCloseChatTab(id)}
 								/>

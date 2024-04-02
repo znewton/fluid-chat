@@ -33,5 +33,5 @@ export const getRandomUser = (currentUser: IFluidChatUser): IFluidChatUser => {
 	return user;
 };
 
-export const canWrite = (user: IFluidChatUser): boolean =>
-	user.permissions.includes("write");
+export const canWrite = (user: IFluidChatUser | undefined): boolean =>
+	user?.permissions.includes("write") ?? false;

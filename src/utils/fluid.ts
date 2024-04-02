@@ -7,6 +7,7 @@ import {
 import { generateToken } from "@fluidframework/azure-service-utils";
 import type { IFluidChatUser } from "../definitions";
 import { localStorageManager, StorageKeys } from "./localStorage";
+import { canWrite } from "./users";
 
 export class CustomInsecureTokenProvider implements ITokenProvider {
 	private readonly tokenLifetimeMs: number | undefined;
@@ -39,16 +40,7 @@ export class CustomInsecureTokenProvider implements ITokenProvider {
 		documentId?: string,
 		refresh?: boolean,
 	): Promise<ITokenResponse> {
-		if (!this.cachedToken || refresh) {
-			return {
-				fromCache: false,
-				jwt: this.signToken(tenantId, documentId),
-			};
-		}
-		return {
-			fromCache: true,
-			jwt: this.cachedToken,
-		};
+		return this.fetchToken(tenantId, documentId, refresh);
 	}
 
 	/**
@@ -59,10 +51,22 @@ export class CustomInsecureTokenProvider implements ITokenProvider {
 		documentId: string,
 		refresh?: boolean,
 	): Promise<ITokenResponse> {
+		return this.fetchToken(tenantId, documentId, refresh);
+	}
+
+	private async fetchToken(
+		tenantId: string,
+		documentId?: string,
+		refresh?: boolean,
+	): Promise<ITokenResponse> {
 		if (!this.cachedToken || refresh) {
+			const token = this.signToken(tenantId, documentId);
+			if (documentId) {
+				this.cachedToken = token;
+			}
 			return {
 				fromCache: false,
-				jwt: this.signToken(tenantId, documentId),
+				jwt: token,
 			};
 		}
 		return {
@@ -73,7 +77,7 @@ export class CustomInsecureTokenProvider implements ITokenProvider {
 
 	private signToken(tenantId: string, documentId: string | undefined): string {
 		const scopes: ScopeType[] =
-			this.user.additionalDetails?.permissions.includes("write") || !documentId
+			canWrite(this.user.additionalDetails) || !documentId
 				? [ScopeType.DocRead, ScopeType.DocWrite, ScopeType.SummaryWrite]
 				: [ScopeType.DocRead];
 		return generateToken(

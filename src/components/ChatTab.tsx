@@ -11,7 +11,7 @@ import { ReactionMenu } from "./Reactions";
 import { NotificationDisplay } from "./NotificationDisplay";
 
 export interface IChatTabProps {
-	documentId: string;
+	documentId: string | undefined;
 	readonly?: boolean;
 	onDocumentIdChange: (id: string) => void;
 	onCloseClient?: () => void;
